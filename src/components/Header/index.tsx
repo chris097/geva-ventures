@@ -31,7 +31,7 @@ const Header = () => {
                             <span className='text-xs font-semibold'>elevator@gmail.com</span>
                         </div>
                     </div>
-                    <div className='lg:flex gap-2 items-center lg:block hidden'>
+                    <div className='lg:flex gap-2 items-center hidden'>
                         <ClockIcon />
                         <span className='text-xs font-semibold'>Mon - Sat 9:00AM - 6:00PM, Sunday - Closed</span>
                     </div>
