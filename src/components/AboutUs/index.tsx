@@ -9,41 +9,40 @@ interface metaData {
     description: string
     stats: string
     text: string
-
+    data: {icon: JSX.Element | string, description: string}[]
 }
 
-
-const abouts = [
-    { description: "Emergency Solution Anytime" },
-    { description: "Affordable Price Upto 2 Years" },
-    { description: "Reliable & Experienced Team" },
+const abouts: {description: string, icon: string}[] = [
+    { icon: "", description: "Emergency Solution Anytime" },
+    { icon: "", description: "Affordable Price Upto 2 Years" },
+    { icon: "", description: "Reliable & Experienced Team" },
 ];
-const contacts = [
+const contacts: {description: string, icon: JSX.Element}[] = [
     { description: "+234808908837", icon: <PhoneIcon fillColor="white" width="10px" height="10.5px" /> },
     { description: "Example@gmail.com", icon: <EmailIcon fillColor="white" width="10px" height="10.5px" /> },
     { description: "20 Madi Ave, Lagos", icon: <PhoneIcon fillColor="white" width="10px" height="10.5px" /> },
 ];
 
-const tabs = [
+const tabs:{tab: number, name: string}[] = [
     { tab: 1, name: "About Us" },
     { tab: 2, name: "Vision" },
     { tab: 3, name: "Contact Us" },
 ];
 
-const AboutText = ({description, stats, text}:metaData) => {
+const AboutText = ({description, stats, text, data}:metaData) => {
     return (
         <Reveal>
-            <p className='text-lg text-[#6E777D] mt-3 lg:ml-14 mr-16'>{description}</p>
-            <div className='flex items-center gap-20 lg:ml-14 mt-3'>
+            <p className='lg:text-lg text-base text-[#6E777D] mt-3 lg:ml-14 lg:mr-16'>{description}</p>
+            <div className='flex items-center lg:gap-20 gap-8 lg:ml-14 mt-3'>
                 <div>
-                    <p className='text-[60px] font-bold text-primarypink'>{stats}</p>
-                    <p className='text-lg font-semibold text-primaryblack leading-tight mt-2'>{text}</p>
+                    <p className='lg:text-[60px] text-[48px] font-bold text-primarypink'>{stats}</p>
+                    <p className='lg:text-lg text-md font-semibold text-primaryblack leading-tight mt-2'>{text}</p>
                 </div>
                 <div className='mt-2'>
-                    {contacts.map((contact, index) => (
+                    {data.map((meta, index: number) => (
                         <div key={index} className='flex gap-2 items-center mt-3'>
-                            <span className='bg-primarypink rounded-full p-1'>{contact.icon}</span>
-                            <span className='text-primaryblack text-base'>{contact.description}</span>
+                            <span className='bg-primarypink rounded-full p-1'>{meta.icon}</span>
+                            <span className='text-primaryblack lg:text-base text-xs'>{meta.description}</span>
                         </div>
                     ))}
                 </div>
@@ -71,7 +70,7 @@ const AboutUs = () => {
                     <Reveal><p className='text-primarypink text-base font-semibold uppercase lg:ml-14'>Latest Projects</p></Reveal>
                     <Reveal><p className='lg:text-[40px] text-2xl text-primaryblack font-bold mt-4 leading-tight lg:ml-14'>WE ARE QUALIFIED IN <br /> EVERY WORKING <br /> DEPARTMENTS</p></Reveal>
                     <Reveal>
-                        <div className='bg-primarygray pl-8 text-lg font-tillitium font-semibold gap-10 flex items-center text-primaryblack h-20 lg:ml-14 mr-10 my-6'>
+                        <div className='bg-primarygray pl-8 lg:text-lg font-tillitium font-semibold text-base gap-10 flex items-center text-primaryblack lg:h-20 h-16 lg:ml-14 lg:mr-10 my-6'>
                         {tabs.map((tab) => (
                             <div onClick={() => setCurrentTab(tab.tab)} key={tab.tab} className={`cursor-pointer ${tab.tab === currentTab && "border-primaryblack border-b-2"}`}>{tab.name}</div>
                         ))}
@@ -82,18 +81,21 @@ const AboutUs = () => {
                             description='Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus erat nascetur, a sed placerat sagittis euismod'
                             stats='3025'
                             text='STARTED JOURNEY'
+                            data={abouts}
                         />}
                         {tabs[1].tab === currentTab && <AboutText
                             description='Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus erat nascetur, a sed placerat sagittis euismod'
                             stats='2025'
                             text='STARTED JOURNEY'
+                            data={contacts}
                         />}
                         {tabs[2].tab === currentTab && <AboutText
                             description='Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus erat nascetur, a sed placerat sagittis euismod'
                             stats='1025'
                             text='STARTED JOURNEY'
+                            data={contacts}
                         />}
-                        <button className='bg-black lg:h-14 h-10 lg:ml-14 rounded-sm py-3 px-6 text-base font-semibold mt-10 text-white'>GET STARTED</button>
+                        <button className='bg-black h-14 lg:ml-14 rounded-sm py-3 px-6 text-base font-semibold mt-10 text-white'>GET STARTED</button>
                     </Reveal>
                 </div>
             </div>
