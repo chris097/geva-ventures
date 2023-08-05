@@ -8,6 +8,8 @@ import RecentWork from '@/components/RecentWork/page';
 import ContactUs from '@/components/ContactUs/page';
 import Result from '@/components/Results/page';
 import Testimonies from '@/components/Testimonies/page';
+import Faq from '@/components/Faq/page';
+import Footer from '@/components/Footer/page';
 
 
 export default function Home() {
@@ -21,6 +23,8 @@ export default function Home() {
       <ContactUs />
       <Result />
       <Testimonies />
+      <Faq />
+      <Footer />
     </main>
   )
 }
