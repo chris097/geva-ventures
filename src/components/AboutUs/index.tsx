@@ -98,7 +98,7 @@ GEVAC GLOBAL SERVICES is managed by professionals with experience spanning over 
                             text='STARTED JOURNEY'
                             data={contacts}
                         />}
-                        <button className='bg-black h-14 lg:ml-14 rounded-sm py-3 px-6 text-base font-semibold mt-10 text-white'>GET STARTED</button>
+                        {/* <button className='bg-black h-14 lg:ml-14 rounded-sm py-3 px-6 text-base font-semibold mt-10 text-white'>GET STARTED</button> */}
                     </Reveal>
                 </div>
             </div>
