@@ -10,7 +10,7 @@ import Result from '@/components/Results/page';
 import Testimonies from '@/components/Testimonies/page';
 import Faq from '@/components/Faq/page';
 import Footer from '@/components/Footer/page';
-import '@/app/globals.css';
+import '@/styles/globals.css';
 
 
 export default function Home() {
