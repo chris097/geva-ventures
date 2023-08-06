@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/Homepage/HeroSection';
@@ -10,7 +10,6 @@ import Result from '@/components/Results/page';
 import Testimonies from '@/components/Testimonies/page';
 import Faq from '@/components/Faq/page';
 import Footer from '@/components/Footer/page';
-import '@/styles/globals.css';
 
 
 export default function Home() {
