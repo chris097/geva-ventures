@@ -44,7 +44,7 @@ const Header = () => {
                     </div>
                         <div className='lg:flex hidden items-center font-tillitium font-semibold text-sm gap-16'>
                             <Link href="/" className='cursor-pointer'>Home</Link>
-                            <Link href="/about-us" className='cursor-pointer'>About Us</Link>
+                            <Link href="/pages/about" className='cursor-pointer'>About Us</Link>
                             <Link href="/our-service" className='cursor-pointer'>Our Service</Link>
                             <Link href="/contact-us" className='cursor-pointer'>Contact US</Link>
                         </div>

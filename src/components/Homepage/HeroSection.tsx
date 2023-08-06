@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import frame2 from '@/public/images/frame2.jpeg';
-import frame1 from '@/public/images/frame1.jpeg';
+import frame1 from '@/public/images/frame4.jpeg';
 import frame3 from '@/public/images/frame3.jpeg';
 import Reveal from '../utils/Reveal';
 import PhoneIcon from '@/public/svgs/PhoneIcon';
@@ -16,15 +16,15 @@ interface metadata{
 }
 
 const tabs = [
-    { tab: 1, name: "DESIGN AND BUILD" },
-    { tab: 2, name: "ELEVATOR REMODELING" },
-    { tab: 3, name: "ELEVATOR INSTALLATION" },
+    { tab: 1, name: "ELEVATOR INSTALLATION" },
+    { tab: 2, name: "ESCALATOR INSTALLATION" },
+    { tab: 3, name: "AUTOMATIC DOORS" },
 ];
 
 const Banner = ({ frame, heading, description, buttonName, number, subText }:metadata) => {
     return <> <div>
         <div className='overlay z-30 opacity-80' />
-        <Image className="w-full slide absolute z-20 h-screen object-cover left-0" src={frame} alt="elevator hero section" />
+        <Image className="w-full slide absolute z-20 h-screen object-fill left-0" src={frame} alt="elevator hero section" />
     </div>
         <div className='relative text-white z-40 flex flex-col w-[90%] justify-center mx-auto h-full'>
             <div>
@@ -69,7 +69,7 @@ const HeroSection = () => {
     return (
         <div className='w-full font-tillitium relative h-screen'>
             {tabs[0].tab === activeIndex && <Banner
-                frame={frame2}
+                frame={frame1}
                 heading="WELCOME YOU TO ELEVATOR"
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"
@@ -77,7 +77,7 @@ const HeroSection = () => {
                 number="+2347015362583"
             />}
             {tabs[1].tab === activeIndex && <Banner
-                frame={frame1}
+                frame={frame2}
                 heading="WELCOME YOU TO ELEVATOR"
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"

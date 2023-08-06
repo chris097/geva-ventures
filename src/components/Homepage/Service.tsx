@@ -6,9 +6,9 @@ import service3 from '@/public/images/service3.png';
 import Reveal from '../utils/Reveal';
 
 const services = [
-    {url: service1, title: "Sustainable System", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
-    {url: service2, title: "Property Maintenance", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
-    {url: service3, title: "Virtual design & build", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
+    {url: service1, title: "ELEVATOR INSTALLATION", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
+    {url: service2, title: "PROCUREMENT SERVICES", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
+    {url: service3, title: "LABOUR CONTRACTORS", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
 ]
 
 const Service = () => {
