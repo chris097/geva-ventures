@@ -1,6 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { Interface } from 'readline';
 
-const PhoneIcon = ({fillColor, width, height}) => {
+interface PhoneProps {
+  fillColor: string
+  width: string
+  height: string
+}
+
+const PhoneIcon = ({fillColor, width, height}: PhoneProps) => {
   return (
     <div><svg width={width} height={height} viewBox="0 0 25 29" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M13.3499 9.15757C14.3155 9.15757 15.2415 9.59454 15.9243 10.3723C16.6071 11.1502 16.9907 12.2051 16.9907 13.3051C16.9907 13.6717 17.1186 14.0234 17.3462 14.2826C17.5738 14.5419 17.8825 14.6876 18.2043 14.6876C18.5262 14.6876 18.8349 14.5419 19.0625 14.2826C19.2901 14.0234 19.418 13.6717 19.418 13.3051C19.418 11.4718 18.7786 9.71354 17.6407 8.4172C16.5027 7.12086 14.9592 6.39258 13.3499 6.39258C13.028 6.39258 12.7193 6.53823 12.4917 6.7975C12.2641 7.05677 12.1362 7.40841 12.1362 7.77508C12.1362 8.14174 12.2641 8.49338 12.4917 8.75265C12.7193 9.01192 13.028 9.15757 13.3499 9.15757Z" fill={fillColor} />

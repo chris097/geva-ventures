@@ -1,6 +1,12 @@
 import React from 'react'
 
-const EmailIcon = ({width, height, fillColor}) => {
+interface EProps {
+  width: string
+  height: string
+  fillColor: string
+}
+
+const EmailIcon = ({width, height, fillColor}: EProps) => {
   return (
       <div>
           <svg width={width} height={height} viewBox="0 0 30 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -11,4 +17,4 @@ const EmailIcon = ({width, height, fillColor}) => {
   )
 }
 
-export default EmailIcon
+export default EmailIcon;
