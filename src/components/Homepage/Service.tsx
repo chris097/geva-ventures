@@ -1,14 +1,20 @@
 import React from 'react';
 import Image from 'next/image';
-import service1 from '@/public/images/service1.png';
-import service2 from '@/public/images/service2.png';
+import service1 from '@/public/images/frame7.jpeg';
+import service2 from '@/public/images/frame6.jpeg';
 import service3 from '@/public/images/service3.png';
+import service4 from '@/public/images/frame8.jpeg';
+import service5 from '@/public/images/frame10.jpg';
+import service6 from '@/public/images/frame4.jpeg';
 import Reveal from '../utils/Reveal';
 
 const services = [
     {url: service1, title: "ELEVATOR INSTALLATION", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
-    {url: service2, title: "PROCUREMENT SERVICES", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
+    {url: service2, title: "ESCALATOR INSTALLATION", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
+    {url: service4, title: "PROCUREMENT SERVICES", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
     {url: service3, title: "LABOUR CONTRACTORS", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
+    {url: service5, title: "ELEVATOR SERVICES", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
+    {url: service6, title: "ESCALATOR SERVICES", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
 ]
 
 const Service = () => {

@@ -21,11 +21,11 @@ const ContactInfo = ({info, time, show, bgColor, icon, showEnd}: metaData) => {
                     <div>
                         {show ? <div className='w-6 h-full bg-primarypink' /> : ""}
                     </div>
-                    <div className='flex justify-center items-center w-full gap-4'>
+                    <div className='flex justify-center items-center w-full gap-4 px-6'>
                         {icon}
                         <div className='font-tillitium text-white'>
                             <p className='text-sm font-semibold'>{info}</p>
-                            <p className='text-2xl font-semibold mt-1'>{time}</p>
+                            <p className='text-xl font-semibold mt-3'>{time}</p>
                         </div>
                     </div>
                     <div>
@@ -50,7 +50,7 @@ const ContactUs = () => {
             />
             <ContactInfo
                 info='HAVE A QUESTION?'
-                time='+23470153625'
+                time='+2348035802938, +2348100727926'
                 show={false}
                 showEnd={false}
                 bgColor='bg-primarypink'
@@ -58,7 +58,7 @@ const ContactUs = () => {
             />
             <ContactInfo
                 info='NEED AN ELEVATOR? OUR ADDRESS'
-                time='22 Madi Ave, New York'
+                time='NO. 1 CHIEF VAL CLOSE OFF TIMOTHY LANE RUMUOLA ROAD PORT HARCOURT, RIVERS STATE'
                 show={false}
                 showEnd={true}
                 bgColor='bg-black'

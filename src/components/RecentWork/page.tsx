@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import recent1 from "@/public/images/recent1.png"
-import recent2 from "@/public/images/recent2.png"
-import recent3 from "@/public/images/recent3.png"
+import recent1 from "@/public/images/frame5.jpeg"
+import recent2 from "@/public/images/frame9.jpeg"
+import recent3 from "@/public/images/frame10.jpg"
 import Reveal from '../utils/Reveal';
 
 const RecentWork = () => {

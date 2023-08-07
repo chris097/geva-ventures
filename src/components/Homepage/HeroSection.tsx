@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
-import frame2 from '@/public/images/frame2.jpeg';
-import frame1 from '@/public/images/frame4.jpeg';
-import frame3 from '@/public/images/frame3.jpeg';
+import frame2 from '@/public/images/frame3.jpeg';
+import frame1 from '@/public/images/frame12.webp';
+import frame3 from '@/public/images/frame6.jpeg';
 import Reveal from '../utils/Reveal';
 import PhoneIcon from '@/public/svgs/PhoneIcon';
 
@@ -70,7 +70,7 @@ const HeroSection = () => {
         <div className='w-full font-tillitium relative h-screen'>
             {tabs[0].tab === activeIndex && <Banner
                 frame={frame1}
-                heading="WELCOME YOU TO ELEVATOR"
+                heading="WELCOME YOU TO GEVA VENTURES LIMITED"
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"
                 subText="Call Us Now"
@@ -78,7 +78,7 @@ const HeroSection = () => {
             />}
             {tabs[1].tab === activeIndex && <Banner
                 frame={frame2}
-                heading="WELCOME YOU TO ELEVATOR"
+                heading="WELCOME YOU TO GEVA VENTURES LIMITED"
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"
                 subText="Call Us Now"
@@ -86,7 +86,7 @@ const HeroSection = () => {
             />}
             {tabs[2].tab === activeIndex && <Banner
                 frame={frame3}
-                heading="WELCOME YOU TO ELEVATOR"
+                heading="WELCOME YOU TO GEVA VENTURES LIMITED"
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"
                 subText="Call Us Now"

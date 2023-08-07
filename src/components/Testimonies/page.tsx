@@ -1,6 +1,8 @@
 import React from 'react';
 import {HiOutlineArrowSmallLeft, HiOutlineArrowSmallRight} from 'react-icons/hi2';
 import Reveal from '@/components/utils/Reveal';
+import Image from 'next/image';
+import client1 from "@/public/images/technical1.png";
 
 const Testimonies = () => {
     return (
@@ -10,10 +12,12 @@ const Testimonies = () => {
                 <div className='lg:flex'>
                     <div className='flex justify-center flex-col lg:items-center'>
                         <Reveal><p className='text-primaryblack text-[25px] whitespace-nowrap font-semibold'>TRUSTED FROM OVER <br /> 1,500 CLIENTS</p></Reveal>
-                        <div className='w-44 h-44 mt-10 rounded-full bg-primaryblack' />
+                            <div className='w-44 h-44 mt-14 lg:ml-32'>
+                                <Image className='w-full h-full rounded-full' src={client1} alt="client" />
+                        </div>
                     </div>
-                    <div className='lg:ml-32'>
-                        <Reveal><p className='leading-tight text-primaryblack mt-6 text-2xl w-[90%] font-tillitium lg:text-[36px]'>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p></Reveal>
+                    <div className='lg:ml-28'>
+                        <Reveal><p className='leading-normal text-primaryblack mt-6 text-2xl w-[95%] font-roboto lg:text-[36px]'>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p></Reveal>
                         <Reveal><p className='font-bold text-xl text-primaryblack mt-10'>Christian Chiemela, <span className='text-primarypink'>CEO</span></p></Reveal>
                     </div>
                 </div>

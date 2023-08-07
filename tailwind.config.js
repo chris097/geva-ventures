@@ -22,8 +22,8 @@ module.exports = {
       },
       fontFamily: {
         tillitium: ["Titillium Web, sans-serif"],
-        roboto: ["Roboto, sans-serif"],
-        "roboto-slab": ["Roboto Slab, sans-serif"],
+        roboto: ["Roboto', sans-serif"],
+        "roboto-slab": ["Roboto Slab', sans-serif"],
       }
     },
   },
