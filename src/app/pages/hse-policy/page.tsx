@@ -34,30 +34,45 @@ const HSEPOLICY = () => {
           <div className='text-primaryblack'>
             <div className="flex items-center gap-4 mt-6 ml-10">
               <div className='bg-primaryblue w-4 h-4 rounded-full' />
-              <span className='text-2xl text-primaryblack font-roboto leading-relaxed'>Strive to achieve the goal of zero accidents and injuries.</span>
+              <span className='text-2xl text-primaryblack font-roboto leading-relaxed'>Train all employees in safe work practices and procedures.</span>
+           </div>
+            <div className="flex items-center gap-4 mt-3 ml-10">
+              <div className='bg-primaryblue w-4 h-4 rounded-full' />
+              <span className='text-2xl text-primaryblack font-roboto leading-relaxed'>Provide employees with necessary personal protective equipment
+and train them to use and care for it properly</span>
            </div>
             <div className="flex items-center gap-4 mt-3 ml-10">
               <div className='bg-primaryblue w-4 h-4 rounded-full' />
               <span className='text-2xl text-primaryblack font-roboto leading-relaxed'>Strive to achieve the goal of zero accidents and injuries.</span>
-           </div>
+            </div>
             <div className="flex items-center gap-4 mt-3 ml-10">
               <div className='bg-primaryblue w-4 h-4 rounded-full' />
-              <span className='text-2xl text-primaryblack font-roboto leading-relaxed'>Strive to achieve the goal of zero accidents and injuries.</span>
+              <span className='text-2xl text-primaryblack font-roboto leading-relaxed'>Enforce company safety and health rules and make employees to
+follow the rules as a condition of employment</span>
+            </div>
+            <div className="flex items-center gap-4 mt-3 ml-10">
+              <div className='bg-primaryblue w-4 h-4 rounded-full' />
+              <span className='text-2xl text-primaryblack font-roboto leading-relaxed'>Investigate accident to determine the cause and prevent similar
+accidents.</span>
            </div>
           </div>
           <p className='text-2xl text-primaryblue mt-10 font-roboto leading-relaxed font-bold'>MANAGEMENT, SUPERVISORS AND ALL OTHER EMPLOYEE SHARE RESPONSIBILITY FOR A SAFE AND HEALTHY WORK PLACE.</p>
            <div className='text-primaryblack'>
             <div className="flex items-center gap-4 mt-6 ml-10">
               <div className='bg-primaryblue w-4 h-4 rounded-full' />
-              <span className='text-2xl text-primaryblack font-roboto leading-relaxed'>Strive to achieve the goal of zero accidents and injuries.</span>
+              <span className='text-2xl text-primaryblack font-roboto leading-relaxed'>Management is accountable for preventing workplace injuries and illness, management also will keep informed about work place safety and health hazards and regularly review the company’s safety and health program.</span>
            </div>
             <div className="flex items-center gap-4 mt-3 ml-10">
               <div className='bg-primaryblue w-4 h-4 rounded-full' />
-              <span className='text-2xl text-primaryblack font-roboto leading-relaxed'>Strive to achieve the goal of zero accidents and injuries.</span>
+              <span className='text-2xl text-primaryblack font-roboto leading-relaxed'>Supervisors are responsible for supervising and training workers in safe work practices.</span>
            </div>
             <div className="flex items-center gap-4 mt-3 ml-10">
               <div className='bg-primaryblue w-4 h-4 rounded-full' />
-              <span className='text-2xl text-primaryblack font-roboto leading-relaxed'>Strive to achieve the goal of zero accidents and injuries.</span>
+              <span className='text-2xl text-primaryblack font-roboto leading-relaxed'>Supervisors must enforce company rules and ensure that employees follow safe practices during their work.</span>
+           </div>
+            <div className="flex items-center gap-4 mt-3 ml-10">
+              <div className='bg-primaryblue relative w-4 h-4 rounded-full' />
+              <p className='text-2xl text-primaryblack font-roboto leading-relaxed'> Employees are expected to participate in safety health program activities including immediately reporting hazard unsafe work practices and accident to supervisors or a safety committee representative, wearing required personal protective equipment and participating in and supporting safety committee activities</p>
            </div>
           </div>
         </div>

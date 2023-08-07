@@ -24,16 +24,16 @@ const Header = () => {
                     <div className='flex lg:gap-10 h-44 gap-6'>
                         <div className='flex items-center gap-1'>
                             <PhoneIcon fillColor="#4F81BD" width="16px" height="14px" />
-                            <span className='text-xs font-semibold'>+2348035802938, +2348100727926</span>
+                            <span className='text-sm font-semibold'>+2348035802938, +2348100727926</span>
                         </div>
                         <div className='flex items-center gap-1'>
                             <EmailIcon fillColor="#4F81BD" width="16px" height="16px" />
-                            <span className='text-xs font-semibold'>vinovilla_2014@yahoo.com</span>
+                            <span className='text-sm font-semibold'>vinovilla_2014@yahoo.com</span>
                         </div>
                     </div>
                     <div className='lg:flex gap-2 items-center hidden'>
                         <ClockIcon />
-                        <span className='text-xs font-semibold'>Mon - Sat 9:00AM - 6:00PM, Sunday - Closed</span>
+                        <span className='text-sm font-semibold'>Mon - Sat 9:00AM - 6:00PM, Sunday - Closed</span>
                     </div>
                 </div>
             </div>
