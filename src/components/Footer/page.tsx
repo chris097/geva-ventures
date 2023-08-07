@@ -9,7 +9,7 @@ import FacebookIcon from '@/public/svgs/FacebookIcon';
 
 const Footer = () => {
   return (
-      <div className='bg-black lg:h-[500px] h-auto lg:mt-52 mt-32 overflow-x-hidden'>
+      <div className='bg-primaryblack h-[600px] lg:mt-52 mt-32'>
           <div className='lg:flex block justify-between text-white w-[90%] mx-auto pt-14'>
               <div className='lg:w-[30%] w-[90%]'>
                     <div className='flex items-center gap-16'>
@@ -76,7 +76,7 @@ const Footer = () => {
               </div>
           </div>
           <div className='border-t-[0.5px] w-[90%] mx-auto mt-14 border-white' />
-          <p className='text-[#6E777D] my-10 text-center flex items-center lg:text-base text-sm justify-center gap-1'>
+          <p className='text-[#6E777D] mt-10 text-center flex items-center text-sm justify-center gap-1'>
               <span className='text-xl'>&copy;</span> Copyright 2023 Geva Ventures Limited. All Rights Reserved.</p>
     </div>
   )
