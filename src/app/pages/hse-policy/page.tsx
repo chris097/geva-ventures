@@ -78,7 +78,7 @@ accidents.</span>
         </div>
         <div className='mt-14'>
           <h1 className='text-3xl text-primaryblack font-roboto font-bold leading-relaxed'>Contact Us</h1>
-          <p className='text-xl text-primaryblack font-tillitium leading-relaxed'>Don't hesitate to contact us if you have any questions.</p>
+          <p className='text-xl text-primaryblack font-tillitium leading-relaxed'>Don&apos;t hesitate to contact us if you have any questions.</p>
           <p className='text-xl text-primaryblack font-tillitium leading-relaxed'>Via Email: vinovilla_2014@yahoo.com</p>
         </div>
       </div>
