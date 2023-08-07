@@ -16,7 +16,7 @@ const Footer = () => {
                     <div className='flex items-center gap-16'>
                         <div>
                             <Logo />
-                        <p className='text-white font-semibold text-xl font-tillitium'>Geva Ventures LTD</p>
+                        <p className='text-white font-semibold text-xl font-tillitium'>GEVAC GLOBAL SERVICES LTD</p>
                         </div>
                     </div>
                   <div className='mt-6'>
