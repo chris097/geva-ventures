@@ -23,7 +23,7 @@ const Result = () => {
                     <div className='grid lg:grid-cols-4 grid-cols-2 lg:mt-10 mt-16 gap-6'>
                 {results.map((result, index) => (
                     <Reveal  key={index}>
-                        <div className='bg-primarypink w-full font-tillitium lg:h-[280px] lg:py-0 py-4 h-auto gap-1 flex justify-center flex-col lg:px-10 px-5 lg:mt-10'>
+                        <div className='bg-[#244061] w-full font-tillitium lg:h-[280px] lg:py-0 py-4 h-auto gap-1 flex justify-center flex-col lg:px-10 px-5 lg:mt-10'>
                         <svg className='lg:w-[80px] lg:h-[80px] w-[40px] h-[40px]' viewBox="0 0 78 80" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                             <ellipse cx="38.875" cy="40" rx="38.875" ry="40" fill="#FFFFF1" />
                             <rect x="21.3813" y="20" width="34.9875" height="40" fill="url(#pattern0)" />

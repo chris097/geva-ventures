@@ -33,7 +33,7 @@ const RecentWork = () => {
                 </Reveal>
                 <div className='flex justify-center w-full py-8'>
                     <div className='flex lg:gap-4 gap-2 items-center mt-2'>
-                        <span className='bg-primaryblack h-2 w-2 lg:w-3 lg:h-3 rounded-full' />
+                        <span className='bg-[#244061] h-2 w-2 lg:w-3 lg:h-3 rounded-full' />
                         <span className='bg-white w-2 h-2 lg:w-3 lg:h-3 rounded-full' />
                         <span className='bg-white w-2 h-2 lg:w-3 lg:h-3 rounded-full' />
                         <span className='bg-white w-2 h-2 lg:w-3 lg:h-3 rounded-full' />
