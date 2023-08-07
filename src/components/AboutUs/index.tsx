@@ -78,10 +78,10 @@ const AboutUs = () => {
                     </Reveal>
                     <Reveal>
                         {tabs[0].tab === currentTab && <AboutText
-                            description={<p><span className='text-primarypink font-bold'>GEVAC GLOBAL SERVICES</span> is a company incorporated under the laws
+                            description={<p className='text-primaryblack'><span className='text-primarypink font-bold'>GEVAC GLOBAL SERVICES LTD</span> is a company incorporated under the laws
 of the Federal Republic of Nigeria with registration Number RV122469
 The Company was formed to provide expert indigenous services to support local and foreign firms operating within the shores of Nigeria.
-GEVAC GLOBAL SERVICES is managed by professionals with experience spanning over many years in their fields.</p>}
+<span className='font-bold'>GEVAC GLOBAL SERVICES LIMITED </span>is managed by professionals with experience spanning over many years in their fields.</p>}
                             stats='2045'
                             text='Completed Projects'
                             data={abouts}

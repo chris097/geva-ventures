@@ -8,7 +8,7 @@ import PhoneIcon from '@/public/svgs/PhoneIcon';
 
 interface metadata{
     frame: StaticImageData
-    heading: string
+    heading: string | JSX.Element
     description: string
     buttonName: string
     number: string
@@ -59,7 +59,7 @@ const HeroSection = () => {
     
      useEffect(() => {
     // Automatically change slide every 3 seconds
-    const slideInterval = setInterval(nextSlide, 6000);
+    const slideInterval = setInterval(nextSlide, 7000);
 
     // Clear interval when the component is unmounted
     return () => clearInterval(slideInterval);
@@ -70,7 +70,7 @@ const HeroSection = () => {
         <div className='w-full font-tillitium relative h-screen'>
             {tabs[0].tab === activeIndex && <Banner
                 frame={frame1}
-                heading="WELCOME YOU TO GEVAC GLOBAL SERVICES LTD"
+                heading={<p>WELCOME YOU TO <span className='text-primarypink'>GEVAC GLOBAL SERVICES LTD</span></p>}
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"
                 subText="Call Us Now"
@@ -78,7 +78,7 @@ const HeroSection = () => {
             />}
             {tabs[1].tab === activeIndex && <Banner
                 frame={frame2}
-                heading="WELCOME YOU TO GEVAC GLOBAL SERVICES LTD"
+                heading={<p>WELCOME YOU TO <span className='text-primarypink'>GEVAC GLOBAL SERVICES LTD</span></p>}
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"
                 subText="Call Us Now"
@@ -86,7 +86,7 @@ const HeroSection = () => {
             />}
             {tabs[2].tab === activeIndex && <Banner
                 frame={frame3}
-                heading="WELCOME YOU TO GEVAC GLOBAL SERVICES LTD"
+                heading={<p>WELCOME YOU TO <span className='text-primarypink'>GEVAC GLOBAL SERVICES LTD</span></p>}
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"
                 subText="Call Us Now"
