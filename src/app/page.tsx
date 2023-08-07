@@ -11,19 +11,10 @@ import Testimonies from '@/components/Testimonies/page';
 import Faq from '@/components/Faq/page';
 import Footer from '@/components/Footer/page';
 import Team from '@/components/Homepage/Team';
-import Head from 'next/head';
 
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Yabacon: Africa&apos;s Most Inclusive Tech Community</title>
-                <meta name="description" content="Privacy Policy" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-             <link rel="icon" href="" />
-      </Head>
     <main>
       <Header />
       <HeroSection />
@@ -37,6 +28,5 @@ export default function Home() {
       <Faq />
       <Footer />
     </main>
-    </>
-  )
-}
+  );
+};

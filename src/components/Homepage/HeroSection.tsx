@@ -74,7 +74,7 @@ const HeroSection = () => {
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"
                 subText="Call Us Now"
-                number="+2347015362583"
+                number="+2348035802938"
             />}
             {tabs[1].tab === activeIndex && <Banner
                 frame={frame2}
@@ -82,7 +82,7 @@ const HeroSection = () => {
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"
                 subText="Call Us Now"
-                number="+2347015362583"
+                number="+2348035802938"
             />}
             {tabs[2].tab === activeIndex && <Banner
                 frame={frame3}
@@ -90,7 +90,7 @@ const HeroSection = () => {
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"
                 subText="Call Us Now"
-                number="+2347015362583"
+                number="+2348035802938"
             />}
             <div className='text-black lg:w-3/6 absolute bottom-0 z-40 h-16 right-0 bg-white'>
                 <div className='flex lg:px-14 px-4 gap-4 justify-between w-full font-roboto-slab lg:text-[13px] text-[10px] font-semibold h-full items-center'>

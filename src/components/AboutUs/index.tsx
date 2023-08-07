@@ -87,15 +87,13 @@ The Company was formed to provide expert indigenous services to support local an
                             data={abouts}
                         />}
                         {tabs[1].tab === currentTab && <AboutText
-                            description={<div>
-                                <p>Head Office</p>
-                            </div>}
+                            description=""
                             stats='2025'
                             text='STARTED JOURNEY'
                             data={contacts}
                         />}
                         {tabs[2].tab === currentTab && <AboutText
-                            description={<div className=''>
+                            description={<div className='text-primaryblack'>
                                 <div className='flex-1'>
                                     <p className='text-primarypink font-bold'>Head Office:</p>
                                     <p className='text-base mt-1'>NO. 1 CHIEF VAL CLOSE OFF TIMOTHY LANE RUMUOLA ROAD PORT HARCOURT, RIVERS STATE</p>

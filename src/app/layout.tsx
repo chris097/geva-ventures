@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 // const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'GEVAC GLOBAL SERVICES',
+  title: 'GEVAC GLOBAL SERVICES LTD',
   description: 'The Company was formed to provide expert indigenous services to support local and foreign firms operating within the shores of Nigeria.',
 }
 
