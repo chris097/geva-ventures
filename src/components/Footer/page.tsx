@@ -45,7 +45,7 @@ const Footer = () => {
                       </div> */}
                   </div>
               </div>
-              <div className='mt-10 lg:mt-32'>
+              <div className='mt-10 lg:mt-0'>
                   <p className='text-2xl font-semibold'>Useful Links</p>
                   <div className='mt-6'>
                       <div className='mt-4 text-lg'>Company</div>
@@ -57,7 +57,9 @@ const Footer = () => {
               <div className='lg:mt-0 mt-7'>
                   <p className='text-2xl font-semibold'>Other Links</p>
                   <div className='mt-6'>
-                      <div className='mt-4 text-lg'>Our Quality Policy</div>
+                      <div className='mt-4 text-lg'>
+                      <Link href="pages/quality-policy">Our Quality Policy</Link>
+                      </div>
                       <div className='mt-4 text-lg'>
                       <Link href="pages/hse-policy">Health Safety Policy</Link>
                       </div>

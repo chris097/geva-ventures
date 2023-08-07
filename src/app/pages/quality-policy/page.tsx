@@ -1,9 +1,9 @@
 "use client";
-import React from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer/page';
+import Footer from '@/components/Footer/page'
+import Header from '@/components/Header'
+import React from 'react'
 
-const HSEPOLICY = () => {
+const QualityPolicy = () => {
   return (
     <main>
       <Header />
@@ -69,7 +69,7 @@ const HSEPOLICY = () => {
       </div>
       <Footer />
     </main>
-  );
-};
+  )
+}
 
-export default HSEPOLICY;
+export default QualityPolicy;
