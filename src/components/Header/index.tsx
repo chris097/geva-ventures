@@ -42,7 +42,7 @@ const Header = () => {
                     <div className='flex items-center gap-16'>
                         <div>
                             <Logo />
-                        <p className='text-primarypink font-semibold text-base font-tillitium'>GEVAC GLOBAL SERVICES LTD</p>
+                        {/* <p className='text-primarypink font-semibold text-base font-tillitium'>GEVAC GLOBAL SERVICES LTD</p> */}
                         </div>
                     </div>
                         <div className='lg:flex hidden items-center text-white font-roboto font-medium text-base gap-16'>

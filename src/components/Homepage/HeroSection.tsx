@@ -70,7 +70,7 @@ const HeroSection = () => {
         <div className='w-full font-tillitium relative h-screen'>
             {tabs[0].tab === activeIndex && <Banner
                 frame={frame1}
-                heading="WELCOME YOU TO GEVA VENTURES LIMITED"
+                heading="WELCOME YOU TO GEVAC GLOBAL SERVICES LTD"
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"
                 subText="Call Us Now"
@@ -78,7 +78,7 @@ const HeroSection = () => {
             />}
             {tabs[1].tab === activeIndex && <Banner
                 frame={frame2}
-                heading="WELCOME YOU TO GEVA VENTURES LIMITED"
+                heading="WELCOME YOU TO GEVAC GLOBAL SERVICES LTD"
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"
                 subText="Call Us Now"
@@ -86,7 +86,7 @@ const HeroSection = () => {
             />}
             {tabs[2].tab === activeIndex && <Banner
                 frame={frame3}
-                heading="WELCOME YOU TO GEVA VENTURES LIMITED"
+                heading="WELCOME YOU TO GEVAC GLOBAL SERVICES LTD"
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"
                 subText="Call Us Now"
