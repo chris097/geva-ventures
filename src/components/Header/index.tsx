@@ -23,11 +23,11 @@ const Header = () => {
                 <div className='w-[90%] mx-auto flex justify-between items-center h-[52px]'>
                     <div className='flex lg:gap-10 h-44 gap-6'>
                         <div className='flex items-center gap-1'>
-                            <PhoneIcon fillColor="#FF6600" width="16px" height="14px" />
+                            <PhoneIcon fillColor="#4F81BD" width="16px" height="14px" />
                             <span className='text-xs font-semibold'>+2348035802938, +2348100727926</span>
                         </div>
                         <div className='flex items-center gap-1'>
-                            <EmailIcon fillColor="#FF6600" width="16px" height="16px" />
+                            <EmailIcon fillColor="#4F81BD" width="16px" height="16px" />
                             <span className='text-xs font-semibold'>vinovilla_2014@yahoo.com</span>
                         </div>
                     </div>
@@ -42,17 +42,17 @@ const Header = () => {
                     <div className='flex items-center gap-16'>
                         <div>
                             <Logo />
-                        <p className='text-white font-semibold text-base font-tillitium'>Geva Ventures LTD</p>
+                        <p className='text-primarypink font-semibold text-base font-tillitium'>Geva Ventures LTD</p>
                         </div>
                     </div>
                         <div className='lg:flex hidden items-center text-white font-roboto font-medium text-base gap-16'>
-                            <Link href="/" className='cursor-pointer'>Home</Link>
-                            <Link href="/pages/about" className='cursor-pointer'>Company</Link>
-                            <Link href="/our-service" className='cursor-pointer'>Our Service</Link>
-                            <Link href="/contact-us" className='cursor-pointer'>Contact US</Link>
+                            <Link href="/" className='cursor-pointer hover:text-primarypink transition-all duration-500'>Home</Link>
+                            <Link href="/pages/about" className='cursor-pointer hover:text-primarypink transition-all duration-500'>Company</Link>
+                            <Link href="/our-service" className='cursor-pointer hover:text-primarypink transition-all duration-500'>Our Service</Link>
+                            <Link href="/contact-us" className='cursor-pointer hover:text-primarypink transition-all duration-500'>Contact US</Link>
                         </div>
                     <div className='lg:hidden block' onClick={handleClick}>
-                        <BiMenuAltLeft size="30px" />
+                        <BiMenuAltLeft color="white" size="30px" />
                     </div>
                 </div>
             </div>

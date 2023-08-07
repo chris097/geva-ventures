@@ -6,10 +6,11 @@ import TwitterIcon from '@/public/svgs/TwitterIcon';
 import LinkedIcon from '@/public/svgs/LinkedIcon';
 import DiscordIcon from '@/public/svgs/DiscordIcon';
 import FacebookIcon from '@/public/svgs/FacebookIcon';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
-      <div className='bg-primaryblack h-[600px] lg:mt-52 mt-32'>
+      <div className='bg-primaryblack lg:h-[600px] h-auto pb-10 lg:mt-52 mt-32'>
           <div className='lg:flex block justify-between text-white w-[90%] mx-auto pt-14'>
               <div className='lg:w-[30%] w-[90%]'>
                     <div className='flex items-center gap-16'>
@@ -44,7 +45,7 @@ const Footer = () => {
                       </div> */}
                   </div>
               </div>
-              <div className='lg:mt-0 mt-32'>
+              <div className='mt-10 lg:mt-32'>
                   <p className='text-2xl font-semibold'>Useful Links</p>
                   <div className='mt-6'>
                       <div className='mt-4 text-lg'>Company</div>
@@ -57,7 +58,9 @@ const Footer = () => {
                   <p className='text-2xl font-semibold'>Other Links</p>
                   <div className='mt-6'>
                       <div className='mt-4 text-lg'>Our Quality Policy</div>
-                      <div className='mt-4 text-lg'>Health Safety Policy</div>
+                      <div className='mt-4 text-lg'>
+                      <Link href="pages/hse-policy">Health Safety Policy</Link>
+                      </div>
                   </div>
               </div>
               <div className='lg:mt-0 mt-7'>

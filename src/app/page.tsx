@@ -10,6 +10,7 @@ import Result from '@/components/Results/page';
 import Testimonies from '@/components/Testimonies/page';
 import Faq from '@/components/Faq/page';
 import Footer from '@/components/Footer/page';
+import Team from '@/components/Homepage/Team';
 
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <AboutUs />
       <RecentWork />
       <ContactUs />
+      <Team />
       <Result />
       <Testimonies />
       <Faq />

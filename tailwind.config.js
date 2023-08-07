@@ -15,6 +15,7 @@ module.exports = {
       colors: {
         'primarywhite': "#FEFEFE",
         'primarypink': "#4F81BD",
+        'primaryblue': "#244061",
         'primaryyellow': "#FFFFF1",
         'primaryblack': "#0C0A0A",
         'secondaryblack': "#1A1A1A",
@@ -22,8 +23,8 @@ module.exports = {
       },
       fontFamily: {
         tillitium: ["Titillium Web, sans-serif"],
-        roboto: ["Roboto', sans-serif"],
-        "roboto-slab": ["Roboto Slab', sans-serif"],
+        roboto: ["Roboto, sans-serif"],
+        "roboto-slab": ["Roboto Slab, sans-serif"],
       }
     },
   },
