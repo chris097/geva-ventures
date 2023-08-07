@@ -23,14 +23,14 @@ const tabs = [
 
 const Banner = ({ frame, heading, description, buttonName, number, subText }:metadata) => {
     return <> <div>
-        <div className='overlay z-30 opacity-80' />
-        <Image className="w-full slide absolute z-20 h-screen object-fill left-0" src={frame} alt="elevator hero section" />
+        <div className='overlay absolute overflow-hidden w-full lg:h-screen h-[550px] m-0 z-30 opacity-80' />
+        <Image className="w-full slide absolute z-20 lg:h-screen h-[550px] object-fill left-0" src={frame} alt="elevator hero section" />
     </div>
-        <div className='relative text-white z-40 flex flex-col w-[90%] justify-center mx-auto h-full'>
+        <div className='relative text-white z-40 flex flex-col w-[90%] justify-center mx-auto lg:h-full h-[500px]'>
             <div>
                 <Reveal><p className='lg:text-xl text-sm font-semibold font-roboto'>{heading}</p></Reveal>
                 <Reveal>
-                    <h1 className='lg:w-[65%] w-[80%] lg:text-[72px] text-3xl mt-4 font-bold leading-tight'>{description}</h1>
+                    <h1 className='lg:w-[65%] sm:w-[80%] w-[90%] lg:text-[72px] text-3xl mt-4 font-bold leading-tight'>{description}</h1>
                 </Reveal>
             </div>
             <Reveal>
@@ -58,7 +58,7 @@ const HeroSection = () => {
     };
     
      useEffect(() => {
-    // Automatically change slide every 3 seconds
+    // Automatically change slide every 7 seconds
     const slideInterval = setInterval(nextSlide, 7000);
 
     // Clear interval when the component is unmounted
@@ -67,10 +67,10 @@ const HeroSection = () => {
   
 
     return (
-        <div className='w-full font-tillitium relative h-screen'>
+        <div className='w-full font-tillitium relative lg:h-screen h-[550px]'>
             {tabs[0].tab === activeIndex && <Banner
                 frame={frame1}
-                heading={<p>WELCOME YOU TO <span className='text-primarypink'>GEVAC GLOBAL SERVICES LTD</span></p>}
+                heading={<p>WELCOME TO <span className='text-primarypink'>GEVAC GLOBAL SERVICES LTD</span></p>}
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"
                 subText="Call Us Now"
@@ -78,7 +78,7 @@ const HeroSection = () => {
             />}
             {tabs[1].tab === activeIndex && <Banner
                 frame={frame2}
-                heading={<p>WELCOME YOU TO <span className='text-primarypink'>GEVAC GLOBAL SERVICES LTD</span></p>}
+                heading={<p>WELCOME TO <span className='text-primarypink'>GEVAC GLOBAL SERVICES LTD</span></p>}
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"
                 subText="Call Us Now"
@@ -86,14 +86,14 @@ const HeroSection = () => {
             />}
             {tabs[2].tab === activeIndex && <Banner
                 frame={frame3}
-                heading={<p>WELCOME YOU TO <span className='text-primarypink'>GEVAC GLOBAL SERVICES LTD</span></p>}
+                heading={<p>WELCOME TO <span className='text-primarypink'>GEVAC GLOBAL SERVICES LTD</span></p>}
                 description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
                 buttonName="Get Started"
                 subText="Call Us Now"
                 number="+2348035802938"
             />}
             <div className='text-black lg:w-3/6 absolute bottom-0 z-40 h-16 right-0 bg-white'>
-                <div className='flex lg:px-14 px-4 gap-4 justify-between w-full font-roboto-slab lg:text-[13px] text-[10px] font-semibold h-full items-center'>
+                <div className='flex lg:px-14 px-4 gap-4 justify-between w-full font-roboto-slab sm:text-[13px] text-[9px] sm:font-semibold h-full items-center'>
                     {tabs.map((tab, index) => (
                         <div onClick={() => setActiveIndex(tab.tab)} key={index} className={`cursor-pointer ${tab.tab === activeIndex && "border-primaryblack border-b"}`}>{tab.name}</div>
                     ))}

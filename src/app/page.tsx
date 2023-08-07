@@ -11,11 +11,13 @@ import Testimonies from '@/components/Testimonies/page';
 import Faq from '@/components/Faq/page';
 import Footer from '@/components/Footer/page';
 import Team from '@/components/Homepage/Team';
+import CookiesPage from '@/components/utils/Cookies';
 
 
 export default function Home() {
   return (
     <main>
+      <CookiesPage />
       <Header />
       <HeroSection />
       <Service />

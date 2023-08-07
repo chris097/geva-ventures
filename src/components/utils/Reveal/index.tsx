@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 
 const Reveal = ({ children }: any) => {
@@ -9,13 +9,11 @@ const Reveal = ({ children }: any) => {
     const mainContainer = useAnimation();
 
     useEffect(() => {
-        if (isInView) {
-            mainContainer.start("visible")
-        }
+        if (isInView) mainContainer.start("visible");
     }, [isInView, mainContainer]);
 
   return (
-      <div ref={ref} className='relative overflow-hidden'>
+      <>
           <motion.div
               variants={{
                   hidden: { opacity: 0, y: 90 },
@@ -23,9 +21,11 @@ const Reveal = ({ children }: any) => {
               }}
               initial="hidden"
               animate={mainContainer}
-              transition={{duration: 0.75, delay: 0.33}}
+              transition={{ duration: 0.75, delay: 0.33 }}
+              className='relative overflow-hidden'
+              ref={ref}
           >{children}</motion.div>
-      </div>
+      </>
   )
 }
 

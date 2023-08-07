@@ -25,6 +25,9 @@ module.exports = {
         tillitium: ["Titillium Web, sans-serif"],
         roboto: ["Roboto, sans-serif"],
         "roboto-slab": ["Roboto Slab, sans-serif"],
+      },
+      screens: {
+        sm: '540px',
       }
     },
   },

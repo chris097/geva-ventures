@@ -28,7 +28,7 @@ const Service = () => {
                       <div className='flex-1 bg-white shadow-sm rounded-md'>
                   <div className='relative lg:h-[360px] sm:h-[200px] h-[250px]'>
                      <Image className='w-full h-full' src={service.url} alt='elevator service pics' />
-                          <div className='absolute bottom-0 z-50 text-white right-0 bg-primaryblue text-2xl font-bold px-5 py-3'>0{index+1}</div>
+                          <div className='absolute bottom-0 z-40 text-white right-0 bg-primaryblue text-2xl font-bold px-5 py-3'>0{index+1}</div>
                   </div>
                   <div className='px-6 pt-6 font-tillitium'>
                           <p className='lg:text-2xl text-xl sm:text-base font-bold text-[#244061]'>{service.title}</p>
