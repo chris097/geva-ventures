@@ -19,7 +19,7 @@ const Footer = () => {
                         </div>
                     </div>
                   <div className='mt-6'>
-                      <p className='text-xl font-semibold'>Head Office</p>
+                      <p className='text-xl font-semibold text-primarypink'>Head Office</p>
                       {/* <div className='flex gap-2 mt-4 items-center'> 
                           <PhoneIcon fillColor='#FF6600' width='20px' height='20px' />
                           <span className='text-lg'>+2340715362583</span>
@@ -31,7 +31,7 @@ const Footer = () => {
                       </div> */}
                   </div>
                   <div className='mt-6'>
-                      <p className='text-xl font-semibold'>Branch Offices</p>
+                      <p className='text-xl font-semibold text-primarypink'>Branch Offices</p>
                       {/* <div className='flex gap-2 mt-4 items-center'> 
                           <PhoneIcon fillColor='#FF6600' width='20px' height='20px' />
                           <span className='text-lg'>+2340715362583</span>
@@ -44,7 +44,7 @@ const Footer = () => {
                       </div> */}
                   </div>
               </div>
-              <div className='lg:mt-0 mt-7'>
+              <div className='lg:mt-0 mt-32'>
                   <p className='text-2xl font-semibold'>Useful Links</p>
                   <div className='mt-6'>
                       <div className='mt-4 text-lg'>Company</div>
@@ -76,8 +76,8 @@ const Footer = () => {
               </div>
           </div>
           <div className='border-t-[0.5px] w-[90%] mx-auto mt-14 border-white' />
-          <p className='text-[#6E777D] mt-10 text-center flex items-center text-sm justify-center gap-1'>
-              <span className='text-xl'>&copy;</span> Copyright 2023 Geva Ventures Limited. All Rights Reserved.</p>
+          <p className='text-primarypink mt-10 text-center flex items-center text-sm justify-center gap-1'>
+              <span className='text-xl text-primarypink'>&copy;</span> Copyright 2023 Geva Ventures Limited. All Rights Reserved.</p>
     </div>
   )
 }
