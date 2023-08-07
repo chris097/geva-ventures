@@ -99,12 +99,13 @@ The Company was formed to provide expert indigenous services to support local an
                                     <p className='text-base mt-1'>NO. 1 CHIEF VAL CLOSE OFF TIMOTHY LANE RUMUOLA ROAD PORT HARCOURT, RIVERS STATE</p>
                                 </div>
                                 <div className='flex-1'>
-                                    <p className='text-primarypink font-bold mt-3'>Branch Office:</p>
+                                    <p className='text-primarypink font-bold mt-3'>Rivers State -</p>
                                     <p className='mt-1 text-base'>NO 12 OHIAMINI ROAD OFF RUMULA ROAD Port Harcourt RIVERS STATE.</p>
+                                    <p className='mt-2 text-base'>NO. 6 CROWN AVENUE ENUGU – NGWO ENUGU STATE NIGERIA</p>
                                 </div>
                                 <div className='flex-1'>
-                                    <p className='text-primarypink font-bold mt-3'>Branch Office:</p>
-                                    <p className='mt-1 text-base'>NO. 6 CROWN AVENUE ENUGU – NGWO ENUGU STATE NIGERIA</p>
+                                    <p className='text-primarypink font-bold mt-3'>Lagos State -</p>
+                                    <p className='mt-1 text-base'>3rd Floor Nurses House, Churchgate Street Victoria Island Lagos.</p>
                                 </div>
                             </div>}
                             stats='1995'

@@ -46,7 +46,7 @@ const CookiesPage = () => {
                                             We use cookies on our website to enhance your user experience and improve our services. By clicking &apos;Accept&apos;, you agree to our use of cookies as described in our Policy
                                             {/* <Link href="/cookie-policy" className="md:border-b-2 border-b font-circular border-primarypink md:font-bold text-primarypink ml-2">Cookie Policy</Link> */}
                                         </p>
-                                        <button onClick={handleSetCookie} type="button" className="bg-primaryblack lg:block lg:mx-0 flex items-center justify-center mx-auto text-white w-[181px] md:h-[56px] h-[40px] md:text-sm text-xs lg:mt-0 mt-2 rounded-[4px]">Accept</button>
+                                        <button onClick={handleSetCookie} type="button" className="bg-primaryblack hover:bg-gray-900 lg:block lg:mx-0 flex items-center justify-center mx-auto text-white w-[181px] md:h-[56px] h-[40px] md:text-sm text-xs lg:mt-0 mt-2 rounded-[4px]">Accept</button>
                             </div>
                         </div>
                        </div>
