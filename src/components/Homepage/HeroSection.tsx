@@ -35,9 +35,9 @@ const Banner = ({ frame, heading, description, buttonName, number, subText }:met
             </div>
             <Reveal>
                 <div className='text-white flex items-center lg:mt-20 mt-10 lg:gap-20 gap-10'>
-                    <button className='w-52 h-16 lg:block hidden text-lg text-white font-roboto uppercase bg-primarypink'>{buttonName}</button>
+                    <button className='w-52 h-16 lg:block hidden text-lg text-white font-roboto uppercase bg-primaryblue'>{buttonName}</button>
                     <div className='flex items-center gap-3'>
-                        <div className='bg-white rounded-full flex justify-center items-center w-14 h-14'><PhoneIcon fillColor="#FF6600" width="18px" height="15.5px" /></div>
+                        <div className='bg-white rounded-full flex justify-center items-center w-14 h-14'><PhoneIcon fillColor="#244061" width="18px" height="15.5px" /></div>
                         <div>
                             <p className='text-[#6E777D] text-base font-semibold font-roboto'>{subText}</p>
                             <p className='text-lg font-semibold font-roboto'>{number}</p>
