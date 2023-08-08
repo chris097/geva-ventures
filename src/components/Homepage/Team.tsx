@@ -2,8 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import technical1 from '@/public/images/technical1.png';
 import technical2 from '@/public/images/technical2.png';
-import Linkedin from '@/public/svgs/Linkedin';
-import Reveal from '../utils/Reveal';
+import Linkedin from '@/public/svgs/Linkedin'
+import {Reveal} from '../utils/Reveal';
 
 const teams = [
     {url: technical1, name: "Helen Chai", role: "Head of Construction"},

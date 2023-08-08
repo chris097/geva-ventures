@@ -3,7 +3,7 @@ import Image, { StaticImageData } from 'next/image';
 import frame2 from '@/public/images/frame3.jpeg';
 import frame1 from '@/public/images/frame12.webp';
 import frame3 from '@/public/images/frame6.jpeg';
-import Reveal from '../utils/Reveal';
+import {Reveal} from '../utils/Reveal';
 import PhoneIcon from '@/public/svgs/PhoneIcon';
 
 interface metadata{

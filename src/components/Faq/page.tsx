@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PlusIcon from '@/public/svgs/PlusIcon';
 import MinusIcon from '@/public/svgs/MinusIcon';
-import Reveal from '../utils/Reveal';
+import { Reveal } from '../utils/Reveal';
 
 const faqs:{tag: number, title: string, description: string}[] = [
   { tag: 1, title: "What to double down on accuracy, efficiency, and time management", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },

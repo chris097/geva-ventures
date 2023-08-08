@@ -6,7 +6,7 @@ import service3 from '@/public/images/service3.png';
 import service4 from '@/public/images/frame8.jpeg';
 import service5 from '@/public/images/frame10.jpg';
 import service6 from '@/public/images/frame4.jpeg';
-import Reveal from '../utils/Reveal';
+import {Reveal} from '../utils/Reveal';
 
 const services = [
     {url: service1, title: "ELEVATOR INSTALLATION", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},

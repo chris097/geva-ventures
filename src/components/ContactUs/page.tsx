@@ -1,5 +1,5 @@
 import React from 'react';
-import Reveal from '../utils/Reveal';
+import { Reveal } from '../utils/Reveal';
 import PhonewithTime from '@/public/svgs/PhonewithTime';
 import Phone from '@/public/svgs/Phone';
 import LocationIcon from '@/public/svgs/LocationIcon';

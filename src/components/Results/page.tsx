@@ -1,14 +1,14 @@
 import React from 'react';
 import result from "@/public/images/result.png";
 import Image from 'next/image';
-import Reveal from '@/components/utils/Reveal';
+import {Reveal} from '@/components/utils/Reveal';
 import { IoIosPeople } from 'react-icons/io';
 import { FaPeopleRoof,FaBuildingLock } from 'react-icons/fa6';
 import { BiBookAdd } from 'react-icons/bi';
 
 const results:{number:string, title: string, icon: any}[] = [
     {number: "3526+", title: "Tons Of Customers", icon: <FaPeopleRoof color="#4F81BD" size="32px" />},
-    {number: "3550+", title: "Complete Projects", icon: <FaBuildingLock color="#4F81BD" size="28 px" />},
+    {number: "3550+", title: "Complete Projects", icon: <FaBuildingLock color="#4F81BD" size="28px" />},
     {number: "124+", title: "Team Members", icon: <IoIosPeople color="#4F81BD" size="38px" />},
     {number: "72+", title: "Upcoming Projects", icon: <BiBookAdd color="#4F81BD" size="32px" />},
 ]

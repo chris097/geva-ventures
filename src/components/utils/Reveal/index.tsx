@@ -1,32 +1,35 @@
-import React, { useEffect, useRef } from 'react';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import React, { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
-const Reveal = ({ children }: any) => {
+export const Reveal = ({ children }: any) => {
 
-    const ref = useRef<HTMLDivElement>(null);
-    const isInView = useInView(ref, { once: true });
+    const [ref, inView] = useInView();
 
-    const mainContainer = useAnimation();
+    const control = useAnimation();
 
     useEffect(() => {
-        if (isInView) mainContainer.start("visible");
-    }, [isInView, mainContainer]);
+        if (inView) {
+            control.start("visible");
+        } else {
+            control.start("hidden")
+        }
+            
+    }, [control, inView]);
 
-  return (
-      <>
-          <motion.div
-              variants={{
-                  hidden: { opacity: 0, y: 90 },
-                  visible: {opacity: 1, y: 0}
-              }}
-              initial="hidden"
-              animate={mainContainer}
-              transition={{ duration: 0.75, delay: 0.33 }}
-              className='relative overflow-hidden'
-              ref={ref}
-          >{children}</motion.div>
-      </>
-  )
-}
-
-export default Reveal;
+    return (
+        <>
+            <motion.div
+                variants={{
+                    hidden: { opacity: 0, y: 45 },
+                    visible: { opacity: 1, y: 0 }
+                }}
+                initial="hidden"
+                animate={control}
+                transition={{ duration: 0.65, delay: 0.33 }}
+                className='relative overflow-hidden'
+                ref={ref}
+            >{children}</motion.div>
+        </>
+    )
+};

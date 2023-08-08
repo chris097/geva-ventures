@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import faqImg from '@/public/images/frame12.jpeg';
 import Image from 'next/image';
-import Reveal from '../utils/Reveal';
+import { Reveal }from '../utils/Reveal';
 import PhoneIcon from '@/public/svgs/PhoneIcon';
 import EmailIcon from '@/public/svgs/EmailIcon';
 

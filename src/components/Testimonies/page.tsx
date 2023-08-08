@@ -1,6 +1,6 @@
 import React from 'react';
 import {HiOutlineArrowSmallLeft, HiOutlineArrowSmallRight} from 'react-icons/hi2';
-import Reveal from '@/components/utils/Reveal';
+import { Reveal} from '@/components/utils/Reveal';
 import Image from 'next/image';
 import client1 from "@/public/images/technical1.png";
 
