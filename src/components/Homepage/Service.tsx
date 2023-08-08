@@ -22,11 +22,11 @@ const Service = () => {
       <div className='pb-16 lg:mt-28 mt-20 mx-auto w-[90%]'>
           <Reveal><p className='text-xl font-tillitium text-primarypink text-center font-semibold'>OUR SERVICES</p></Reveal>
           <Reveal><p className='lg:text-[40px] font-tillitium text-primaryblack text-center sm:text-[38px] text-[32px] font-bold'>QUALITY SERVICING OPPORTUNITY</p></Reveal>
-          <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-3 lg:gap-5 gap-5 mt-14'>
+          <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 sm:gap-3 lg:gap-5 gap-5 mt-14'>
               {services.map((service, index) => (
                   <Reveal key={index}>
                       <div className='flex-1 bg-white shadow-sm rounded-md'>
-                  <div className='relative lg:h-[360px] sm:h-[200px] h-[250px]'>
+                  <div className='relative lg:h-[360px] h-[300px]'>
                      <Image className='w-full h-full' src={service.url} alt='elevator service pics' />
                           <div className='absolute bottom-0 z-40 text-white right-0 bg-primaryblue text-2xl font-bold px-5 py-3'>0{index+1}</div>
                   </div>

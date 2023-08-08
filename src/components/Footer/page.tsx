@@ -63,7 +63,7 @@ const Footer = () => {
               </div>
           </div>
           <div className='border-t-[0.5px] w-[90%] mx-auto mt-14 border-white' />
-          <p className='text-primarypink mt-10 text-center flex items-center text-sm justify-center gap-1'>
+          <p className='text-primarypink mt-10 text-center flex items-center sm:text-sm text-[10px] justify-center gap-1'>
               <span className='text-xl text-primarypink'>&copy;</span> Copyright 2023 Gevac Global Services Limited. All Rights Reserved.</p>
     </div>
   )

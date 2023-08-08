@@ -26,8 +26,8 @@ const Result = () => {
                     <div className='grid lg:grid-cols-4 grid-cols-2 lg:mt-10 mt-16 gap-6'>
                 {results.map((result, index) => (
                     <Reveal  key={index}>
-                        <div className='bg-primaryblue w-full font-tillitium lg:h-[280px] lg:py-0 py-4 h-auto gap-1 flex justify-center flex-col lg:px-10 px-5 lg:mt-10'>
-                            <div className='lg:w-[80px] lg:h-[80px] w-[40px] flex justify-center items-center rounded-full h-[40px] bg-white'>
+                        <div className='bg-primaryblue w-full font-tillitium lg:h-[280px] lg:py-0 py-4 h-auto gap-1 flex justify-center flex-col sm:items-start items-center px-10 lg:mt-10'>
+                            <div className='lg:w-[80px] lg:h-[80px] flex justify-center items-center rounded-full w-[55px] h-[55px] bg-white'>
                                 {result.icon}
                             </div>
                             <p className='text-white lg:text-[40px] md:mt-8 mt-2 font-bold text-2xl'>{result.number}</p>

@@ -7,6 +7,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'GEVAC GLOBAL SERVICES LTD',
   description: 'The Company was formed to provide expert indigenous services to support local and foreign firms operating within the shores of Nigeria.',
+  icons: {icon: '/logo.png'}
 }
 
 export default function RootLayout({

@@ -25,7 +25,7 @@ const ContactInfo = ({info, time, show, bgColor, icon, showEnd}: metaData) => {
                         {icon}
                         <div className='font-tillitium text-white'>
                             <p className='text-sm font-semibold'>{info}</p>
-                            <p className='text-xl font-semibold mt-3'>{time}</p>
+                            <p className='text-lg font-semibold mt-3'>{time}</p>
                         </div>
                     </div>
                     <div>
