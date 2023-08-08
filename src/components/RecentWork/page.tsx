@@ -27,8 +27,8 @@ const RecentWork = () => {
                 </Reveal>
                 <div className='flex lg:justify-between gap-4 mt-16 w-[2200px]'>
                     {recents.map((recent, index) => (
-                        <Reveal>
-                            <div key={index} className='lg:w-[550px] lg:h-[434px] w-[300px] h-[300px]'>
+                        <Reveal key={index}>
+                            <div className='lg:w-[550px] lg:h-[434px] w-[300px] h-[300px]'>
                                 <Image className='w-full h-full' src={recent.img} alt='elevator recent pic' />
                             </div>
                         </Reveal>
