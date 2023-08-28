@@ -45,10 +45,10 @@ const Footer = () => {
                   <p className='text-2xl font-semibold'>Other Links</p>
                   <div className='mt-6'>
                       <div className='mt-4 text-lg'>
-                      <Link href="pages/quality-policy">Our Quality Policy</Link>
+                      <a href="pages/quality-policy" >Our Quality Policy</a>
                       </div>
                       <div className='mt-4 text-lg'>
-                      <Link href="pages/hse-policy">Health Safety Policy</Link>
+                      <a href="pages/hse-policy">Health Safety Policy</a>
                       </div>
                   </div>
               </div>

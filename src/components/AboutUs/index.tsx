@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import faqImg from '@/public/images/frame12.jpeg';
+import faqImg from '@/public/images/gevac7.jpeg';
 import Image from 'next/image';
 import { Reveal }from '../utils/Reveal';
 import PhoneIcon from '@/public/svgs/PhoneIcon';
@@ -19,8 +19,8 @@ const abouts: {description: string, icon: string}[] = [
 ];
 const contacts: {description: string, icon: JSX.Element}[] = [
     { description: "+2348035802938", icon: <PhoneIcon fillColor="white" width="10px" height="10.5px" /> },
-    { description: "vinovilla_2014@yahoo.com", icon: <EmailIcon fillColor="white" width="10px" height="10.5px" /> },
-    { description: "+2348100727926", icon: <PhoneIcon fillColor="white" width="10px" height="10.5px" /> },
+    { description: "+2348034422516", icon: <PhoneIcon fillColor="white" width="10px" height="10.5px" /> },
+    { description: "info@gevacglobalservicesltd.com", icon: <EmailIcon fillColor="white" width="10px" height="10.5px" /> },
 ];
 
 const tabs:{tab: number, name: string}[] = [
@@ -59,7 +59,7 @@ const AboutUs = () => {
         <div className='pt-24'>
             <div className='flex h-auto relative'>
                 <div className='flex-1 lg:block hidden'>
-                    <Image className='w-full h-full object-cover' alt='elevator about image' src={faqImg} />
+                    <Image className='w-full h-auto object-fill' alt='elevator about image' src={faqImg} />
                     <div>
                         <div className='bg-primaryblack text-white font-tillitium absolute bottom-0 px-6 py-8 left-0'>
                             <Reveal> <p className='text-xl mx-4 font-semibold'>Leading Developer Of Commercial & <br /> Residential Projects</p></Reveal>
@@ -99,13 +99,17 @@ The Company was formed to provide expert indigenous services to support local an
                                     <p className='text-base mt-1'>NO. 1 CHIEF VAL CLOSE OFF TIMOTHY LANE RUMUOLA ROAD PORT HARCOURT, RIVERS STATE</p>
                                 </div>
                                 <div className='flex-1'>
+                                    <p className='text-primarypink font-bold mt-3'>Lagos State -</p>
+                                    <p className='mt-1 text-base'>3rd Floor Nurses House, Churchgate Street Victoria Island Lagos.</p>
+                                </div>
+                                <div className='flex-1'>
                                     <p className='text-primarypink font-bold mt-3'>Rivers State -</p>
                                     <p className='mt-1 text-base'>NO 12 OHIAMINI ROAD OFF RUMULA ROAD Port Harcourt RIVERS STATE.</p>
                                     <p className='mt-2 text-base'>NO. 6 CROWN AVENUE ENUGU – NGWO ENUGU STATE NIGERIA</p>
                                 </div>
                                 <div className='flex-1'>
-                                    <p className='text-primarypink font-bold mt-3'>Lagos State -</p>
-                                    <p className='mt-1 text-base'>3rd Floor Nurses House, Churchgate Street Victoria Island Lagos.</p>
+                                    <p className='text-primarypink font-bold mt-3'>Abuja State -</p>
+                                    <p className='mt-1 text-base'>Suite 9D Lake City Plaza, Oladipo Diva way Gudu District Abuja.</p>
                                 </div>
                             </div>}
                             stats='1995'

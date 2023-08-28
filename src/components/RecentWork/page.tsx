@@ -1,8 +1,11 @@
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
-import recent1 from "@/public/images/frame5.jpeg"
-import recent2 from "@/public/images/frame9.jpeg"
-import recent3 from "@/public/images/frame10.jpg"
+import recent1 from "@/public/images/gevac2.jpeg"
+import recent2 from "@/public/images/gevac3.jpeg"
+import recent3 from "@/public/images/gevac4.jpeg"
+import recent4 from "@/public/images/gevac5.jpeg"
+import recent5 from "@/public/images/gevac6.jpeg"
+import recent6 from "@/public/images/gevac7.jpeg"
 import { Reveal } from '../utils/Reveal';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -31,7 +34,9 @@ const recents: { img: StaticImageData }[] = [
     { img: recent1 },
     { img: recent2 },
     { img: recent3 },
-    { img: recent2 },
+    { img: recent4 },
+    { img: recent5 },
+    { img: recent6 },
 ];
 
 const RecentWork = () => {
@@ -62,7 +67,7 @@ const RecentWork = () => {
                     >
                         {recents.map((recent, index) => (
                             <div key={index} className='lg:w-[550px] lg:h-[434px] w-[450px] mx-72 h-[300px]'>
-                                <Image className='w-full h-full lg:pr-20 sm:pr-[200px] pr-[212px]' src={recent.img} alt='elevator recent pic' />
+                                <Image className='w-full h-full object-fill lg:pr-20 sm:pr-[200px] pr-[212px]' src={recent.img} alt='elevator recent pic' />
                             </div>
                         ))}
                     </Carousel>
