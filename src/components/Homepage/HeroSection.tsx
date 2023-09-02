@@ -23,7 +23,7 @@ const tabs = [
 
 const Banner = ({ frame, heading, description, buttonName, number, subText }:metadata) => {
     return <> <div>
-        <div className='overlay absolute overflow-hidden w-full lg:h-screen h-[550px] m-0 z-30 opacity-80' />
+        <div className='overlay absolute overflow-hidden w-full lg:h-screen h-[550px] m-0 z-30 opacity-40' />
         <Image className="w-full slide absolute z-20 lg:h-screen h-[550px] object-fill left-0" src={frame} alt="elevator hero section" />
     </div>
         <div className='relative text-white z-40 flex flex-col w-[90%] justify-center mx-auto lg:h-full h-[500px]'>

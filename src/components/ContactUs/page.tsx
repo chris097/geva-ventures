@@ -39,7 +39,7 @@ const ContactInfo = ({info, time, show, bgColor, icon, showEnd}: metaData) => {
 
 const ContactUs = () => {
     return (
-        <div className='grid lg:grid-cols-3 grid-cols-1 text-white py-24'>
+        <div id="contact" className='grid lg:grid-cols-3 grid-cols-1 text-white py-24'>
             <ContactInfo
                 info='WE ARE OPEN MONDAY-FRIDAY'
                 time='7:00 am - 9:00 pm'

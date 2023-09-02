@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import recent1 from "@/public/images/gevac2.jpeg"
 import recent2 from "@/public/images/gevac3.jpeg"
@@ -40,8 +40,27 @@ const recents: { img: StaticImageData }[] = [
 ];
 
 const RecentWork = () => {
+
+     const [playing, setPlaying] = useState<boolean>(false);
+    const [toggle, setToogle] = useState<boolean>(false);
+
+    const playRef = useRef<HTMLVideoElement>(null)
+
+    const handlePlay = () => {
+        if (playing === false) {
+            playRef.current && playRef.current?.play();
+        }
+        setPlaying(true)
+    }
+    const handlePause = () => {
+        if (playing === true) {
+            playRef.current && playRef.current?.pause();
+        }
+        setPlaying(false)
+    }
+
     return (
-        <div className='overflow-x-hidden'>
+        <div id='company' className='overflow-x-hidden'>
             <div className='lg:pt-32 pt-24'>
                 <Reveal>
                     <div className='lg:flex justify-between items-center w-[90%] mx-auto'>
@@ -72,14 +91,25 @@ const RecentWork = () => {
                         ))}
                     </Carousel>
                 </div>
-                {/* <div className='flex justify-center w-full py-8'>
-                    <div className='flex lg:gap-4 gap-2 items-center mt-2'>
-                        <span className='bg-[#244061] h-2 w-2 lg:w-3 lg:h-3 rounded-full' />
-                        <span className='bg-white w-2 h-2 lg:w-3 lg:h-3 rounded-full' />
-                        <span className='bg-white w-2 h-2 lg:w-3 lg:h-3 rounded-full' />
-                        <span className='bg-white w-2 h-2 lg:w-3 lg:h-3 rounded-full' />
-                    </div>
-                </div> */}
+                <div className='bg-yabalightyellow h-auto xl:pt-40 xl:pb-20 md:py-10 py-7'>
+            <div className='w-[90%] mx-auto'>
+                {/* <div className='border-yabayellow text-yabayellow bg-yabalighteryellow text-base font-circular flex justify-center items-center rounded-[8px] border-[0.5px] w-[110px] h-[40px]'>About Us</div>
+                <p className='lg:text-2xl sm:text-xl text-base font-circular font-[450] w-[90%] text-primaryblack mt-4'>GEVAC GLOBAL SERVICES LTD is a company incorporated under the laws of the Federal Republic of Nigeria with registration Number RV122469 The Company was formed to provide expert indigenous services to support local and foreign firms operating within the shores of Nigeria.GEVAC GLOBAL SERVICES LIMITED is managed by professionals with experience spanning over many years in their fields.</p> */}
+                <div onMouseLeave={() => setToogle(false)} className='border bg-black relative z-40 lg:h-[600px] md:h-[400px] h-[320px] rounded mt-[37px] flex justify-center items-center'>
+                    <div className='flex justify-center items-center w-full h-full'>
+                        {playing === false && <button type='button' onClick={handlePlay} className='flex absolute z-50'>play</button>}
+                       {toggle === true && playing === true && <button className='flex absolute z-50' type='button' onClick={handlePause}>pause</button>}
+                        <div onMouseOver={() => setToogle(true)} className='w-full h-full'>
+                            <video muted ref={playRef} onEnded={() => setPlaying(false)} className="object-fill object-top h-full min-w-full">
+                  <source src="https://drive.google.com/uc?id=13wQVOZRdZDn5ixXo-wlyy48NaoTuGsZ1&export=download"
+                                    type="video/mp4" />
+                            </video>
+                        </div>
+                      </div>
+                      
+                </div>
+            </div>
+        </div>
             </div>
         </div>
     );

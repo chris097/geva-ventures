@@ -47,9 +47,9 @@ const Header = () => {
                     </div>
                         <div className='lg:flex hidden items-center text-white font-roboto font-medium text-base gap-16'>
                             <Link href="/" className='cursor-pointer hover:text-primarypink transition-all duration-500'>Home</Link>
-                            <Link href="/pages/about-us" className='cursor-pointer hover:text-primarypink transition-all duration-500'>Company</Link>
-                            <Link href="/our-service" className='cursor-pointer hover:text-primarypink transition-all duration-500'>Our Service</Link>
-                            <Link href="/contact-us" className='cursor-pointer hover:text-primarypink transition-all duration-500'>Contact US</Link>
+                            <Link href="#company" className='cursor-pointer hover:text-primarypink transition-all duration-500'>Company</Link>
+                            <Link href="#service" className='cursor-pointer hover:text-primarypink transition-all duration-500'>Our Service</Link>
+                            <Link href="#contact" className='cursor-pointer hover:text-primarypink transition-all duration-500'>Contact US</Link>
                         </div>
                     <div className='lg:hidden block' onClick={handleClick}>
                         <BiMenuAltLeft color="white" size="30px" />
