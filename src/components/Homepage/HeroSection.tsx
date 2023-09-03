@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import frame2 from '@/public/images/frame3.jpeg';
-import frame1 from '@/public/images/frame12.webp';
+import frame1 from '@/public/images/frame16.jpeg';
 import frame3 from '@/public/images/frame6.jpeg';
 import {Reveal} from '../utils/Reveal';
 import PhoneIcon from '@/public/svgs/PhoneIcon';
@@ -24,7 +24,7 @@ const tabs = [
 const Banner = ({ frame, heading, description, buttonName, number, subText }:metadata) => {
     return <> <div>
         <div className='overlay absolute overflow-hidden w-full lg:h-screen h-[550px] m-0 z-30 opacity-40' />
-        <Image className="w-full slide absolute z-20 lg:h-screen h-[550px] object-fill left-0" src={frame} alt="elevator hero section" />
+        <Image className="w-full slide absolute z-20 lg:h-screen h-[550px] object-cover left-0" src={frame} alt="elevator hero section" />
     </div>
         <div className='relative text-white z-40 flex flex-col w-[90%] justify-center mx-auto lg:h-full h-[500px]'>
             <div>
