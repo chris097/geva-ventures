@@ -50,7 +50,7 @@ const ContactUs = () => {
             />
             <ContactInfo
                 info='HAVE A QUESTION?'
-                time='+2348035802938, +2348100727926'
+                time='+2348035802938, +2348034422516'
                 show={false}
                 showEnd={false}
                 bgColor='bg-primarypink'

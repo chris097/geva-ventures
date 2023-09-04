@@ -23,14 +23,14 @@ const Footer = () => {
                       <p className='text-xl font-semibold text-primarypink'>Offices</p>
                   </div> */}
                   <div className='mt-6'>
+                      <p className='text-xl font-semibold text-primarypink'>Lagos State -</p>
+                      <p className='mt-2'>3rd Floor Nurses House, Churchgate Street Victoria Island Lagos.</p>
+                  </div>
+                  <div className='mt-6'>
                       <p className='text-xl font-semibold text-primarypink'>Rivers State -</p>
                       <p className='mt-2 '>NO. 1 CHIEF VAL CLOSE OFF TIMOTHY LANE RUMUOLA ROAD PORT HARCOURT, RIVERS STATE.</p>
                       <p className='mt-2'>NO. 12 OHIAMINI ROAD OFF RUMULA ROAD Port Harcourt RIVERS STATE.</p>
                       <p className='mt-2'>NO. 6 CROWN AVENUE ENUGU – NGWO ENUGU STATE NIGERIA.</p>
-                  </div>
-                  <div className='mt-6'>
-                      <p className='text-xl font-semibold text-primarypink'>Lagos State -</p>
-                      <p className='mt-2'>3rd Floor Nurses House, Churchgate Street Victoria Island Lagos.</p>
                   </div>
               </div>
               <div className='mt-10 lg:mt-0'>
