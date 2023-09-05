@@ -4,13 +4,15 @@ import MinusIcon from '@/public/svgs/MinusIcon';
 import { Reveal } from '../utils/Reveal';
 
 const faqs:{tag: number, title: string, description: string}[] = [
-  { tag: 1, title: "Quality elevators,  escalators,  automatic doors etc,  at affordable rate", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
-  { tag: 2, title: "Trustworthy and dependable ", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
-  { tag: 3, title: "Speedy supply and delivery of jobs", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
-  { tag: 4, title: "Efficient installations", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
-  { tag: 5, title: "100% Free maintenance for @ least 12 months", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
-  { tag: 6, title: "Insurance cover by way of performance bond, if necessary.", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
-  { tag: 7, title: "Rapid response in time of needs", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
+  { tag: 1, title: "How long does it take for you to deliver after payment?", description: "12-16 weeks" },
+  { tag: 2, title: "What products do you import?", description: "Turkish, Japanese, German, American and generally European products of high quality." },
+  { tag: 3, title: "Do you import from China?", description: "No" },
+  { tag: 4, title: "How much do you sell a lift or an elevator or escalator?", description: "It depends of the size and height of the elevator. We will give quotation on demand. Our quotation usually comes after our inspection of the site." },
+  { tag: 5, title: "Do you have elevators that are already available in Nigeria?", description: "We don’t usually manufacture and keep. When we receive your order, we pass across to the manufacturers in Europe and America." },
+  { tag: 6, title: "How long does it take to install an elevator?", description: "About three weeks to one month" },
+  { tag: 7, title: "Do I need to provide anything for your installation?", description: "Yes – you are to provide power and scaffolder" },
+  { tag: 8, title: "Can I visit the previous work that you have done?", description: "Yes. Contact our office for an appointment.  On appointment, we will take you to our recent sites " },
+  { tag: 9, title: "Can I see and interact with your past customers?", description: "Yes. For your verifications below are the list of customers we recently worked for." },
 ];
 
 

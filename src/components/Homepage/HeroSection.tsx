@@ -71,7 +71,7 @@ const HeroSection = () => {
             {tabs[0].tab === activeIndex && <Banner
                 frame={frame1}
                 heading={<p>WELCOME TO <span className='text-primarypink'>GEVAC GLOBAL SERVICES LTD</span></p>}
-                description="Elevate your building's accessibility and efficiency"
+                description="Elevate your building's accessibility"
                 buttonName="Get Started"
                 subText="Call Us Now"
                 number="+2348035802938"
@@ -87,7 +87,7 @@ const HeroSection = () => {
             {tabs[2].tab === activeIndex && <Banner
                 frame={frame3}
                 heading={<p>WELCOME TO <span className='text-primarypink'>GEVAC GLOBAL SERVICES LTD</span></p>}
-                description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
+                description="WE’RE PROVIDING INDUSTRY LEADING SOLUTIONS"
                 buttonName="Get Started"
                 subText="Call Us Now"
                 number="+2348035802938"
