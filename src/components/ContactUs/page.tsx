@@ -42,7 +42,7 @@ const ContactUs = () => {
         <div id="contact" className='grid lg:grid-cols-3 grid-cols-1 text-white py-24'>
             <ContactInfo
                 info='WE ARE OPEN MONDAY-FRIDAY'
-                time='7:00 am - 9:00 pm'
+                time='9:00 am - 6:00 pm'
                 show={true}
                 bgColor='bg-black'
                 icon={<PhonewithTime />}
@@ -58,7 +58,7 @@ const ContactUs = () => {
             />
             <ContactInfo
                 info='NEED AN ELEVATOR? OUR ADDRESS'
-                time='NO. 1 CHIEF VAL CLOSE OFF TIMOTHY LANE RUMUOLA ROAD PORT HARCOURT, RIVERS STATE'
+                time='3rd Floor Nurses House, Churchgate Street Victoria Island Lagos.'
                 show={false}
                 showEnd={true}
                 bgColor='bg-black'

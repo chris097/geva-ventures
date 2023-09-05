@@ -24,11 +24,11 @@ const Header = () => {
                     <div className='flex lg:gap-10 h-44 gap-6'>
                         <div className='flex items-center gap-1'>
                             <PhoneIcon fillColor="#4F81BD" width="16px" height="14px" />
-                            <span className='sm:text-sm text-xs font-semibold'>+2348035802938, +2348100727926</span>
+                            <span className='sm:text-sm text-xs font-semibold'>+2348035802938, +2348034422516</span>
                         </div>
                         <div className='flex items-center gap-1'>
                             <EmailIcon fillColor="#4F81BD" width="16px" height="16px" />
-                            <span className='sm:text-sm text-xs font-semibold'>vinovilla_2014@yahoo.com</span>
+                            <span className='sm:text-sm text-xs font-semibold'>info@gevacglobalservices.com</span>
                         </div>
                     </div>
                     <div className='lg:flex gap-2 items-center hidden'>

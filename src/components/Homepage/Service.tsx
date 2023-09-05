@@ -9,12 +9,12 @@ import service6 from '@/public/images/frame4.jpeg';
 import {Reveal} from '../utils/Reveal';
 
 const services = [
-    {url: service1, title: "ELEVATOR INSTALLATION", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
-    {url: service2, title: "ESCALATOR INSTALLATION", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
-    {url: service4, title: "PROCUREMENT SERVICES", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
-    {url: service3, title: "LABOUR CONTRACTORS", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
-    {url: service5, title: "ELEVATOR SERVICES", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
-    {url: service6, title: "ESCALATOR SERVICES", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus."},
+    {url: service1, title: "ELEVATOR INSTALLATION", description: "We specialize in installing various elevator types, including passenger, freight, accessibility, and dumbwaiters. Ensures smart, energy-efficient elevators. Our commitment to innovative technology ensures smart, energy-efficient elevators, while customization options allow you to create a unique interior design. "},
+    {url: service2, title: "ESCALATOR INSTALLATION", description: "Our dedicated team specializes in installing a wide range of escalator types, from standard passenger escalators to heavy-duty and outdoor models. With a focus on cutting-edge technology, energy efficiency, and safety compliance, we tailor solutions to match your unique space and design preferences.  "},
+    {url: service4, title: "PROCUREMENT SERVICES", description: "Our experienced team specializes in delivering comprehensive procurement solutions to meet your specific needs.  We handle procurement across various industries, ensuring efficiency, cost-effectiveness, and quality. With a commitment to cutting-edge technology, transparency, and client satisfaction. "},
+    {url: service3, title: "LABOUR CONTRACTORS", description: "Our seasoned team specializes in providing comprehensive labor solutions to meet your workforce needs. We offer labor contracting services across various industries, ensuring flexibility, expertise, and efficiency. With a focus on cutting-edge labor management technology, compliance, and client satisfaction."},
+    {url: service5, title: "ELEVATOR SERVICES", description: "Our dedicated team specializes in delivering comprehensive elevator solutions to meet your vertical transportation needs. We offer services for various types of elevators, including passenger, freight, accessibility, and more. With a commitment to cutting-edge technology, safety, and client satisfaction."},
+    {url: service6, title: "ESCALATOR SERVICES", description: "Our experienced team specializes in delivering comprehensive escalator solutions to enhance vertical transportation in your commercial spaces. We offer installation and maintenance services for a variety of escalators, including standard passenger, heavy-duty, outdoor, and customized designs."},
 ]
 
 const Service = () => {
@@ -25,7 +25,7 @@ const Service = () => {
           <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 sm:gap-3 lg:gap-5 gap-5 mt-14'>
               {services.map((service, index) => (
                   <Reveal key={index}>
-                      <div className='flex-1 bg-white shadow-sm rounded-md'>
+                      <div className='flex-1 bg-white lg:h-[760px] h-auto shadow-sm rounded-md'>
                   <div className='relative lg:h-[360px] h-[300px]'>
                      <Image className='w-full h-full' src={service.url} alt='elevator service pics' />
                           <div className='absolute bottom-0 z-40 text-white right-0 bg-primaryblue text-2xl font-bold px-5 py-3'>0{index+1}</div>

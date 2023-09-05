@@ -30,7 +30,7 @@ const Banner = ({ frame, heading, description, buttonName, number, subText }:met
             <div>
                 <Reveal><p className='lg:text-xl text-sm font-semibold font-roboto'>{heading}</p></Reveal>
                 <Reveal>
-                    <h1 className='lg:w-[65%] sm:w-[80%] w-[90%] lg:text-[72px] text-3xl mt-4 font-bold leading-tight'>{description}</h1>
+                    <h1 className='lg:w-[65%] uppercase sm:w-[80%] w-[90%] lg:text-[72px] text-3xl mt-4 font-bold leading-tight'>{description}</h1>
                 </Reveal>
             </div>
             <Reveal>
@@ -71,7 +71,7 @@ const HeroSection = () => {
             {tabs[0].tab === activeIndex && <Banner
                 frame={frame1}
                 heading={<p>WELCOME TO <span className='text-primarypink'>GEVAC GLOBAL SERVICES LTD</span></p>}
-                description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
+                description="Elevate your building's accessibility and efficiency"
                 buttonName="Get Started"
                 subText="Call Us Now"
                 number="+2348035802938"
@@ -79,7 +79,7 @@ const HeroSection = () => {
             {tabs[1].tab === activeIndex && <Banner
                 frame={frame2}
                 heading={<p>WELCOME TO <span className='text-primarypink'>GEVAC GLOBAL SERVICES LTD</span></p>}
-                description="WE’RE PROVIDING INDUSTRY LEADING SOLUTION"
+                description="WE’RE PROVIDING INDUSTRY LEADING SOLUTIONS"
                 buttonName="Get Started"
                 subText="Call Us Now"
                 number="+2348035802938"

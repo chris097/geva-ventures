@@ -4,13 +4,13 @@ import MinusIcon from '@/public/svgs/MinusIcon';
 import { Reveal } from '../utils/Reveal';
 
 const faqs:{tag: number, title: string, description: string}[] = [
-  { tag: 1, title: "What to double down on accuracy, efficiency, and time management", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
-  { tag: 2, title: "What to double down on accuracy, efficiency, and time management", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
-  { tag: 3, title: "What to double down on accuracy, efficiency, and time management", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
-  { tag: 4, title: "What to double down on accuracy, efficiency, and time management", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
-  { tag: 5, title: "What to double down on accuracy, efficiency, and time management", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
-  { tag: 6, title: "What to double down on accuracy, efficiency, and time management", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
-  { tag: 7, title: "What to double down on accuracy, efficiency, and time management", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
+  { tag: 1, title: "Quality elevators,  escalators,  automatic doors etc,  at affordable rate", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
+  { tag: 2, title: "Trustworthy and dependable ", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
+  { tag: 3, title: "Speedy supply and delivery of jobs", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
+  { tag: 4, title: "Efficient installations", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
+  { tag: 5, title: "100% Free maintenance for @ least 12 months", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
+  { tag: 6, title: "Insurance cover by way of performance bond, if necessary.", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
+  { tag: 7, title: "Rapid response in time of needs", description: "Laoreet conubia parturient lacinia pulvinar senectus vel posuere proin nec montes dapibus, elementum blandit sem et massa ornare habitasse cursus." },
 ];
 
 
