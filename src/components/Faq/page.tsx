@@ -12,7 +12,7 @@ const faqs:{tag: number, title: string, description: string}[] = [
   { tag: 6, title: "How long does it take to install an elevator?", description: "About three weeks to one month" },
   { tag: 7, title: "Do I need to provide anything for your installation?", description: "Yes – you are to provide power and scaffolder" },
   { tag: 8, title: "Can I visit the previous work that you have done?", description: "Yes. Contact our office for an appointment.  On appointment, we will take you to our recent sites " },
-  { tag: 9, title: "Can I see and interact with your past customers?", description: "Yes. For your verifications below are the list of customers we recently worked for." },
+  { tag: 9, title: "Can I see and interact with your past customers?", description: "Yes. For your verifications below are the list of customers we recently worked for. We have also indicated the names of the contact persons in each organization. " },
 ];
 
 

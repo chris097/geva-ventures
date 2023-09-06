@@ -17,7 +17,7 @@ const Testimonies = () => {
                         </div>
                     </div>
                     <div className='lg:ml-28'>
-                        <Reveal><p className='leading-normal text-primaryblack mt-6 text-2xl w-full font-tillitium lg:text-[30px]'>From the initial consultation to the final inspection, the entire process was seamless and efficient. Your team displayed an impressive level of professionalism and expertise throughout the project.</p></Reveal>
+                        <Reveal><p className='leading-normal text-primaryblack mt-6 text-2xl italic w-full font-tillitium lg:text-[30px]'>“From the initial consultation to the final inspection, the entire process was seamless and efficient. Your team displayed an impressive level of professionalism and expertise throughout the project”.</p></Reveal>
                         <Reveal><p className='font-bold text-xl text-primaryblack mt-10'>DR. IBEABUCHI CMD, <span className='text-primarypink text-sm'>PALMARS HOSPITAL, PORT HARCOURT, RIVERS STATE, NIGERIA</span></p></Reveal>
                     </div>
                 </div>

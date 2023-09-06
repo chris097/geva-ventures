@@ -82,13 +82,13 @@ const AboutUs = () => {
                                 of the Federal Republic of Nigeria with registration Number RC1667707
                                 The Company was formed to provide expert indigenous services to support local and foreign firms operating within the shores of Nigeria.
                                 <span className='font-bold'>GEVAC GLOBAL SERVICES LIMITED </span>is managed by professionals with experience spanning over many years in their fields.</p>}
-                            stats='2045'
+                            stats='745'
                             text='Completed Projects'
                             data={abouts}
                         />}
                         {tabs[1].tab === currentTab && <AboutText
                             description="Being the pride and comfort of every home and office through our unparalleled service delivery."
-                            stats='2020'
+                            stats='28 years'
                             text='STARTED JOURNEY'
                             data={contacts}
                         />}
