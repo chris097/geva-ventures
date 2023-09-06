@@ -24,6 +24,7 @@ const Faq = () => {
   return (
     <div className='py-20 mt-36 bg-white w-[90%] mx-auto'>
       <Reveal>
+        <p className='text-center text-primaryblack text-lg font-roboto font-bold'>FAQ</p>
         <div className='text-center font-tillitium text-primaryblack w-[90%] leading-loose mx-auto'><span className='lg:text-[32px] sm:text-2xl text-lg font-bold'>WE MAY HAVE THE <span className='text-primarypink leading-loose'>SOLUTION</span> TO </span> <br /> <span className='lg:text-[64px] sm:text-4xl text-3xl font-bold'>YOUR <span className='text-primarypink'>ELEVATOR</span> NEEDS.</span></div>
       </Reveal>
       <div className='mt-14 lg:w-[60%] mx-auto'>
