@@ -1,126 +1,143 @@
+"use client";
 import React, { useState } from 'react';
-import faqImg from '@/public/images/gevac7.jpeg';
+import aboutImg from '../../../public/images/about_modern_office.png';
 import Image from 'next/image';
-import { Reveal }from '../utils/Reveal';
-import PhoneIcon from '@/public/svgs/PhoneIcon';
-import EmailIcon from '@/public/svgs/EmailIcon';
+import Link from 'next/link';
+import { Reveal } from '../utils/Reveal';
+import { AnimatedCounter } from '../utils/AnimatedCounter';
 
-interface metaData {
-    description: string | JSX.Element
-    stats: string
-    text: string
-    data: {icon: JSX.Element | string, description: string}[]
-}
-
-const abouts: {description: string, icon: string}[] = [
-    { icon: "", description: "Emergency Solution Anytime" },
-    { icon: "", description: "Affordable Price Upto 2 Years" },
-    { icon: "", description: "Reliable & Experienced Team" },
-];
-const contacts: {description: string, icon: JSX.Element}[] = [
-    { description: "+2348035802938", icon: <PhoneIcon fillColor="white" width="10px" height="10.5px" /> },
-    { description: "+2348034422516", icon: <PhoneIcon fillColor="white" width="10px" height="10.5px" /> },
-    { description: "info@gevacglobalservicesltd.com", icon: <EmailIcon fillColor="white" width="10px" height="10.5px" /> },
+const stats = [
+    { value: '745+', label: 'Projects Done' },
+    { value: '30+', label: 'Years Experience' },
+    { value: '124', label: 'Team Members' },
+    { value: '1K+', label: 'Happy Clients' },
 ];
 
-const tabs:{tab: number, name: string}[] = [
-    { tab: 1, name: "About Us" },
-    { tab: 2, name: "Vision" },
-    { tab: 3, name: "Contact Us" },
+const pillars = [
+    { icon: '⚡', title: 'Emergency Response', desc: 'Round-the-clock support for critical mobility system failures.' },
+    { icon: '🏆', title: 'Certified Engineers', desc: 'Our team holds internationally recognised engineering certifications.' },
+    { icon: '🌍', title: 'European Standards', desc: 'We import only premium products from Europe, America & Japan.' },
 ];
-
-const AboutText = ({description, stats, text, data}:metaData) => {
-    return (
-        <Reveal>
-            <p className='lg:text-lg text-base text-[#6E777D] mt-3 lg:ml-14 lg:mr-16'>{description}</p>
-            <div className='flex items-center lg:gap-20 gap-8 lg:ml-14 mt-3'>
-                <div>
-                    <p className='lg:text-[60px] text-[48px] font-bold text-primarypink'>{stats}</p>
-                    <p className='lg:text-lg text-md font-semibold text-primaryblue uppercase leading-tight mt-2'>{text}</p>
-                </div>
-                <div className='mt-2'>
-                    {data.map((meta, index: number) => (
-                        <div key={index} className='flex gap-2 items-center mt-3'>
-                            <span className='bg-primarypink rounded-full p-1'>{meta.icon}</span>
-                            <span className='text-primaryblack lg:text-base text-xs'>{meta.description}</span>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </Reveal>
-    );
-};
 
 const AboutUs = () => {
-
-    const [currentTab, setCurrentTab] = useState(1);
+    const [activeTab, setActiveTab] = useState<'about' | 'vision' | 'contact'>('about');
 
     return (
-        <div className='pt-24'>
-            <div className='flex h-auto relative'>
-                <div className='flex-1 lg:block hidden'>
-                    <Image className='w-full h-auto object-fill' alt='elevator about image' src={faqImg} />
-                    <div>
-                        <div className='bg-primaryblack text-white font-tillitium absolute bottom-0 px-6 py-8 left-0'>
-                            <Reveal> <p className='text-xl mx-4 font-semibold'>Leading Developer Of Commercial & <br /> Residential Projects</p></Reveal>
+        <section className='bg-slate-950 pt-20 pb-28 overflow-hidden'>
+            <div className='w-[90%] max-w-7xl mx-auto'>
+
+                {/* Top Row: Image + Stats */}
+                <div className='grid lg:grid-cols-2 gap-16 items-center'>
+
+                    {/* Left – Image */}
+                    <div className='relative'>
+                        <div className='rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 border border-white/5 relative'>
+                            <Image
+                                src={aboutImg}
+                                alt='GEVA Ventures team at work'
+                                className='w-full h-[480px] object-cover'
+                            />
+                            <div className='absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent' />
+                        </div>
+                        {/* Floating badge */}
+                        <div className='absolute -bottom-6 -right-6 bg-accent text-white rounded-3xl px-8 py-5 shadow-2xl shadow-accent/40 font-tillitium'>
+                            <p className='text-3xl font-black'>30+</p>
+                            <p className='text-xs uppercase tracking-widest font-semibold mt-1 opacity-90'>Years of Excellence</p>
                         </div>
                     </div>
+
+                    {/* Right – Content */}
+                    <div className='font-tillitium'>
+                        <Reveal>
+                            <p className='text-accent text-xs tracking-[0.4em] uppercase font-bold mb-5'>Who We Are</p>
+                        </Reveal>
+                        <Reveal>
+                            <h2 className='text-white text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-8'>
+                                Nigeria&lsquo;s Premier <br />
+                                <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-400'>Mobility Systems</span><br />
+                                Specialists
+                            </h2>
+                        </Reveal>
+
+                        {/* Tab Bar */}
+                        <Reveal>
+                            <div className='flex gap-1 bg-slate-900 p-1 rounded-2xl w-fit mb-8 border border-white/5'>
+                                {(['about', 'vision', 'contact'] as const).map((tab) => (
+                                    <button
+                                        key={tab}
+                                        onClick={() => setActiveTab(tab)}
+                                        className={`px-5 py-2.5 rounded-xl text-sm font-semibold capitalize transition-all duration-200 ${activeTab === tab ? 'bg-primary text-white shadow-lg shadow-primary/40' : 'text-slate-400 hover:text-white'}`}
+                                    >
+                                        {tab === 'about' ? 'About Us' : tab === 'vision' ? 'Our Vision' : 'Contact'}
+                                    </button>
+                                ))}
+                            </div>
+                        </Reveal>
+
+                        <Reveal>
+                            {activeTab === 'about' && (
+                                <p className='text-slate-400 leading-relaxed text-base mb-8'>
+                                    <span className='text-accent font-bold'>GEVA VENTURES</span> is the dedicated elevators, escalators and automatic doors division of Gevac Global Services Ltd. We deliver modern vertical mobility systems for commercial, residential and healthcare developments nationwide — backed by certified engineers and a customer-first philosophy.
+                                </p>
+                            )}
+                            {activeTab === 'vision' && (
+                                <p className='text-slate-400 leading-relaxed text-base mb-8'>
+                                    To modernize access across Nigeria with safe, reliable, and beautifully engineered elevator, escalator, and automatic door solutions — setting the standard for excellence in vertical mobility.
+                                </p>
+                            )}
+                            {activeTab === 'contact' && (
+                                <div className='grid grid-cols-2 gap-4 mb-8 text-slate-400 text-sm leading-relaxed'>
+                                    {[
+                                        { title: 'Head / Port Harcourt', addr: 'No. 1 Chief Val Close off Timothy Lane, Rumuola Road, PH.' },
+                                        { title: 'Lagos Office', addr: '3rd Floor Nurses House, Churchgate Street, Victoria Island.' },
+                                        { title: 'Abuja Office', addr: 'Suite 9D Lake City Plaza, Oladipo Diva Way, Gudu District.' },
+                                        { title: 'Telephone', addr: '+2348035802938 | +2348034422516' },
+                                    ].map(({ title, addr }) => (
+                                        <div key={title}>
+                                            <p className='text-accent font-bold text-xs uppercase tracking-widest mb-1'>{title}</p>
+                                            <p>{addr}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </Reveal>
+
+                        <Reveal>
+                            <Link href='/about' className='inline-flex items-center gap-3 bg-gradient-to-r from-primary to-blue-500 text-white font-bold text-sm px-8 py-4 rounded-2xl shadow-xl shadow-primary/30 hover:scale-105 hover:shadow-primary/50 transition-all duration-300'>
+                                Discover More
+                                <span className='text-lg'>→</span>
+                            </Link>
+                        </Reveal>
+                    </div>
                 </div>
-                <div className=' bg-white font-tillitium h-auto border-tb pt-10 py-14 px-5 flex-1'>
-                    <Reveal><p className='text-primarypink text-base font-semibold uppercase lg:ml-14'>Latest Projects</p></Reveal>
-                    <Reveal><p className='lg:text-[40px] text-2xl text-primaryblack font-bold mt-4 leading-tight lg:w-[60%] w-[90%] lg:ml-14'>WE ARE QUALIFIED IN EVERY WORKING DEPARTMENTS</p></Reveal>
-                    <Reveal>
-                        <div className='bg-primarygray pl-8 lg:text-lg font-tillitium font-semibold text-base gap-10 flex items-center text-primaryblack lg:h-20 h-16 lg:ml-14 lg:mr-10 my-6'>
-                            {tabs.map((tab) => (
-                                <div onClick={() => setCurrentTab(tab.tab)} key={tab.tab} className={`cursor-pointer transition-all duration-1000 delay-100 ${tab.tab === currentTab && "border-primarypink text-primarypink border-b-2"}`}>{tab.name}</div>
-                            ))}
-                        </div>
-                    </Reveal>
-                    <Reveal>
-                        {tabs[0].tab === currentTab && <AboutText
-                            description={<p className='text-primaryblack'><span className='text-primarypink font-bold'>GEVAC GLOBAL SERVICES LTD</span> is a company incorporated under the laws
-                                of the Federal Republic of Nigeria with registration Number RC1667707
-                                The Company was formed to provide expert indigenous services to support local and foreign firms operating within the shores of Nigeria.
-                                <span className='font-bold'>GEVAC GLOBAL SERVICES LIMITED </span>is managed by professionals with experience spanning over many years in their fields.</p>}
-                            stats='745'
-                            text='Completed Projects'
-                            data={abouts}
-                        />}
-                        {tabs[1].tab === currentTab && <AboutText
-                            description="Being the pride and comfort of every home and office through our unparalleled service delivery."
-                            stats='28 years'
-                            text='STARTED JOURNEY'
-                            data={contacts}
-                        />}
-                        {tabs[2].tab === currentTab && <AboutText
-                            description={<div className='text-primaryblack'>
-                                <div className='flex-1'>
-                                    <p className='text-primarypink font-bold'>Head Office:</p>
-                                    <p className='text-base mt-1'>NO. 1 CHIEF VAL CLOSE OFF TIMOTHY LANE RUMUOLA ROAD PORT HARCOURT, RIVERS STATE</p>
-                                </div>
-                                <div className='flex-1'>
-                                    <p className='text-primarypink font-bold mt-3'>Lagos State -</p>
-                                    <p className='mt-1 text-base'>3rd Floor Nurses House, Churchgate Street Victoria Island Lagos.</p>
-                                </div>
-                                <div className='flex-1'>
-                                    <p className='text-primarypink font-bold mt-3'>Rivers State -</p>
-                                    <p className='mt-1 text-base'>NO 12 OHIAMINI ROAD OFF RUMULA ROAD Port Harcourt RIVERS STATE.</p>
-                                    <p className='mt-2 text-base'>NO. 6 CROWN AVENUE ENUGU – NGWO ENUGU STATE NIGERIA</p>
-                                </div>
-                                <div className='flex-1'>
-                                    <p className='text-primarypink font-bold mt-3'>Abuja State -</p>
-                                    <p className='mt-1 text-base'>Suite 9D Lake City Plaza, Oladipo Diva way Gudu District Abuja.</p>
-                                </div>
-                            </div>}
-                            stats='1995'
-                            text='STARTED JOURNEY'
-                            data={contacts}
-                        />}
-                        <button className='bg-black h-14 lg:ml-14 rounded-sm py-3 px-6 text-base font-semibold mt-10 text-white'>GET STARTED</button>
-                    </Reveal>
+
+                {/* Stats Row */}
+                <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 mt-24'>
+                    {stats.map((s, i) => (
+                        <Reveal key={i}>
+                            <div className='border border-white/8 rounded-2xl bg-white/3 p-8 text-center group hover:border-primary/40 hover:bg-primary/5 transition-all duration-300'>
+                                <p className='text-4xl lg:text-5xl font-black text-white group-hover:text-primary transition-colors duration-300'><AnimatedCounter value={s.value} /></p>
+                                <p className='text-slate-500 text-xs uppercase tracking-widest mt-2 font-semibold'>{s.label}</p>
+                            </div>
+                        </Reveal>
+                    ))}
                 </div>
+
+                {/* Pillars Row */}
+                <div className='grid lg:grid-cols-3 gap-6 mt-10'>
+                    {pillars.map((p, i) => (
+                        <Reveal key={i}>
+                            <div className='border border-white/8 rounded-2xl p-8 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 group'>
+                                <div className='text-4xl mb-4'>{p.icon}</div>
+                                <p className='text-white font-bold text-lg mb-2 group-hover:text-primary transition-colors duration-300'>{p.title}</p>
+                                <p className='text-slate-500 text-sm leading-relaxed'>{p.desc}</p>
+                            </div>
+                        </Reveal>
+                    ))}
+                </div>
+
             </div>
-        </div>
+        </section>
     );
 };
 

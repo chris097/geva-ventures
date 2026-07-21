@@ -1,105 +1,123 @@
+"use client";
 import React, { useEffect, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
-import frame2 from '@/public/images/frame3.jpeg';
-import frame1 from '@/public/images/frame16.jpeg';
-import frame3 from '@/public/images/frame6.jpeg';
-import {Reveal} from '../utils/Reveal';
+import Link from 'next/link';
+import frame2 from '@/public/images/hero_escalator.png';
+import frame1 from '@/public/images/hero_elevator.png';
+import frame3 from '@/public/images/hero_auto_doors.png';
+import { Reveal } from '../utils/Reveal';
 import PhoneIcon from '@/public/svgs/PhoneIcon';
 
-interface metadata{
-    frame: StaticImageData
-    heading: string | JSX.Element
-    description: string
-    buttonName: string
-    number: string
-    subText: string
+interface metadata {
+    frame: StaticImageData;
+    heading: string | JSX.Element;
+    description: string;
+    buttonName: string;
+    number: string;
+    subText: string;
 }
 
 const tabs = [
-    { tab: 1, name: "ELEVATOR INSTALLATION" },
-    { tab: 2, name: "ESCALATOR INSTALLATION" },
-    { tab: 3, name: "AUTOMATIC DOORS" },
+    { tab: 1, name: 'ELEVATOR INSTALLATION' },
+    { tab: 2, name: 'ESCALATOR INSTALLATION' },
+    { tab: 3, name: 'AUTOMATIC DOORS' },
 ];
 
-const Banner = ({ frame, heading, description, buttonName, number, subText }:metadata) => {
-    return <> <div>
-        <div className='overlay absolute overflow-hidden w-full lg:h-screen h-[550px] m-0 z-30 opacity-40' />
-        <Image className="w-full slide absolute z-20 lg:h-screen h-[550px] object-cover left-0" src={frame} alt="elevator hero section" />
-    </div>
-        <div className='relative text-white z-40 flex flex-col w-[90%] justify-center mx-auto lg:h-full h-[500px]'>
-            <div>
-                <Reveal><p className='lg:text-xl text-sm font-semibold font-roboto'>{heading}</p></Reveal>
-                <Reveal>
-                    <h1 className='lg:w-[65%] uppercase sm:w-[80%] w-[90%] lg:text-[72px] text-3xl mt-4 font-bold leading-tight'>{description}</h1>
-                </Reveal>
+const Banner = ({ frame, heading, description, buttonName, number, subText }: metadata) => {
+    return (
+        <>
+            <div className='absolute inset-0'>
+                <Image src={frame} alt='GEVA hero background' className='h-full w-full object-cover' />
+                <div className='absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/60 to-transparent' />
             </div>
-            <Reveal>
-                <div className='text-white flex items-center lg:mt-20 mt-10 lg:gap-20 gap-10'>
-                    <button className='w-52 h-16 lg:block hidden text-lg text-white font-roboto uppercase bg-primaryblue'>{buttonName}</button>
-                    <div className='flex items-center gap-3'>
-                        <div className='bg-white rounded-full flex justify-center items-center w-14 h-14'><PhoneIcon fillColor="#244061" width="18px" height="15.5px" /></div>
-                        <div>
-                            <p className='text-[#6E777D] text-base font-semibold font-roboto'>{subText}</p>
-                            <p className='text-lg font-semibold font-roboto'>{number}</p>
+            <div className='relative z-20 mx-auto flex h-full w-[90%] max-w-7xl flex-col justify-center gap-10 py-12 text-white'>
+                <div className='max-w-2xl space-y-6'>
+                    <Reveal>
+                        <p className='text-sm uppercase tracking-[0.32em] text-sky-200/90'>Elevating your spaces with high-performance mobility systems</p>
+                    </Reveal>
+                    <Reveal>
+                        <h1 className='text-4xl font-bold tracking-tight leading-tight sm:text-5xl lg:text-7xl drop-shadow-lg'>{heading}</h1>
+                    </Reveal>
+                    <Reveal>
+                        <p className='text-base leading-8 text-slate-100/90'>{description}</p>
+                    </Reveal>
+                    <Reveal>
+                        <div className='flex flex-col gap-4 sm:flex-row sm:items-center'>
+                            <Link href='/contact' className='inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-orange-400 px-8 py-3 text-sm font-semibold text-white shadow-xl shadow-accent/40 transition-all hover:scale-105'>
+                                {buttonName}
+                            </Link>
+                            <Link href='#service' className='inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 backdrop-blur-md px-8 py-3 text-sm font-semibold text-white transition-all hover:bg-white/20 hover:scale-105'>
+                                Explore Services
+                            </Link>
+                        </div>
+                    </Reveal>
+                </div>
+                <Reveal>
+                    <div className='grid gap-4 rounded-3xl border border-white/15 bg-white/10 p-5 shadow-2xl shadow-slate-950/25 backdrop-blur-xl sm:grid-cols-[1fr_1fr]'>
+                        <div className='flex items-center gap-4'>
+                            <div className='flex h-14 w-14 items-center justify-center rounded-3xl bg-slate-900/90 text-white shadow-lg shadow-slate-950/20'>
+                                <PhoneIcon fillColor='#ffffff' width='18px' height='15.5px' />
+                            </div>
+                            <div>
+                                <p className='text-sm uppercase tracking-[0.2em] text-slate-300'>Call our mobility team</p>
+                                <p className='text-xl font-semibold text-white'>{number}</p>
+                            </div>
+                        </div>
+                        <div className='flex flex-col justify-center rounded-3xl bg-slate-950/20 p-4 text-slate-100'>
+                            <p className='text-sm uppercase tracking-[0.2em] text-slate-300'>Fast response & modern support</p>
+                            <p className='mt-2 text-lg font-semibold'>{subText}</p>
                         </div>
                     </div>
-                </div>
-            </Reveal>
-        </div>
-    </>
+                </Reveal>
+            </div>
+        </>
+    );
 };
 
 const HeroSection = () => {
-
     const [activeIndex, setActiveIndex] = useState(1);
 
     const nextSlide = () => {
-    setActiveIndex((prevIndex) => (prevIndex === tabs.length ? 1 : prevIndex + 1));
+        setActiveIndex((prevIndex) => (prevIndex === tabs.length ? 1 : prevIndex + 1));
     };
-    
-     useEffect(() => {
-    // Automatically change slide every 7 seconds
-    const slideInterval = setInterval(nextSlide, 7000);
 
-    // Clear interval when the component is unmounted
-    return () => clearInterval(slideInterval);
-  }, [activeIndex]);
-  
+    useEffect(() => {
+        const slideInterval = setInterval(nextSlide, 7000);
+        return () => clearInterval(slideInterval);
+    }, []);
 
     return (
-        <div className='w-full font-tillitium relative lg:h-screen h-[550px]'>
-            {tabs[0].tab === activeIndex && <Banner
-                frame={frame1}
-                heading={<p className='text-2xl'>WELCOME TO <span className='text-primarypink'>GEVAC GLOBAL SERVICES LTD</span></p>}
-                description="Elevate your building's accessibility"
-                buttonName="Get Started"
-                subText="Call Us Now"
-                number="+2348035802938"
-            />}
-            {tabs[1].tab === activeIndex && <Banner
-                frame={frame2}
-                heading={<p className='text-2xl'>WELCOME TO <span className='text-primarypink'>GEVAC GLOBAL SERVICES LTD</span></p>}
-                description="WE’RE PROVIDING INDUSTRY LEADING SOLUTIONS"
-                buttonName="Get Started"
-                subText="Call Us Now"
-                number="+2348035802938"
-            />}
-            {tabs[2].tab === activeIndex && <Banner
-                frame={frame3}
-                heading={<p className='text-2xl'>WELCOME TO <span className='text-primarypink'>GEVAC GLOBAL SERVICES LTD</span></p>}
-                description="WE’RE PROVIDING INDUSTRY LEADING SOLUTIONS"
-                buttonName="Get Started"
-                subText="Call Us Now"
-                number="+2348035802938"
-            />}
-            <div className='text-black lg:w-3/6 absolute bottom-0 z-40 h-16 right-0 bg-white'>
-                <div className='flex lg:px-14 px-4 gap-4 justify-between w-full font-roboto-slab sm:text-[13px] text-[9px] sm:font-semibold h-full items-center'>
-                    {tabs.map((tab, index) => (
-                        <div onClick={() => setActiveIndex(tab.tab)} key={index} className={`cursor-pointer ${tab.tab === activeIndex && "border-primaryblack border-b"}`}>{tab.name}</div>
-                    ))}
+        <section className='relative w-full font-tillitium lg:h-screen min-h-[720px] overflow-hidden'>
+            <Banner
+                frame={activeIndex === 1 ? frame1 : activeIndex === 2 ? frame2 : frame3}
+                heading={<span>WELCOME TO <span className='text-primary'>GEVA VENTURES</span></span>}
+                description='Modern vertical mobility systems for elevators, escalators and automatic doors.'
+                buttonName='Request Quote'
+                subText='Reliable support for engineered mobility solutions.'
+                number='+2348035802938'
+            />
+
+            <div className='absolute bottom-10 left-1/2 z-40 w-[min(94%,980px)] -translate-x-1/2 rounded-full border border-white/40 bg-white/70 px-4 py-2.5 shadow-2xl shadow-slate-900/20 backdrop-blur-xl'>
+                <div className='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
+                    <div className='text-center sm:text-left'>
+                        <p className='text-xs uppercase tracking-[0.3em] text-slate-500'>Featured solutions</p>
+                        <p className='text-sm font-semibold text-slate-900'>Elevators, escalators, automatic doors.</p>
+                    </div>
+                    <div className='flex flex-wrap justify-center gap-3 sm:justify-end'>
+                        {tabs.map((tab) => (
+                            <button
+                                key={tab.tab}
+                                type='button'
+                                onClick={() => setActiveIndex(tab.tab)}
+                                className={`rounded-full border px-4 py-2 text-sm transition ${tab.tab === activeIndex ? 'border-primary bg-primary/10 text-primary' : 'border-slate-200 bg-white text-slate-700 hover:border-primary hover:text-primary'}`}
+                            >
+                                {tab.name}
+                            </button>
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

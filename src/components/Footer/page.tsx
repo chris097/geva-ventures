@@ -1,72 +1,71 @@
 import React from 'react';
 import Logo from '@/public/svgs/Logo';
-import PhoneIcon from '@/public/svgs/PhoneIcon';
-import EmailIcon from '@/public/svgs/EmailIcon';
 import TwitterIcon from '@/public/svgs/TwitterIcon';
 import LinkedIcon from '@/public/svgs/LinkedIcon';
-import DiscordIcon from '@/public/svgs/DiscordIcon';
 import FacebookIcon from '@/public/svgs/FacebookIcon';
 import Link from 'next/link';
+import { FaWhatsapp } from 'react-icons/fa6';
+import { navLinks } from '@/data/navLinks';
 
 const Footer = () => {
-  return (
-      <div className='bg-primaryblack lg:h-auto h-auto pb-10 lg:mt-52 mt-32'>
-          <div className='lg:flex block justify-between text-white w-[90%] mx-auto pt-14'>
-              <div className='lg:w-[30%] w-[90%]'>
-                    <div className='flex items-center gap-16'>
+    return (
+        <div className='bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800 lg:h-auto h-auto pb-10'>
+            <div className='lg:flex block justify-between text-slate-300 w-[90%] mx-auto pt-14'>
+                <div className='lg:w-[30%] w-[90%]'>
+                    <div className='flex items-center gap-4'>
+                        <Logo />
                         <div>
-                            <Logo />
-                        <p className='text-white font-semibold text-xl font-tillitium'>GEVAC GLOBAL SERVICES LTD</p>
+                            <p className='text-white font-bold tracking-tight text-xl font-tillitium'>GEVA VENTURES</p>
+                            <p className='text-[10px] uppercase tracking-wider text-slate-400'>A Subsidiary of Gevac Global Services Ltd</p>
                         </div>
                     </div>
-                  {/* <div className='mt-6'>
-                      <p className='text-xl font-semibold text-primarypink'>Offices</p>
-                  </div> */}
-                  <div className='mt-6'>
-                      <p className='text-xl font-semibold text-primarypink'>Lagos State -</p>
-                      <p className='mt-2'>3rd Floor Nurses House, Churchgate Street Victoria Island Lagos.</p>
-                  </div>
-                  <div className='mt-6'>
-                      <p className='text-xl font-semibold text-primarypink'>Rivers State -</p>
-                      <p className='mt-2 '>NO. 1 CHIEF VAL CLOSE OFF TIMOTHY LANE RUMUOLA ROAD PORT HARCOURT, RIVERS STATE.</p>
-                      <p className='mt-2'>NO. 12 OHIAMINI ROAD OFF RUMULA ROAD Port Harcourt RIVERS STATE.</p>
-                      <p className='mt-2'>NO. 6 CROWN AVENUE ENUGU – NGWO ENUGU STATE NIGERIA.</p>
-                  </div>
-              </div>
-              <div className='mt-10 lg:mt-0'>
-                  <p className='text-2xl font-semibold'>Useful Links</p>
-                  <div className='mt-6'>
-                      <div className='mt-4 text-lg'>Company</div>
-                      <div className='mt-4 text-lg'>Our Service</div>
-                      <div className='mt-4 text-lg'>Contact Us</div>
-                  </div>
-              </div>
-              <div className='lg:mt-0 mt-7'>
-                  <p className='text-2xl font-semibold'>Other Links</p>
-                  <div className='mt-6'>
-                      <div className='mt-4 text-lg'>
-                      <a href="pages/quality-policy" >Our Quality Policy</a>
-                      </div>
-                      <div className='mt-4 text-lg'>
-                      <a href="pages/hse-policy">Health Safety Policy</a>
-                      </div>
-                  </div>
-              </div>
-              <div className='lg:mt-0 mt-7'>
-                  <p className='text-2xl font-semibold'>Social Links</p>
-                  <div className='mt-6 flex gap-3 items-center'>
-                      <TwitterIcon />
-                      <LinkedIcon />
-                      <DiscordIcon />
-                      <FacebookIcon />
-                  </div>
-              </div>
-          </div>
-          <div className='border-t-[0.5px] w-[90%] mx-auto mt-14 border-white' />
-          <p className='text-primarypink mt-10 text-center flex items-center sm:text-sm text-[10px] justify-center gap-1'>
-              <span className='text-xl text-primarypink'>&copy;</span> Copyright 2023 Gevac Global Services Limited. All Rights Reserved.</p>
-    </div>
-  )
+                    <div className='mt-6'>
+                        <p className='text-lg font-semibold text-white'>Lagos Office</p>
+                        <p className='mt-2 text-sm text-slate-400 leading-relaxed'>3rd Floor Nurses House, Churchgate Street, Victoria Island, Lagos.</p>
+                    </div>
+                    <div className='mt-6'>
+                        <p className='text-lg font-semibold text-white'>Port Harcourt Office</p>
+                        <p className='mt-2 text-sm text-slate-400 leading-relaxed'>No. 1 Chief Val Close off Timothy Lane, Rumuola Road, Port Harcourt, Rivers State.</p>
+                        <p className='mt-2 text-sm text-slate-400 leading-relaxed'>No. 12 Ohiaimini Road off Rumuola Road, Port Harcourt, Rivers State.</p>
+                    </div>
+                    <div className='mt-6'>
+                        <p className='text-lg font-semibold text-white'>Abuja Office</p>
+                        <p className='mt-2 text-sm text-slate-400 leading-relaxed'>Suite 9D Lake City Plaza, Oladipo Diva Way, Gudu District, Abuja.</p>
+                    </div>
+                </div>
+                <div className='mt-10 lg:mt-0'>
+                    <p className='text-xl font-semibold text-white'>Useful Links</p>
+                    <div className='mt-6 flex flex-col gap-3 text-sm text-slate-400'>
+                        {navLinks.map((link) => (
+                            <Link key={link.href} href={link.href} className='transition-all hover:text-white hover:translate-x-1'>{link.label}</Link>
+                        ))}
+                        <Link href='/team' className='transition-all hover:text-white hover:translate-x-1'>Our Team</Link>
+                    </div>
+                </div>
+                <div className='lg:mt-0 mt-7'>
+                    <p className='text-xl font-semibold text-white'>Other Links</p>
+                    <div className='mt-6 flex flex-col gap-3 text-sm text-slate-400'>
+                        <Link href='/quality-policy' className='transition-all hover:text-white hover:translate-x-1'>Our Quality Policy</Link>
+                        <Link href='/hse-policy' className='transition-all hover:text-white hover:translate-x-1'>Health Safety Policy</Link>
+                    </div>
+                </div>
+                <div className='lg:mt-0 mt-7'>
+                    <p className='text-xl font-semibold text-white'>Social Links</p>
+                    <div className='mt-6 flex gap-3 items-center'>
+                        <TwitterIcon />
+                        <LinkedIcon />
+                        <a href='https://wa.me/2348035802938' target='_blank' rel='noopener noreferrer' className='flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-accent'>
+                            <FaWhatsapp size={16} />
+                        </a>
+                        <FacebookIcon />
+                    </div>
+                </div>
+            </div>
+            <div className='border-t-[0.5px] w-[90%] mx-auto mt-14 border-slate-800' />
+            <p className='text-slate-500 mt-10 text-center flex items-center sm:text-sm text-xs justify-center gap-1'>
+                <span className='text-lg'>&copy;</span> Copyright 2026 GEVA VENTURES. All Rights Reserved.</p>
+        </div>
+    )
 }
 
 export default Footer;
