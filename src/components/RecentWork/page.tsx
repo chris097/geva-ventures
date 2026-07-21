@@ -152,7 +152,7 @@ const RecentWork = () => {
                                 <button
                                     type='button'
                                     onClick={handlePlay}
-                                    className='absolute z-50 flex items-center justify-center w-20 h-20 rounded-full bg-primary/90 hover:bg-primary border-4 border-white/30 shadow-2xl shadow-primary/50 transition-all duration-300 hover:scale-110'
+                                    className='absolute z-30 flex items-center justify-center w-20 h-20 rounded-full bg-primary/90 hover:bg-primary border-4 border-white/30 shadow-2xl shadow-primary/50 transition-all duration-300 hover:scale-110'
                                     aria-label='Play video'
                                 >
                                     <svg viewBox='0 0 24 24' fill='white' className='w-8 h-8 ml-1'>
