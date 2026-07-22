@@ -34,7 +34,7 @@ const AboutUs = () => {
                         <div className='rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 border border-white/5 relative'>
                             <Image
                                 src={aboutImg}
-                                alt='GEVA Ventures team at work'
+                                alt='GEVAC Ventures team at work'
                                 className='w-full h-[480px] object-cover'
                             />
                             <div className='absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent' />
@@ -77,7 +77,7 @@ const AboutUs = () => {
                         <Reveal>
                             {activeTab === 'about' && (
                                 <p className='text-slate-400 leading-relaxed text-base mb-8'>
-                                    <span className='text-accent font-bold'>GEVA VENTURES</span> is the dedicated elevators, escalators and automatic doors division of Gevac Global Services Ltd. We deliver modern vertical mobility systems for commercial, residential and healthcare developments nationwide — backed by certified engineers and a customer-first philosophy.
+                                    <span className='text-accent font-bold'>GEVAC VENTURES</span> is the dedicated elevators, escalators and automatic doors division of Gevac Global Services Ltd. We deliver modern vertical mobility systems for commercial, residential and healthcare developments nationwide — backed by certified engineers and a customer-first philosophy.
                                 </p>
                             )}
                             {activeTab === 'vision' && (

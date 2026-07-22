@@ -94,7 +94,7 @@ const Header = () => {
                     <Logo />
                     <div className='-ml-6'>
                         <p className='text-sm font-extrabold tracking-tight leading-tight text-white'>
-                            GEVA VENTURES
+                            GEVAC VENTURES
                         </p>
                         <p className='text-[9px] uppercase tracking-widest leading-tight text-slate-400'>
                             Subsidiary of Gevac Global Services

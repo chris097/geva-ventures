@@ -38,10 +38,10 @@ const ContactPage = () => {
     <main className='bg-slate-950'>
       <Header />
       <div className='relative h-[420px] lg:h-[500px] overflow-hidden flex items-center'>
-        <Image src={heroImg} alt='Contact GEVA Ventures' className='absolute inset-0 w-full h-full object-cover object-center' priority />
+        <Image src={heroImg} alt='Contact GEVAC Ventures' className='absolute inset-0 w-full h-full object-cover object-center' priority />
         <div className='absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/80 to-slate-950/40' />
         <div className='absolute inset-0 opacity-10' style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-        
+
         <div className='relative z-10 w-[90%] mx-auto max-w-6xl mt-16'>
           <Reveal>
             <span className='inline-block text-accent text-xs font-black tracking-[0.5em] uppercase mb-5 border border-accent/30 bg-accent/10 px-4 py-2 rounded-full'>
@@ -66,7 +66,7 @@ const ContactPage = () => {
           <form onSubmit={handleSubmit} className='rounded-[2rem] bg-slate-900/50 backdrop-blur-md border border-white/10 p-8 lg:p-10 shadow-2xl h-full'>
             <h2 className='text-2xl sm:text-3xl font-tillitium font-extrabold sm:font-black text-white mb-2'>Send Us A Message</h2>
             <p className='text-slate-400 text-sm mb-8'>We typically reply within 24 hours.</p>
-            
+
             <div className='grid gap-6 sm:grid-cols-2'>
               <div className='sm:col-span-1'>
                 <label htmlFor='name' className='text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block'>Full Name</label>

@@ -13,7 +13,7 @@ const Team = () => {
                         <div className='bg-white font-tillitium p-8 w-full border-[#f5f5f5]' key={team.name}>
                             <Reveal>
                                 <div>
-                                    <Image className='w-full lg:h-[350.33px] h-[240px] object-cover object-center' src={team.url} alt={`${team.name}, ${team.role} at GEVA VENTURES`} />
+                                    <Image className='w-full lg:h-[350.33px] h-[240px] object-cover object-center' src={team.url} alt={`${team.name}, ${team.role} at GEVAC VENTURES`} />
                                     <div className='flex justify-center pt-8 pb-6 items-center'>
                                         <div>
                                             <p className='text-ink font-tillitium text-center text-[30px] font-semibold'>{team.name}</p>

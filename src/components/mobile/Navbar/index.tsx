@@ -48,7 +48,7 @@ const Navbar = ({ setShowMenu }: { setShowMenu: (show: boolean) => void }) => {
                     <Link href="/" onClick={() => setShowMenu(false)} className="flex items-center gap-2">
                         <Logo />
                         <div className="-ml-4">
-                            <p className="text-sm font-extrabold tracking-tight leading-tight text-white">GEVA VENTURES</p>
+                            <p className="text-sm font-extrabold tracking-tight leading-tight text-white">GEVAC VENTURES</p>
                             <p className="text-[8px] uppercase tracking-widest text-slate-500 leading-tight">Subsidiary of Gevac Global Services</p>
                         </div>
                     </Link>
@@ -70,11 +70,10 @@ const Navbar = ({ setShowMenu }: { setShowMenu: (show: boolean) => void }) => {
                                 key={link.href}
                                 href={link.href}
                                 onClick={() => setShowMenu(false)}
-                                className={`group flex items-center justify-between px-5 py-4 rounded-2xl text-lg font-tillitium font-black tracking-wide transition-all duration-300 ${
-                                    isActive
+                                className={`group flex items-center justify-between px-5 py-4 rounded-2xl text-lg font-tillitium font-black tracking-wide transition-all duration-300 ${isActive
                                         ? 'bg-primary/10 text-primary border border-primary/20 shadow-[inset_0_0_20px_rgba(23,121,186,0.1)]'
                                         : 'text-slate-200 hover:text-white hover:bg-white/5 border border-transparent'
-                                }`}
+                                    }`}
                             >
                                 <div className="flex items-center gap-4">
                                     <span className={`text-xs font-black transition-colors duration-300 ${isActive ? 'text-primary' : 'text-slate-600 group-hover:text-slate-400'}`}>

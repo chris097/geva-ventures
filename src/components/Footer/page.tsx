@@ -15,7 +15,7 @@ const Footer = () => {
                     <div className='flex items-center gap-4'>
                         <Logo />
                         <div>
-                            <p className='text-white font-bold tracking-tight text-lg sm:text-xl font-tillitium'>GEVA VENTURES</p>
+                            <p className='text-white font-bold tracking-tight text-lg sm:text-xl font-tillitium'>GEVAC VENTURES</p>
                             <p className='text-[10px] uppercase tracking-wider text-slate-400'>A Subsidiary of Gevac Global Services Ltd</p>
                         </div>
                     </div>
@@ -63,7 +63,7 @@ const Footer = () => {
             </div>
             <div className='border-t-[0.5px] w-[90%] mx-auto mt-14 border-slate-800' />
             <p className='text-slate-500 mt-10 text-center flex items-center sm:text-sm text-xs justify-center gap-1'>
-                <span className='text-lg'>&copy;</span> Copyright 2026 GEVA VENTURES. All Rights Reserved.</p>
+                <span className='text-lg'>&copy;</span> Copyright 2026 GEVAC VENTURES. All Rights Reserved.</p>
         </div>
     )
 }

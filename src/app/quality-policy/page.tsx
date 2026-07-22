@@ -4,8 +4,8 @@ import Footer from '@/components/Footer/page';
 import Header from '@/components/Header';
 
 export const metadata: Metadata = {
-  title: 'Quality Policy | GEVA VENTURES',
-  description: 'The quality policy of GEVA VENTURES, a subsidiary of Gevac Global Services Ltd.',
+  title: 'Quality Policy | GEVAC VENTURES',
+  description: 'The quality policy of GEVAC VENTURES, a subsidiary of Gevac Global Services Ltd.',
 };
 
 const commitments = [

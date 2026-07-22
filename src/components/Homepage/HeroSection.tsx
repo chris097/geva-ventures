@@ -90,7 +90,7 @@ const HeroSection = () => {
         <section className='relative w-full font-tillitium min-h-[900px] lg:h-screen lg:min-h-[720px] overflow-hidden'>
             <Banner
                 frame={activeIndex === 1 ? frame1 : activeIndex === 2 ? frame2 : frame3}
-                heading={<span>WELCOME TO <span className='text-primary'>GEVA VENTURES</span></span>}
+                heading={<span>WELCOME TO <span className='text-primary'>GEVAC VENTURES</span></span>}
                 description='Modern vertical mobility systems for elevators, escalators and automatic doors.'
                 buttonName='Request Quote'
                 subText='Reliable support for engineered mobility solutions.'

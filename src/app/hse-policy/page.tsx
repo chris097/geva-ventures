@@ -4,8 +4,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer/page';
 
 export const metadata: Metadata = {
-  title: 'Health, Safety & Employee Policy | GEVA VENTURES',
-  description: 'The health, safety and employee policy of GEVA VENTURES, a subsidiary of Gevac Global Services Ltd.',
+  title: 'Health, Safety & Employee Policy | GEVAC VENTURES',
+  description: 'The health, safety and employee policy of GEVAC VENTURES, a subsidiary of Gevac Global Services Ltd.',
 };
 
 const pledges = [
@@ -33,10 +33,10 @@ const HSEPOLICY = () => {
       </div>
       <div className='mx-auto w-[90%] max-w-4xl py-14'>
         <p className='text-sm font-semibold uppercase tracking-[0.2em] text-accent'>Updated August 7th, 2023</p>
-        <p className='mt-6 text-lg leading-relaxed text-ink'>The health and safety of our employees is the highest priority for GEVA VENTURES, a subsidiary of Gevac Global Services Ltd. No employee will be required to do work they consider unsafe; we comply with all applicable safety requirements and maintain occupational standards that equal or exceed industry best practices. Our safety committee, consisting of management and labour representatives, identifies hazards, removes obstacles to accident prevention, and evaluates our efforts to achieve an injury-free workplace.</p>
+        <p className='mt-6 text-lg leading-relaxed text-ink'>The health and safety of our employees is the highest priority for GEVAC VENTURES, a subsidiary of Gevac Global Services Ltd. No employee will be required to do work they consider unsafe; we comply with all applicable safety requirements and maintain occupational standards that equal or exceed industry best practices. Our safety committee, consisting of management and labour representatives, identifies hazards, removes obstacles to accident prevention, and evaluates our efforts to achieve an injury-free workplace.</p>
 
         <div className='mt-10'>
-          <h2 className='text-xl sm:text-2xl font-bold text-primary'>GEVA VENTURES pledges to:</h2>
+          <h2 className='text-xl sm:text-2xl font-bold text-primary'>GEVAC VENTURES pledges to:</h2>
           <ul className='mt-6 space-y-4'>
             {pledges.map((item) => (
               <li key={item} className='flex items-start gap-4'>

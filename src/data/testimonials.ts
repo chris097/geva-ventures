@@ -22,6 +22,6 @@ export const testimonials: Testimonial[] = [
         id: 3,
         name: 'DR. OHIAH CMD,',
         location: 'PALMARS HOSPITAL, PORT HARCOURT, RIVERS STATE, NIGERIA',
-        description: '"We couldn\'t be happier with the maintenance service provided by GEVA VENTURES. They are true professionals who take pride in their work, and it shows in the results. Our escalator is running better than ever, and we look forward to a continued partnership with them in the future. Thank you for your outstanding service!"',
+        description: '"We couldn\'t be happier with the maintenance service provided by GEVAC VENTURES. They are true professionals who take pride in their work, and it shows in the results. Our escalator is running better than ever, and we look forward to a continued partnership with them in the future. Thank you for your outstanding service!"',
     },
 ];
