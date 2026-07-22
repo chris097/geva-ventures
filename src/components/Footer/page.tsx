@@ -15,26 +15,26 @@ const Footer = () => {
                     <div className='flex items-center gap-4'>
                         <Logo />
                         <div>
-                            <p className='text-white font-bold tracking-tight text-xl font-tillitium'>GEVA VENTURES</p>
+                            <p className='text-white font-bold tracking-tight text-lg sm:text-xl font-tillitium'>GEVA VENTURES</p>
                             <p className='text-[10px] uppercase tracking-wider text-slate-400'>A Subsidiary of Gevac Global Services Ltd</p>
                         </div>
                     </div>
                     <div className='mt-6'>
-                        <p className='text-lg font-semibold text-white'>Lagos Office</p>
+                        <p className='text-base sm:text-lg font-semibold text-white'>Lagos Office</p>
                         <p className='mt-2 text-sm text-slate-400 leading-relaxed'>3rd Floor Nurses House, Churchgate Street, Victoria Island, Lagos.</p>
                     </div>
                     <div className='mt-6'>
-                        <p className='text-lg font-semibold text-white'>Port Harcourt Office</p>
+                        <p className='text-base sm:text-lg font-semibold text-white'>Port Harcourt Office</p>
                         <p className='mt-2 text-sm text-slate-400 leading-relaxed'>No. 1 Chief Val Close off Timothy Lane, Rumuola Road, Port Harcourt, Rivers State.</p>
                         <p className='mt-2 text-sm text-slate-400 leading-relaxed'>No. 12 Ohiaimini Road off Rumuola Road, Port Harcourt, Rivers State.</p>
                     </div>
                     <div className='mt-6'>
-                        <p className='text-lg font-semibold text-white'>Abuja Office</p>
+                        <p className='text-base sm:text-lg font-semibold text-white'>Abuja Office</p>
                         <p className='mt-2 text-sm text-slate-400 leading-relaxed'>Suite 9D Lake City Plaza, Oladipo Diva Way, Gudu District, Abuja.</p>
                     </div>
                 </div>
                 <div className='mt-10 lg:mt-0'>
-                    <p className='text-xl font-semibold text-white'>Useful Links</p>
+                    <p className='text-lg sm:text-xl font-semibold text-white'>Useful Links</p>
                     <div className='mt-6 flex flex-col gap-3 text-sm text-slate-400'>
                         {navLinks.map((link) => (
                             <Link key={link.href} href={link.href} className='transition-all hover:text-white hover:translate-x-1'>{link.label}</Link>
@@ -43,14 +43,14 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className='lg:mt-0 mt-7'>
-                    <p className='text-xl font-semibold text-white'>Other Links</p>
+                    <p className='text-lg sm:text-xl font-semibold text-white'>Other Links</p>
                     <div className='mt-6 flex flex-col gap-3 text-sm text-slate-400'>
                         <Link href='/quality-policy' className='transition-all hover:text-white hover:translate-x-1'>Our Quality Policy</Link>
                         <Link href='/hse-policy' className='transition-all hover:text-white hover:translate-x-1'>Health Safety Policy</Link>
                     </div>
                 </div>
                 <div className='lg:mt-0 mt-7'>
-                    <p className='text-xl font-semibold text-white'>Social Links</p>
+                    <p className='text-lg sm:text-xl font-semibold text-white'>Social Links</p>
                     <div className='mt-6 flex gap-3 items-center'>
                         <TwitterIcon />
                         <LinkedIcon />

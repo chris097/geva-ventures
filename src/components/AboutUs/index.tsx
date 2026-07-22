@@ -40,9 +40,9 @@ const AboutUs = () => {
                             <div className='absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent' />
                         </div>
                         {/* Floating badge */}
-                        <div className='absolute -bottom-6 -right-6 bg-accent text-white rounded-3xl px-8 py-5 shadow-2xl shadow-accent/40 font-tillitium'>
-                            <p className='text-3xl font-black'>30+</p>
-                            <p className='text-xs uppercase tracking-widest font-semibold mt-1 opacity-90'>Years of Excellence</p>
+                        <div className='absolute bottom-4 right-4 sm:-bottom-6 sm:-right-6 bg-accent text-white rounded-2xl sm:rounded-3xl px-6 py-4 sm:px-8 sm:py-5 shadow-2xl shadow-accent/40 font-tillitium z-10'>
+                            <p className='text-2xl sm:text-3xl font-black'>30+</p>
+                            <p className='text-[10px] sm:text-xs uppercase tracking-widest font-semibold mt-1 opacity-90'>Years of Excellence</p>
                         </div>
                     </div>
 
@@ -52,7 +52,7 @@ const AboutUs = () => {
                             <p className='text-accent text-xs tracking-[0.4em] uppercase font-bold mb-5'>Who We Are</p>
                         </Reveal>
                         <Reveal>
-                            <h2 className='text-white text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-8'>
+                            <h2 className='text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold sm:font-black leading-tight tracking-tight mb-8'>
                                 Nigeria&lsquo;s Premier <br />
                                 <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-400'>Mobility Systems</span><br />
                                 Specialists
@@ -115,9 +115,9 @@ const AboutUs = () => {
                 <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 mt-24'>
                     {stats.map((s, i) => (
                         <Reveal key={i}>
-                            <div className='border border-white/8 rounded-2xl bg-white/3 p-8 text-center group hover:border-primary/40 hover:bg-primary/5 transition-all duration-300'>
-                                <p className='text-4xl lg:text-5xl font-black text-white group-hover:text-primary transition-colors duration-300'><AnimatedCounter value={s.value} /></p>
-                                <p className='text-slate-500 text-xs uppercase tracking-widest mt-2 font-semibold'>{s.label}</p>
+                            <div className='border border-white/8 rounded-2xl bg-white/3 p-6 sm:p-8 text-center group hover:border-primary/40 hover:bg-primary/5 transition-all duration-300'>
+                                <p className='text-3xl sm:text-4xl lg:text-5xl font-bold sm:font-black text-white group-hover:text-primary transition-colors duration-300'><AnimatedCounter value={s.value} /></p>
+                                <p className='text-slate-500 text-[10px] sm:text-xs uppercase tracking-widest mt-2 font-semibold'>{s.label}</p>
                             </div>
                         </Reveal>
                     ))}

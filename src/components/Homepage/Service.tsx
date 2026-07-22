@@ -45,7 +45,7 @@ const Service = ({ limit, showViewAll = false }: ServiceProps) => {
               </span>
             </Reveal>
             <Reveal>
-              <h2 className='font-tillitium font-black text-white text-4xl lg:text-5xl leading-tight tracking-tighter mt-4'>
+              <h2 className='font-tillitium font-extrabold sm:font-black text-white text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tighter mt-4'>
                 WORLD-CLASS <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-400'>MOBILITY</span><br className='hidden lg:block' /> SOLUTIONS
               </h2>
             </Reveal>
@@ -82,7 +82,7 @@ const Service = ({ limit, showViewAll = false }: ServiceProps) => {
                     {icons[services[0].slug] ?? '⚡'}
                   </div>
                   <span className='text-xs font-black tracking-[0.4em] uppercase text-slate-400 mb-2'>01</span>
-                  <h3 className='text-white font-black text-2xl font-tillitium tracking-tight mb-3 group-hover:text-sky-300 transition-colors duration-300'>{services[0].title}</h3>
+                  <h3 className='text-white font-bold sm:font-black text-xl sm:text-2xl font-tillitium tracking-tight mb-3 group-hover:text-sky-300 transition-colors duration-300'>{services[0].title}</h3>
                   <p className='text-slate-400 text-sm leading-relaxed mb-5'>{services[0].summary}</p>
                   <span className='inline-flex items-center gap-2 text-primary text-sm font-bold group-hover:gap-3 transition-all duration-300'>
                     Learn more →

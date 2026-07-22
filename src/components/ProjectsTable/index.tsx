@@ -24,9 +24,9 @@ const ProjectsTable = () => {
     <div className='bg-slate-950 py-16 lg:py-24'>
       <div className='mx-auto w-[90%] max-w-7xl'>
         <Reveal>
-          <div className='flex items-center justify-between mb-10'>
-            <h2 className='text-3xl lg:text-4xl font-tillitium font-black text-white'>Installation Directory</h2>
-            <span className='px-4 py-2 bg-primary/20 text-primary border border-primary/30 rounded-xl text-sm font-bold'>
+          <div className='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-10 mb-8 sm:mb-10'>
+            <h2 className='text-2xl sm:text-3xl lg:text-4xl font-tillitium font-black text-white'>Installation Directory</h2>
+            <span className='px-4 py-2 bg-primary/20 text-primary border border-primary/30 rounded-xl text-xs sm:text-sm font-bold shrink-0'>
               {projects.length} Total
             </span>
           </div>
@@ -71,19 +71,19 @@ const ProjectsTable = () => {
             
             {/* Pagination Controls */}
             {totalPages > 1 && (
-              <div className='flex items-center justify-between px-6 py-4 border-t border-white/10 bg-slate-900/30'>
-                <p className='text-sm text-slate-400'>
+              <div className='flex flex-col sm:flex-row items-center justify-between gap-4 px-4 sm:px-6 py-4 border-t border-white/10 bg-slate-900/30'>
+                <p className='text-xs sm:text-sm text-slate-400'>
                   Showing <span className='text-white font-bold'>{startIndex + 1}</span> to <span className='text-white font-bold'>{Math.min(startIndex + ITEMS_PER_PAGE, projects.length)}</span> of <span className='text-white font-bold'>{projects.length}</span> projects
                 </p>
                 <div className='flex items-center gap-2'>
                   <button 
                     onClick={handlePrev} 
                     disabled={currentPage === 1}
-                    className={`px-4 py-2 rounded-lg text-sm font-bold transition-all duration-200 border ${currentPage === 1 ? 'border-white/5 text-slate-600 cursor-not-allowed' : 'border-white/10 text-white hover:border-primary/50 hover:text-primary hover:bg-primary/10'}`}
+                    className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all duration-200 border ${currentPage === 1 ? 'border-white/5 text-slate-600 cursor-not-allowed' : 'border-white/10 text-white hover:border-primary/50 hover:text-primary hover:bg-primary/10'}`}
                   >
-                    Previous
+                    Prev
                   </button>
-                  <div className='flex items-center gap-1 px-2'>
+                  <div className='hidden sm:flex items-center gap-1 px-2'>
                     {Array.from({ length: totalPages }).map((_, i) => (
                       <button
                         key={i}
@@ -94,10 +94,13 @@ const ProjectsTable = () => {
                       </button>
                     ))}
                   </div>
+                  <div className='flex sm:hidden items-center px-2 text-xs font-bold text-slate-400'>
+                    {currentPage} / {totalPages}
+                  </div>
                   <button 
                     onClick={handleNext} 
                     disabled={currentPage === totalPages}
-                    className={`px-4 py-2 rounded-lg text-sm font-bold transition-all duration-200 border ${currentPage === totalPages ? 'border-white/5 text-slate-600 cursor-not-allowed' : 'border-white/10 text-white hover:border-primary/50 hover:text-primary hover:bg-primary/10'}`}
+                    className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all duration-200 border ${currentPage === totalPages ? 'border-white/5 text-slate-600 cursor-not-allowed' : 'border-white/10 text-white hover:border-primary/50 hover:text-primary hover:bg-primary/10'}`}
                   >
                     Next
                   </button>

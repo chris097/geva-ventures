@@ -30,16 +30,16 @@ const Banner = ({ frame, heading, description, buttonName, number, subText }: me
                 <Image src={frame} alt='GEVA hero background' className='h-full w-full object-cover' />
                 <div className='absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/60 to-transparent' />
             </div>
-            <div className='relative z-20 mx-auto flex h-full w-[90%] max-w-7xl flex-col justify-center gap-10 py-12 text-white'>
+            <div className='relative z-20 mx-auto flex min-h-full lg:h-full w-[90%] max-w-7xl flex-col justify-center gap-8 sm:gap-10 pt-40 pb-48 sm:pt-32 sm:pb-32 lg:py-12 text-white'>
                 <div className='max-w-2xl space-y-6'>
                     <Reveal>
-                        <p className='text-sm uppercase tracking-[0.32em] text-sky-200/90'>Elevating your spaces with high-performance mobility systems</p>
+                        <p className='text-xs sm:text-sm uppercase tracking-[0.32em] text-sky-200/90'>Elevating your spaces with high-performance mobility systems</p>
                     </Reveal>
                     <Reveal>
-                        <h1 className='text-4xl font-bold tracking-tight leading-tight sm:text-5xl lg:text-7xl drop-shadow-lg'>{heading}</h1>
+                        <h1 className='text-3xl font-semibold sm:font-bold tracking-tight leading-tight sm:text-5xl lg:text-7xl drop-shadow-lg'>{heading}</h1>
                     </Reveal>
                     <Reveal>
-                        <p className='text-base leading-8 text-slate-100/90'>{description}</p>
+                        <p className='text-sm sm:text-base leading-7 sm:leading-8 text-slate-100/90'>{description}</p>
                     </Reveal>
                     <Reveal>
                         <div className='flex flex-col gap-4 sm:flex-row sm:items-center'>
@@ -59,13 +59,13 @@ const Banner = ({ frame, heading, description, buttonName, number, subText }: me
                                 <PhoneIcon fillColor='#ffffff' width='18px' height='15.5px' />
                             </div>
                             <div>
-                                <p className='text-sm uppercase tracking-[0.2em] text-slate-300'>Call our mobility team</p>
-                                <p className='text-xl font-semibold text-white'>{number}</p>
+                                <p className='text-[10px] sm:text-xs uppercase tracking-widest text-slate-300'>Call our mobility team</p>
+                                <p className='text-lg sm:text-xl font-semibold text-white'>{number}</p>
                             </div>
                         </div>
                         <div className='flex flex-col justify-center rounded-3xl bg-slate-950/20 p-4 text-slate-100'>
-                            <p className='text-sm uppercase tracking-[0.2em] text-slate-300'>Fast response & modern support</p>
-                            <p className='mt-2 text-lg font-semibold'>{subText}</p>
+                            <p className='text-[10px] sm:text-xs uppercase tracking-widest text-slate-300'>Fast response & modern support</p>
+                            <p className='mt-2 text-base sm:text-lg font-semibold'>{subText}</p>
                         </div>
                     </div>
                 </Reveal>
@@ -87,7 +87,7 @@ const HeroSection = () => {
     }, []);
 
     return (
-        <section className='relative w-full font-tillitium lg:h-screen min-h-[720px] overflow-hidden'>
+        <section className='relative w-full font-tillitium min-h-[900px] lg:h-screen lg:min-h-[720px] overflow-hidden'>
             <Banner
                 frame={activeIndex === 1 ? frame1 : activeIndex === 2 ? frame2 : frame3}
                 heading={<span>WELCOME TO <span className='text-primary'>GEVA VENTURES</span></span>}
@@ -97,19 +97,19 @@ const HeroSection = () => {
                 number='+2348035802938'
             />
 
-            <div className='absolute bottom-10 left-1/2 z-40 w-[min(94%,980px)] -translate-x-1/2 rounded-full border border-white/40 bg-white/70 px-4 py-2.5 shadow-2xl shadow-slate-900/20 backdrop-blur-xl'>
+            <div className='absolute bottom-6 sm:bottom-10 left-1/2 z-40 w-[min(94%,980px)] -translate-x-1/2 rounded-3xl sm:rounded-full border border-white/40 bg-white/70 px-4 py-4 sm:px-4 sm:py-2.5 shadow-2xl shadow-slate-900/20 backdrop-blur-xl'>
                 <div className='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
                     <div className='text-center sm:text-left'>
-                        <p className='text-xs uppercase tracking-[0.3em] text-slate-500'>Featured solutions</p>
-                        <p className='text-sm font-semibold text-slate-900'>Elevators, escalators, automatic doors.</p>
+                        <p className='text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-slate-500'>Featured solutions</p>
+                        <p className='text-xs sm:text-sm font-semibold text-slate-900 mt-0.5 sm:mt-0'>Elevators, escalators, automatic doors.</p>
                     </div>
-                    <div className='flex flex-wrap justify-center gap-3 sm:justify-end'>
+                    <div className='flex flex-wrap justify-center gap-2 sm:gap-3 sm:justify-end'>
                         {tabs.map((tab) => (
                             <button
                                 key={tab.tab}
                                 type='button'
                                 onClick={() => setActiveIndex(tab.tab)}
-                                className={`rounded-full border px-4 py-2 text-sm transition ${tab.tab === activeIndex ? 'border-primary bg-primary/10 text-primary' : 'border-slate-200 bg-white text-slate-700 hover:border-primary hover:text-primary'}`}
+                                className={`rounded-full border px-3 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-sm transition ${tab.tab === activeIndex ? 'border-primary bg-primary/10 text-primary' : 'border-slate-200 bg-white text-slate-700 hover:border-primary hover:text-primary'}`}
                             >
                                 {tab.name}
                             </button>

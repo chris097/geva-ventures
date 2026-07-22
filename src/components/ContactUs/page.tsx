@@ -28,7 +28,7 @@ const contactItems = [
 
 const ContactUs = () => {
     return (
-        <section id='contact' className='bg-slate-950 py-52 overflow-hidden relative'>
+        <section id='contact' className='bg-slate-950 py-16 lg:py-32 overflow-hidden relative'>
             {/* Background decoration */}
             <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl pointer-events-none' />
 
@@ -40,7 +40,7 @@ const ContactUs = () => {
                         <span className='inline-block text-accent text-xs font-black tracking-[0.5em] uppercase mb-5 border border-accent/30 bg-accent/10 px-4 py-2 rounded-full'>
                             Get In Touch
                         </span>
-                        <h2 className='font-tillitium font-black text-white text-4xl lg:text-5xl leading-tight tracking-tighter mt-5'>
+                        <h2 className='font-tillitium font-extrabold sm:font-black text-white text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tighter mt-5'>
                             WE&apos;RE READY TO <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-400'>HELP YOU.</span>
                         </h2>
                         <p className='text-slate-500 mt-4 text-base max-w-xl mx-auto leading-relaxed'>
@@ -81,15 +81,15 @@ const ContactUs = () => {
                             <div className='space-y-4'>
                                 <a href="mailto:vincent@gevacglobalservicesltd.com" className='group block'>
                                     <p className='text-white font-bold text-sm group-hover:text-primary transition-colors'>Vincent</p>
-                                    <p className='text-slate-400 text-xs'>vincent@gevacglobalservicesltd.com</p>
+                                    <p className='text-slate-400 text-xs break-all'>vincent@gevacglobalservicesltd.com</p>
                                 </a>
                                 <a href="mailto:kenneth@gevacglobalservicesltd.com" className='group block'>
                                     <p className='text-white font-bold text-sm group-hover:text-primary transition-colors'>Kenneth</p>
-                                    <p className='text-slate-400 text-xs'>kenneth@gevacglobalservicesltd.com</p>
+                                    <p className='text-slate-400 text-xs break-all'>kenneth@gevacglobalservicesltd.com</p>
                                 </a>
                                 <a href="mailto:info@gevacglobalservicesltd.com" className='group block'>
                                     <p className='text-white font-bold text-sm group-hover:text-primary transition-colors'>General Info</p>
-                                    <p className='text-slate-400 text-xs'>info@gevacglobalservicesltd.com</p>
+                                    <p className='text-slate-400 text-xs break-all'>info@gevacglobalservicesltd.com</p>
                                 </a>
                             </div>
                         </div>
@@ -129,15 +129,15 @@ const ContactUs = () => {
 
                 {/* CTA Banner */}
                 <Reveal>
-                    <div className='relative bg-gradient-to-br from-primary/20 to-sky-500/10 border border-primary/20 rounded-3xl p-10 lg:p-14 flex flex-col lg:flex-row items-center justify-between gap-8 overflow-hidden'>
+                    <div className='relative bg-gradient-to-br from-primary/20 to-sky-500/10 border border-primary/20 rounded-[2rem] p-8 lg:p-14 flex flex-col lg:flex-row items-center justify-between gap-6 overflow-hidden'>
                         <div className='absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none' />
-                        <div className='relative z-10'>
-                            <h3 className='font-tillitium font-black text-white text-2xl lg:text-3xl tracking-tight'>Ready to elevate your building?</h3>
+                        <div className='relative z-10 text-center lg:text-left'>
+                            <h3 className='font-tillitium font-bold sm:font-black text-white text-xl sm:text-2xl lg:text-3xl tracking-tight'>Ready to elevate your building?</h3>
                             <p className='text-slate-400 mt-2 text-sm lg:text-base'>Schedule a free site visit and get a detailed project quote.</p>
                         </div>
                         <Link
                             href='/contact'
-                            className='relative z-10 shrink-0 inline-flex items-center gap-3 bg-gradient-to-r from-primary to-blue-500 text-white font-bold text-sm px-8 py-4 rounded-2xl shadow-2xl shadow-primary/40 hover:scale-105 hover:shadow-primary/60 transition-all duration-300 whitespace-nowrap'
+                            className='relative z-10 shrink-0 inline-flex w-full lg:w-auto justify-center items-center gap-3 bg-gradient-to-r from-primary to-blue-500 text-white font-bold text-sm px-6 py-4 rounded-xl sm:rounded-2xl shadow-2xl shadow-primary/40 hover:scale-105 hover:shadow-primary/60 transition-all duration-300'
                         >
                             Book a Free Consultation <span className='text-lg'>→</span>
                         </Link>

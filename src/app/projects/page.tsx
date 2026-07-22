@@ -31,7 +31,7 @@ const ProjectsPage = () => {
             </span>
           </Reveal>
           <Reveal>
-            <h1 className='font-tillitium font-black text-white text-5xl lg:text-7xl leading-none tracking-tighter'>
+            <h1 className='font-tillitium font-extrabold sm:font-black text-white text-4xl sm:text-5xl lg:text-7xl leading-none tracking-tighter'>
               OUR <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-300'>PROJECTS.</span>
             </h1>
           </Reveal>
@@ -48,7 +48,7 @@ const ProjectsPage = () => {
         <div className='w-[90%] max-w-7xl mx-auto'>
           <Reveal>
             <div className='mb-10'>
-              <h2 className='text-3xl lg:text-4xl font-tillitium font-black text-white'>Featured Installations</h2>
+              <h2 className='text-2xl sm:text-3xl lg:text-4xl font-tillitium font-extrabold sm:font-black text-white'>Featured Installations</h2>
             </div>
           </Reveal>
           <div className='grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 auto-rows-[130px] lg:auto-rows-[180px]'>
@@ -72,7 +72,7 @@ const ProjectsPage = () => {
                         <span className='inline-block px-3 py-1.5 bg-white/10 backdrop-blur-xl border border-white/10 rounded-lg text-[10px] lg:text-xs text-white/90 uppercase font-black tracking-widest mb-3'>
                           {featured.region}
                         </span>
-                        <h4 className='text-white font-tillitium font-black text-xl lg:text-2xl leading-tight line-clamp-1'>
+                        <h4 className='text-white font-tillitium font-bold sm:font-black text-lg sm:text-xl lg:text-2xl leading-tight line-clamp-1'>
                           {featured.name}
                         </h4>
                       </div>

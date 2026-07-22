@@ -54,7 +54,7 @@ const RecentWork = () => {
                         </span>
                     </Reveal>
                     <Reveal>
-                        <h2 className='font-tillitium font-black text-white text-4xl lg:text-6xl leading-none tracking-tighter'>
+                        <h2 className='font-tillitium font-extrabold sm:font-black text-white text-3xl sm:text-4xl lg:text-6xl leading-none tracking-tighter'>
                             OUR RECENT<br />
                             <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-300'>WORK.</span>
                         </h2>
@@ -135,7 +135,7 @@ const RecentWork = () => {
                 <div className='w-[90%] max-w-5xl mx-auto'>
                     <Reveal>
                         <div className='text-center mb-10'>
-                            <h3 className='font-tillitium font-black text-white text-2xl lg:text-3xl tracking-tight'>
+                            <h3 className='font-tillitium font-bold sm:font-black text-white text-xl sm:text-2xl lg:text-3xl tracking-tight'>
                                 See Us <span className='text-primary'>In Action</span>
                             </h3>
                             <p className='text-slate-500 mt-2 text-sm'>Watch our team deliver a premium installation</p>

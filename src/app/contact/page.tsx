@@ -49,7 +49,7 @@ const ContactPage = () => {
             </span>
           </Reveal>
           <Reveal>
-            <h1 className='font-tillitium font-black text-white text-5xl lg:text-7xl leading-none tracking-tighter'>
+            <h1 className='font-tillitium font-extrabold sm:font-black text-white text-4xl sm:text-5xl lg:text-7xl leading-none tracking-tighter'>
               CONTACT <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-300'>US.</span>
             </h1>
           </Reveal>
@@ -64,7 +64,7 @@ const ContactPage = () => {
       <div className='mx-auto grid w-[90%] max-w-6xl gap-10 py-16 lg:grid-cols-[1.1fr_1fr]'>
         <Reveal>
           <form onSubmit={handleSubmit} className='rounded-[2rem] bg-slate-900/50 backdrop-blur-md border border-white/10 p-8 lg:p-10 shadow-2xl h-full'>
-            <h2 className='text-3xl font-tillitium font-black text-white mb-2'>Send Us A Message</h2>
+            <h2 className='text-2xl sm:text-3xl font-tillitium font-extrabold sm:font-black text-white mb-2'>Send Us A Message</h2>
             <p className='text-slate-400 text-sm mb-8'>We typically reply within 24 hours.</p>
             
             <div className='grid gap-6 sm:grid-cols-2'>
@@ -109,7 +109,7 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <p className='text-xs font-black uppercase tracking-[0.2em] text-white/70'>Email Us</p>
-                  <p className='text-lg font-bold mt-1'>{CONTACT_EMAIL}</p>
+                  <p className='text-lg font-bold mt-1 break-all sm:break-normal'>{CONTACT_EMAIL}</p>
                 </div>
               </div>
               <div className='mt-8 pt-6 border-t border-white/20'>
@@ -139,7 +139,7 @@ const ContactPage = () => {
         <div className='w-[90%] max-w-6xl mx-auto'>
           <Reveal>
             <div className='text-center mb-10'>
-              <h2 className='font-tillitium font-black text-white text-3xl lg:text-4xl'>Direct Contacts</h2>
+              <h2 className='font-tillitium font-extrabold sm:font-black text-white text-2xl sm:text-3xl lg:text-4xl'>Direct Contacts</h2>
               <p className='text-slate-400 mt-3 text-sm'>Connect with our management team or reach out instantly via WhatsApp.</p>
             </div>
           </Reveal>
@@ -151,15 +151,15 @@ const ContactPage = () => {
                 <div className='space-y-4'>
                   <a href="mailto:vincent@gevacglobalservicesltd.com" className='group block'>
                     <p className='text-white font-bold text-sm group-hover:text-primary transition-colors'>Vincent</p>
-                    <p className='text-slate-400 text-xs'>vincent@gevacglobalservicesltd.com</p>
+                    <p className='text-slate-400 text-xs break-all'>vincent@gevacglobalservicesltd.com</p>
                   </a>
                   <a href="mailto:kenneth@gevacglobalservicesltd.com" className='group block'>
                     <p className='text-white font-bold text-sm group-hover:text-primary transition-colors'>Kenneth</p>
-                    <p className='text-slate-400 text-xs'>kenneth@gevacglobalservicesltd.com</p>
+                    <p className='text-slate-400 text-xs break-all'>kenneth@gevacglobalservicesltd.com</p>
                   </a>
                   <a href="mailto:info@gevacglobalservicesltd.com" className='group block'>
                     <p className='text-white font-bold text-sm group-hover:text-primary transition-colors'>General Info</p>
-                    <p className='text-slate-400 text-xs'>info@gevacglobalservicesltd.com</p>
+                    <p className='text-slate-400 text-xs break-all'>info@gevacglobalservicesltd.com</p>
                   </a>
                 </div>
               </div>

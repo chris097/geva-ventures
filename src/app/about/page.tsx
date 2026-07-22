@@ -43,7 +43,7 @@ const AboutPage = () => {
             </span>
           </Reveal>
           <Reveal>
-            <h1 className='font-tillitium font-black text-white text-5xl lg:text-7xl leading-none tracking-tighter'>
+            <h1 className='font-tillitium font-extrabold sm:font-black text-white text-4xl sm:text-5xl lg:text-7xl leading-none tracking-tighter'>
               GEVA <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-300'>VENTURES.</span>
             </h1>
           </Reveal>
@@ -59,8 +59,8 @@ const AboutPage = () => {
         <div className='w-[90%] max-w-6xl mx-auto'>
 
           <Reveal>
-            <p className='text-xl lg:text-3xl leading-relaxed text-slate-300 font-light border-l-4 border-primary pl-6 py-2'>
-              <span className='font-tillitium font-black text-white uppercase text-2xl lg:text-4xl'>GEVA VENTURES</span> is the dedicated elevators, escalators and automatic doors business of Gevac Global Services Ltd. We deliver modern vertical mobility systems for commercial, residential and healthcare developments nationwide, backed by certified engineers and customer-first service — from procurement and installation through to ongoing maintenance.
+            <p className='text-lg sm:text-xl lg:text-3xl leading-relaxed text-slate-300 font-light border-l-4 border-primary pl-6 py-2'>
+              <span className='font-tillitium font-bold sm:font-black text-white uppercase text-xl sm:text-2xl lg:text-4xl'>GEVA VENTURES</span> is the dedicated elevators, escalators and automatic doors business of Gevac Global Services Ltd. We deliver modern vertical mobility systems for commercial, residential and healthcare developments nationwide, backed by certified engineers and customer-first service — from procurement and installation through to ongoing maintenance.
             </p>
           </Reveal>
 
@@ -90,7 +90,7 @@ const AboutPage = () => {
           {stats.map((stat, i) => (
             <Reveal key={stat.label}>
               <div className='text-center p-8 rounded-3xl bg-white/5 border border-white/5 hover:border-primary/30 transition-colors duration-300 group h-full flex flex-col justify-center'>
-                <p className='text-5xl lg:text-6xl font-black font-tillitium text-white group-hover:text-primary transition-colors'><AnimatedCounter value={stat.number} /></p>
+                <p className='text-4xl sm:text-5xl lg:text-6xl font-bold sm:font-black font-tillitium text-white group-hover:text-primary transition-colors'><AnimatedCounter value={stat.number} /></p>
                 <p className='mt-4 text-xs font-bold uppercase tracking-[0.2em] text-slate-400'>{stat.label}</p>
               </div>
             </Reveal>
@@ -103,7 +103,7 @@ const AboutPage = () => {
           <Reveal>
             <div className='mb-12'>
               <p className='text-xs font-black uppercase tracking-[0.3em] text-accent mb-4'>Our Offices</p>
-              <h2 className='text-4xl lg:text-5xl font-tillitium font-black text-white'>Where to find us</h2>
+              <h2 className='text-3xl sm:text-4xl lg:text-5xl font-tillitium font-extrabold sm:font-black text-white'>Where to find us</h2>
             </div>
           </Reveal>
 

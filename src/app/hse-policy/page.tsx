@@ -28,7 +28,7 @@ const HSEPOLICY = () => {
     <main>
       <Header />
       <div className='bg-section py-16 text-center'>
-        <h1 className='text-4xl font-semibold text-primary sm:text-5xl'>Health, Safety & Employee Policy</h1>
+        <h1 className='text-3xl sm:text-4xl font-semibold text-primary lg:text-5xl'>Health, Safety & Employee Policy</h1>
         <p className='mx-auto mt-3 max-w-2xl text-lg text-muted'>Please read our HSE policy carefully before engaging our services.</p>
       </div>
       <div className='mx-auto w-[90%] max-w-4xl py-14'>
@@ -36,7 +36,7 @@ const HSEPOLICY = () => {
         <p className='mt-6 text-lg leading-relaxed text-ink'>The health and safety of our employees is the highest priority for GEVA VENTURES, a subsidiary of Gevac Global Services Ltd. No employee will be required to do work they consider unsafe; we comply with all applicable safety requirements and maintain occupational standards that equal or exceed industry best practices. Our safety committee, consisting of management and labour representatives, identifies hazards, removes obstacles to accident prevention, and evaluates our efforts to achieve an injury-free workplace.</p>
 
         <div className='mt-10'>
-          <h2 className='text-2xl font-bold text-primary'>GEVA VENTURES pledges to:</h2>
+          <h2 className='text-xl sm:text-2xl font-bold text-primary'>GEVA VENTURES pledges to:</h2>
           <ul className='mt-6 space-y-4'>
             {pledges.map((item) => (
               <li key={item} className='flex items-start gap-4'>

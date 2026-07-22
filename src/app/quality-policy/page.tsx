@@ -21,7 +21,7 @@ const QualityPolicy = () => {
     <main>
       <Header />
       <div className='bg-section py-16 text-center'>
-        <h1 className='text-4xl font-semibold text-primary sm:text-5xl'>Quality Policy</h1>
+        <h1 className='text-3xl sm:text-4xl font-semibold text-primary lg:text-5xl'>Quality Policy</h1>
         <p className='mx-auto mt-3 max-w-2xl text-lg text-muted'>Please read our quality policy carefully before engaging our services.</p>
       </div>
       <div className='mx-auto w-[90%] max-w-4xl py-14'>
@@ -32,7 +32,7 @@ const QualityPolicy = () => {
           <p>The policy of the company, for the manufacture and construction of the work and the service it provides, is clearly defined and meets the requirement of quality.</p>
         </div>
         <div className='mt-10'>
-          <h2 className='text-2xl font-bold text-primary'>GGS places particular emphasis on:</h2>
+          <h2 className='text-xl sm:text-2xl font-bold text-primary'>GGS places particular emphasis on:</h2>
           <ul className='mt-6 space-y-4'>
             {commitments.map((item) => (
               <li key={item} className='flex items-start gap-4'>

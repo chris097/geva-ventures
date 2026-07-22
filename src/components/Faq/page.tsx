@@ -17,7 +17,7 @@ const Faq = ({ limit, showHeading = true, showViewAll = false }: FaqProps) => {
     const toggle = (tag: number) => setOpenTag(prev => prev === tag ? null : tag);
 
     return (
-        <section id='faq' className='bg-slate-950 pb-28 pt-44'>
+        <section id='faq' className='bg-slate-950 pb-16 pt-16 lg:pb-28 lg:pt-44'>
             <div className='w-[90%] max-w-6xl mx-auto'>
 
                 {/* Two-column layout: heading left, FAQs right */}
@@ -30,7 +30,7 @@ const Faq = ({ limit, showHeading = true, showViewAll = false }: FaqProps) => {
                                 <span className='inline-block text-accent text-xs font-black tracking-[0.5em] uppercase mb-5 border border-accent/30 bg-accent/10 px-4 py-2 rounded-full'>
                                     FAQ
                                 </span>
-                                <h2 className='font-tillitium font-black text-white text-4xl lg:text-5xl leading-tight tracking-tighter mt-6 mb-6'>
+                                <h2 className='font-tillitium font-extrabold sm:font-black text-white text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tighter mt-6 mb-6'>
                                     YOUR <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-300'>QUESTIONS,</span><br />ANSWERED.
                                 </h2>
                                 <p className='text-slate-400 leading-relaxed text-base mb-8'>

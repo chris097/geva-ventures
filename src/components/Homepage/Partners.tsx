@@ -17,7 +17,7 @@ const Partners = () => {
             <div className='w-[90%] max-w-7xl mx-auto'>
                 <Reveal>
                     <div className='flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10'>
-                        <h3 className='font-tillitium font-black text-white text-2xl lg:text-3xl tracking-tight'>
+                        <h3 className='font-tillitium font-bold sm:font-black text-white text-xl sm:text-2xl lg:text-3xl tracking-tight'>
                             Trusted by <span className='text-primary'>Industry Leaders</span>
                         </h3>
                         <p className='text-slate-400 text-sm max-w-md'>

@@ -29,7 +29,7 @@ const ServicesPage = () => {
             </span>
           </Reveal>
           <Reveal>
-            <h1 className='font-tillitium font-black text-white text-5xl lg:text-7xl leading-none tracking-tighter'>
+            <h1 className='font-tillitium font-extrabold sm:font-black text-white text-4xl sm:text-5xl lg:text-7xl leading-none tracking-tighter'>
               OUR <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-300'>SERVICES.</span>
             </h1>
           </Reveal>
@@ -59,7 +59,7 @@ const ServicesPage = () => {
                         <Image src={service.image} alt={`${service.title} at GEVA VENTURES`} className='h-full w-full object-cover transition-transform duration-700 group-hover:scale-105' />
                         <div className='absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity duration-500' />
                         <div className='absolute bottom-0 left-0 p-8 lg:p-10'>
-                          <span className='inline-block px-5 py-2.5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl text-white font-black text-2xl lg:text-4xl tracking-tighter shadow-2xl'>
+                          <span className='inline-block px-5 py-2.5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl text-white font-bold sm:font-black text-xl sm:text-2xl lg:text-4xl tracking-tighter shadow-2xl'>
                             0{index + 1}
                           </span>
                         </div>
@@ -70,7 +70,7 @@ const ServicesPage = () => {
                   {/* Text Block */}
                   <div className='w-full lg:w-1/2 flex flex-col justify-center'>
                     <Reveal>
-                      <h2 className='text-4xl lg:text-5xl xl:text-6xl font-tillitium font-black uppercase text-white tracking-tighter mb-6 leading-tight'>
+                      <h2 className='text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-tillitium font-extrabold sm:font-black uppercase text-white tracking-tighter mb-6 leading-tight'>
                         {rest} {rest ? ' ' : ''}
                         <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-300'>
                           {lastWord}

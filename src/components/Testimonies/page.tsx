@@ -30,7 +30,7 @@ const Testimonies = () => {
     const initials = active.name.split(' ').slice(0, 2).map(n => n[0]).join('');
 
     return (
-        <section className='bg-slate-950 py-28'>
+        <section className='bg-slate-950 py-16 sm:py-28'>
             <div className='w-[90%] max-w-6xl mx-auto'>
 
                 {/* Header */}
@@ -39,7 +39,7 @@ const Testimonies = () => {
                         <span className='inline-block text-accent text-xs font-black tracking-[0.5em] uppercase mb-5 border border-accent/30 bg-accent/10 px-4 py-2 rounded-full'>
                             Client Stories
                         </span>
-                        <h2 className='font-tillitium font-black text-white text-4xl lg:text-5xl leading-tight tracking-tighter mt-4'>
+                        <h2 className='font-tillitium font-extrabold sm:font-black text-white text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tighter mt-4'>
                             WHAT OUR <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-400'>CLIENTS</span> SAY
                         </h2>
                     </div>
@@ -63,7 +63,7 @@ const Testimonies = () => {
                             </div>
 
                             {/* Quote */}
-                            <blockquote className='font-tillitium text-slate-200 text-xl lg:text-2xl leading-relaxed italic max-w-4xl mb-10'>
+                            <blockquote className='font-tillitium text-slate-200 text-lg sm:text-xl lg:text-2xl leading-relaxed italic max-w-4xl mb-10'>
                                 {active.description.replace(/^"|"$/g, '')}
                             </blockquote>
 
@@ -107,15 +107,15 @@ const Testimonies = () => {
 
                 {/* Trust indicators */}
                 <Reveal>
-                    <div className='grid grid-cols-3 gap-6 mt-10'>
+                    <div className='grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 mt-10'>
                         {[
                             { num: '1,000+', label: 'Happy clients' },
                             { num: '100%', label: 'Project success rate' },
                             { num: '24/7', label: 'Support available' },
                         ].map(({ num, label }) => (
-                            <div key={label} className='text-center border border-white/8 rounded-2xl py-6 hover:border-primary/30 transition-colors duration-300'>
-                                <p className='text-white font-black text-2xl font-tillitium'>{num}</p>
-                                <p className='text-slate-500 text-xs uppercase tracking-widest mt-1'>{label}</p>
+                            <div key={label} className='text-center border border-white/8 rounded-2xl py-4 sm:py-6 hover:border-primary/30 transition-colors duration-300'>
+                                <p className='text-white font-bold sm:font-black text-xl sm:text-2xl font-tillitium'>{num}</p>
+                                <p className='text-slate-500 text-[10px] sm:text-xs uppercase tracking-widest mt-1'>{label}</p>
                             </div>
                         ))}
                     </div>

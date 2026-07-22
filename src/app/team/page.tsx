@@ -59,7 +59,7 @@ const TeamPage = () => {
                         </span>
                     </Reveal>
                     <Reveal>
-                        <h1 className='font-tillitium font-black text-white text-5xl lg:text-7xl leading-none tracking-tighter'>
+                        <h1 className='font-tillitium font-extrabold sm:font-black text-white text-4xl sm:text-5xl lg:text-7xl leading-none tracking-tighter'>
                             MEET THE <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-300'>TEAM.</span>
                         </h1>
                     </Reveal>
@@ -73,7 +73,7 @@ const TeamPage = () => {
 
             {/* Values Strip */}
             <div className='bg-slate-900/50 border-y border-white/5 py-12'>
-                <div className='w-[90%] max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6'>
+                <div className='w-[90%] max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6'>
                     {values.map((v, i) => (
                         <Reveal key={i}>
                             <div className='flex flex-col items-center text-center p-6 rounded-2xl border border-white/5 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 group'>
@@ -130,7 +130,7 @@ const TeamPage = () => {
                         <span className='inline-block text-accent text-xs font-black tracking-[0.5em] uppercase mb-6 border border-accent/30 bg-accent/10 px-4 py-2 rounded-full'>
                             Join Our Team
                         </span>
-                        <h2 className='font-tillitium font-black text-white text-4xl lg:text-5xl leading-tight tracking-tighter mb-6'>
+                        <h2 className='font-tillitium font-extrabold sm:font-black text-white text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tighter mb-6'>
                             WE&apos;RE ALWAYS LOOKING FOR <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-300'>GREAT TALENT.</span>
                         </h2>
                         <p className='text-slate-400 text-lg leading-relaxed mb-10 max-w-2xl mx-auto'>
