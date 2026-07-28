@@ -7,9 +7,61 @@ import { projectGallery, projects } from '@/data/projects';
 import bannerImg from '../../../public/images/recent_work_banner.png';
 
 const RecentWork = () => {
-    const [playing, setPlaying] = useState<boolean>(false);
+    const [playing, setPlaying] = useState<boolean>(true);
+    const [isMuted, setIsMuted] = useState<boolean>(true);
     const [hovered, setHovered] = useState<boolean>(false);
+    const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(0);
     const playRef = useRef<HTMLVideoElement>(null);
+
+    const videos = [
+        {
+            title: "Escalator & Lift System Installation",
+            description: "Watch our site engineering team deliver a premium escalator & lift system installation.",
+            src: "/action_video.mp4",
+            tag: "Installation"
+        },
+        {
+            title: "Elevator Modernization Service",
+            description: "Witness the technical modernization process of standard elevator cabs and control systems.",
+            src: "/action_video.mp4",
+            tag: "Modernization"
+        },
+        {
+            title: "Routine Maintenance & Testing",
+            description: "Our dedicated technical team carrying out routine safety checks and load testing.",
+            src: "/action_video.mp4",
+            tag: "Maintenance"
+        }
+    ];
+
+    const selectVideo = (index: number) => {
+        setCurrentVideoIndex(index);
+        setPlaying(true);
+        // Force the video element to reload and play
+        setTimeout(() => {
+            if (playRef.current) {
+                playRef.current.load();
+                playRef.current.play().catch(e => console.log(e));
+            }
+        }, 50);
+    };
+
+    const handlePlayPause = () => {
+        if (!playRef.current) return;
+        if (playing) {
+            playRef.current.pause();
+            setPlaying(false);
+        } else {
+            playRef.current.play().catch(e => console.log(e));
+            setPlaying(true);
+        }
+    };
+
+    const handleMuteToggle = () => {
+        if (!playRef.current) return;
+        playRef.current.muted = !isMuted;
+        setIsMuted(!isMuted);
+    };
 
     // Pick 6 prominent projects to feature in the gallery
     const featuredProjects = [
@@ -20,15 +72,6 @@ const RecentWork = () => {
         projects[2],  // Vinmillan Hotel
         projects[27], // PAMO Teaching Hospital
     ];
-
-    const handlePlay = () => {
-        playRef.current?.play();
-        setPlaying(true);
-    };
-    const handlePause = () => {
-        playRef.current?.pause();
-        setPlaying(false);
-    };
 
     return (
         <section id='company' className='bg-white overflow-hidden'>
@@ -142,47 +185,131 @@ const RecentWork = () => {
                         </div>
                     </Reveal>
                     <Reveal>
-                        <div
-                            onMouseEnter={() => setHovered(true)}
-                            onMouseLeave={() => setHovered(false)}
-                            className='relative overflow-hidden rounded-3xl bg-slate-950 border border-white/10 shadow-2xl lg:h-[560px] h-[280px] flex items-center justify-center'
-                        >
-                            {/* Play / Pause overlay */}
-                            {!playing && (
-                                <button
-                                    type='button'
-                                    onClick={handlePlay}
-                                    className='absolute z-30 flex items-center justify-center w-20 h-20 rounded-full bg-primary/90 hover:bg-primary border-4 border-white/30 shadow-2xl shadow-primary/50 transition-all duration-300 hover:scale-110'
-                                    aria-label='Play video'
+                        <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 mt-10'>
+                            {/* Main Video Player */}
+                            <div className='lg:col-span-2'>
+                                <div
+                                    onMouseEnter={() => setHovered(true)}
+                                    onMouseLeave={() => setHovered(false)}
+                                    onClick={handlePlayPause}
+                                    className='group relative overflow-hidden rounded-3xl bg-slate-950 border border-white/10 shadow-2xl lg:h-[480px] h-[280px] cursor-pointer'
                                 >
-                                    <svg viewBox='0 0 24 24' fill='white' className='w-8 h-8 ml-1'>
-                                        <path d='M8 5v14l11-7z' />
-                                    </svg>
-                                </button>
-                            )}
-                            {playing && hovered && (
-                                <button
-                                    type='button'
-                                    onClick={handlePause}
-                                    className='absolute z-50 flex items-center justify-center w-16 h-16 rounded-full bg-black/60 hover:bg-black/80 border border-white/20 backdrop-blur-sm transition-all duration-300'
-                                    aria-label='Pause video'
-                                >
-                                    <svg viewBox='0 0 24 24' fill='white' className='w-6 h-6'>
-                                        <path d='M6 19h4V5H6v14zm8-14v14h4V5h-4z' />
-                                    </svg>
-                                </button>
-                            )}
-                            <video
-                                ref={playRef}
-                                muted
-                                onEnded={() => setPlaying(false)}
-                                className='w-full h-full object-cover'
-                            >
-                                <source
-                                    src='https://drive.google.com/uc?id=13wQVOZRdZDn5ixXo-wlyy48NaoTuGsZ1&export=download'
-                                    type='video/mp4'
-                                />
-                            </video>
+                                    <video
+                                        ref={playRef}
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                        onPlay={() => setPlaying(true)}
+                                        onPause={() => setPlaying(false)}
+                                        className='w-full h-full object-cover pointer-events-none'
+                                        key={currentVideoIndex}
+                                    >
+                                        <source
+                                            src={videos[currentVideoIndex].src}
+                                            type='video/mp4'
+                                        />
+                                    </video>
+
+                                    {/* Centered play/pause overlay */}
+                                    <div className={`absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-[1px] transition-opacity duration-300 ${(!playing || hovered) ? 'opacity-100' : 'opacity-0'}`}>
+                                        <div
+                                            className='flex items-center justify-center w-20 h-20 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95'
+                                        >
+                                            {playing ? (
+                                                <svg viewBox='0 0 24 24' fill='white' className='w-8 h-8'>
+                                                    <path d='M6 19h4V5H6v14zm8-14v14h4V5h-4z' />
+                                                </svg>
+                                            ) : (
+                                                <svg viewBox='0 0 24 24' fill='white' className='w-8 h-8 ml-1'>
+                                                    <path d='M8 5v14l11-7z' />
+                                                </svg>
+                                            )}
+                                        </div>
+                                    </div>
+
+                                    {/* Bottom Glassmorphic Control Bar */}
+                                    <div
+                                        onClick={(e) => e.stopPropagation()}
+                                        className={`absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-950/60 border border-white/10 backdrop-blur-lg flex items-center justify-between transition-all duration-300 ${hovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                                    >
+                                        <div className='flex items-center gap-4'>
+                                            <button
+                                                type='button'
+                                                onClick={handlePlayPause}
+                                                className='text-white hover:text-primary transition-colors'
+                                                aria-label={playing ? 'Pause' : 'Play'}
+                                            >
+                                                {playing ? (
+                                                    <svg viewBox='0 0 24 24' fill='currentColor' className='w-5 h-5'>
+                                                        <path d='M6 19h4V5H6v14zm8-14v14h4V5h-4z' />
+                                                    </svg>
+                                                ) : (
+                                                    <svg viewBox='0 0 24 24' fill='currentColor' className='w-5 h-5'>
+                                                        <path d='M8 5v14l11-7z' />
+                                                    </svg>
+                                                )}
+                                            </button>
+                                            <span className='text-xs font-semibold tracking-wider text-slate-300 uppercase'>
+                                                {playing ? 'In Action' : 'Paused'}
+                                            </span>
+                                        </div>
+
+                                        <div className='flex items-center gap-3'>
+                                            <button
+                                                type='button'
+                                                onClick={handleMuteToggle}
+                                                className='p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all hover:scale-105 active:scale-95'
+                                                aria-label={isMuted ? 'Unmute' : 'Mute'}
+                                            >
+                                                {isMuted ? (
+                                                    <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className='w-4 h-4'>
+                                                        <path d='M11 5L6 9H2v6h4l5 4V5z' />
+                                                        <line x1='23' y1='9' x2='17' y2='15' />
+                                                        <line x1='17' y1='9' x2='23' y2='15' />
+                                                    </svg>
+                                                ) : (
+                                                    <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className='w-4 h-4'>
+                                                        <polygon points='11 5 6 9 2 9 2 15 6 15 11 19 11 5' />
+                                                        <path d='M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07' />
+                                                    </svg>
+                                                )}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Playlist Selector Queue */}
+                            <div className='flex flex-col gap-3 lg:h-[480px] overflow-y-auto pr-1'>
+                                <h4 className='text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 mb-1'>Playlist Queue</h4>
+                                {videos.map((vid, idx) => (
+                                    <button
+                                        key={idx}
+                                        onClick={() => selectVideo(idx)}
+                                        className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 flex flex-col gap-2 ${idx === currentVideoIndex ? 'bg-primary/10 border-primary/40 shadow-lg shadow-primary/5' : 'bg-slate-900/50 border-white/5 hover:border-white/20 hover:bg-slate-900/80'}`}
+                                    >
+                                        <div className='flex justify-between items-center w-full'>
+                                            <span className={`inline-block px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider rounded-md ${idx === currentVideoIndex ? 'bg-primary text-white' : 'bg-white/5 text-slate-400 border border-white/5'}`}>
+                                                {vid.tag}
+                                            </span>
+                                            {idx === currentVideoIndex && playing && (
+                                                <span className='flex gap-1 items-end h-3'>
+                                                    <span className='w-[3px] bg-primary animate-pulse h-2.5' style={{ animationDuration: '0.6s' }} />
+                                                    <span className='w-[3px] bg-primary animate-pulse h-3.5' style={{ animationDuration: '0.8s' }} />
+                                                    <span className='w-[3px] bg-primary animate-pulse h-2' style={{ animationDuration: '0.5s' }} />
+                                                </span>
+                                            )}
+                                        </div>
+                                        <h5 className='text-white font-tillitium font-bold text-sm lg:text-base leading-snug line-clamp-1'>
+                                            {vid.title}
+                                        </h5>
+                                        <p className='text-slate-400 text-xs line-clamp-2 leading-relaxed'>
+                                            {vid.description}
+                                        </p>
+                                    </button>
+                                ))}
+                            </div>
                         </div>
                     </Reveal>
                 </div>
