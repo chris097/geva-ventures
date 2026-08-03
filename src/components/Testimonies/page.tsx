@@ -52,7 +52,7 @@ const Testimonies = () => {
 
                     <div className='relative bg-slate-900 border border-white/8 rounded-3xl p-10 lg:p-16 overflow-hidden'>
                         {/* Large quote mark */}
-                        <div className='absolute top-8 right-8 text-[200px] leading-none text-white/3 font-serif select-none pointer-events-none'>❝</div>
+                        <div className='absolute top-4 right-4 sm:top-8 sm:right-8 text-[100px] sm:text-[150px] lg:text-[200px] leading-none text-white/3 font-serif select-none pointer-events-none'>❝</div>
 
                         <div className={`transition-opacity duration-250 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
                             {/* Stars */}
@@ -69,7 +69,7 @@ const Testimonies = () => {
 
                             {/* Author */}
                             <div className='flex items-center gap-5'>
-                                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${avatarColors[activeIndex % avatarColors.length]} flex items-center justify-center font-black text-white text-xl shadow-xl`}>
+                                <div className={`shrink-0 w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br ${avatarColors[activeIndex % avatarColors.length]} flex items-center justify-center font-black text-white text-sm sm:text-xl shadow-md sm:shadow-xl`}>
                                     {initials}
                                 </div>
                                 <div>
