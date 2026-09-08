@@ -1,139 +1,321 @@
+"use client";
 import React, { useRef, useState } from 'react';
-import Image, { StaticImageData } from 'next/image';
-import recent1 from "@/public/images/gevac2.jpeg"
-import recent2 from "@/public/images/gevac3.jpeg"
-import recent3 from "@/public/images/gevac4.jpeg"
-import recent4 from "@/public/images/gevac5.jpeg"
-import recent5 from "@/public/images/gevac6.jpeg"
-import recent6 from "@/public/images/gevac7.jpeg"
+import Image from 'next/image';
+import Link from 'next/link';
 import { Reveal } from '../utils/Reveal';
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-      items: 2
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-      items: 1.5
-  }
-};
-
-const recents: { img: StaticImageData }[] = [
-    { img: recent1 },
-    { img: recent2 },
-    { img: recent3 },
-    { img: recent4 },
-    { img: recent5 },
-    { img: recent6 },
-];
+import { projectGallery, projects } from '@/data/projects';
+import bannerImg from '../../../public/images/recent_work_banner.png';
 
 const RecentWork = () => {
+    const [playing, setPlaying] = useState<boolean>(true);
+    const [isMuted, setIsMuted] = useState<boolean>(true);
+    const [hovered, setHovered] = useState<boolean>(false);
+    const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(0);
+    const playRef = useRef<HTMLVideoElement>(null);
 
-     const [playing, setPlaying] = useState<boolean>(false);
-    const [toggle, setToogle] = useState<boolean>(false);
-
-    const playRef = useRef<HTMLVideoElement>(null)
-
-    const handlePlay = () => {
-        if (playing === false) {
-            playRef.current && playRef.current?.play();
+    const videos = [
+        {
+            title: "Escalator & Lift System Installation",
+            description: "Watch our site engineering team deliver a premium escalator & lift system installation.",
+            src: "/action_video.mp4",
+            tag: "Installation"
+        },
+        {
+            title: "Elevator Modernization Service",
+            description: "Witness the technical modernization process of standard elevator cabs and control systems.",
+            src: "/action_video.mp4",
+            tag: "Modernization"
+        },
+        {
+            title: "Routine Maintenance & Testing",
+            description: "Our dedicated technical team carrying out routine safety checks and load testing.",
+            src: "/action_video.mp4",
+            tag: "Maintenance"
         }
-        setPlaying(true)
-    }
-    const handlePause = () => {
-        if (playing === true) {
-            playRef.current && playRef.current?.pause();
+    ];
+
+    const selectVideo = (index: number) => {
+        setCurrentVideoIndex(index);
+        setPlaying(true);
+        // Force the video element to reload and play
+        setTimeout(() => {
+            if (playRef.current) {
+                playRef.current.load();
+                playRef.current.play().catch(e => console.log(e));
+            }
+        }, 50);
+    };
+
+    const handlePlayPause = () => {
+        if (!playRef.current) return;
+        if (playing) {
+            playRef.current.pause();
+            setPlaying(false);
+        } else {
+            playRef.current.play().catch(e => console.log(e));
+            setPlaying(true);
         }
-        setPlaying(false)
-    }
+    };
+
+    const handleMuteToggle = () => {
+        if (!playRef.current) return;
+        playRef.current.muted = !isMuted;
+        setIsMuted(!isMuted);
+    };
+
+    // Pick 6 prominent projects to feature in the gallery
+    const featuredProjects = [
+        projects[18], // NDDC
+        projects[13], // 1004 Estate
+        projects[0],  // Bravado Mall
+        projects[1],  // Maas Central Hotel
+        projects[2],  // Vinmillan Hotel
+        projects[27], // PAMO Teaching Hospital
+    ];
 
     return (
-        <div id='company' className='overflow-x-hidden'>
-            <div className='lg:pt-32 pt-24'>
-                <Reveal>
-                    <div className='lg:flex justify-between items-center w-[90%] mx-auto'>
-                        <div>
-                            <p className='font-tillitium uppercase text-primarypink text-lg font-semibold'>Latest Projects</p>
-                            <p className='lg:text-[40px] font-tillitium text-primaryblack text-[32px] font-bold'>OUR RECENT WORK</p>
-                        </div>
-                        <button className='bg-primarypink text-white uppercase px-6 py-3 rounded mt-5 text-sm font-medium'>View Projects</button>
-                    </div>
-                </Reveal>
-                <div>
-                    <Carousel
-                        responsive={responsive}
-                        autoPlay={true}
-                        swipeable={true}
-                        draggable={true}
-                        showDots={false}
-                        infinite={true}
-                        partialVisible={true}
-                        // dotListClass="custom-dot-list-style"
-                        // itemClass='carousel-item-padding-40-px'
-                        className='w-full flex lg:justify-between gap-4 pr-16 mt-16'
-                    >
-                        {recents.map((recent, index) => (
-                            <div key={index} className='lg:w-[550px] lg:h-[434px] w-[450px] mx-72 h-[300px]'>
-                                <Image className='w-full h-full object-fill lg:pr-20 sm:pr-[200px] pr-[212px]' src={recent.img} alt='elevator recent pic' />
-                            </div>
-                        ))}
-                    </Carousel>
+        <section id='company' className='bg-white overflow-hidden'>
+
+            {/* ── Banner strip ── */}
+            <div className='relative h-[420px] lg:h-[500px] overflow-hidden'>
+                <Image
+                    src={bannerImg}
+                    alt='GEVAC Ventures completed projects'
+                    className='w-full h-full object-cover object-center'
+                    priority
+                />
+                <div className='absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/80 to-slate-950/40' />
+                {/* Decorative dots */}
+                <div className='absolute inset-0 opacity-10'
+                    style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }}
+                />
+
+                <div className='absolute inset-0 flex flex-col justify-center w-[90%] mx-auto max-w-7xl left-0 right-0'>
+                    <Reveal>
+                        <span className='inline-block text-accent text-xs font-black tracking-[0.5em] uppercase mb-5 border border-accent/30 bg-accent/10 px-4 py-2 rounded-full w-fit'>
+                            Portfolio
+                        </span>
+                    </Reveal>
+                    <Reveal>
+                        <h2 className='font-tillitium font-extrabold sm:font-black text-white text-3xl sm:text-4xl lg:text-6xl leading-none tracking-tighter'>
+                            OUR RECENT<br />
+                            <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-300'>WORK.</span>
+                        </h2>
+                    </Reveal>
+                    <Reveal>
+                        <p className='text-slate-400 text-base mt-5 max-w-lg leading-relaxed'>
+                            From hospitals to hotels, malls to skyscrapers — we&apos;ve installed and maintained elevators and escalators across Nigeria.
+                        </p>
+                    </Reveal>
+                    <Reveal>
+                        <Link
+                            href='/projects'
+                            className='mt-8 w-fit inline-flex items-center gap-3 bg-gradient-to-r from-primary to-blue-500 text-white font-bold text-sm px-8 py-4 rounded-2xl shadow-xl shadow-primary/40 hover:scale-105 transition-all duration-300'
+                        >
+                            View All Projects <span>→</span>
+                        </Link>
+                    </Reveal>
                 </div>
-                <div className='bg-yabalightyellow h-auto xl:pt-40 xl:pb-20 md:py-10 py-7'>
-                    <div className='w-[90%] mx-auto'>
-                        {/* <div className='border-yabayellow text-yabayellow bg-yabalighteryellow text-base font-circular flex justify-center items-center rounded-[8px] border-[0.5px] w-[110px] h-[40px]'>About Us</div>
-                <p className='lg:text-2xl sm:text-xl text-base font-circular font-[450] w-[90%] text-primaryblack mt-4'>GEVAC GLOBAL SERVICES LTD is a company incorporated under the laws of the Federal Republic of Nigeria with registration Number RV122469 The Company was formed to provide expert indigenous services to support local and foreign firms operating within the shores of Nigeria.GEVAC GLOBAL SERVICES LIMITED is managed by professionals with experience spanning over many years in their fields.</p> */}
-                        <div onMouseLeave={() => setToogle(false)} className='border bg-black relative z-40 lg:h-[600px] md:h-[400px] h-[320px] rounded mt-[37px] flex justify-center items-center'>
-                            <div className='flex justify-center items-center w-full h-full'>
-                                {playing === false && <button type='button' onClick={handlePlay} className='flex absolute z-50'>
-                                    <svg className='cursor-pointer' width="56px" height="56px" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path className='fill-[#244061] animate-pulse bg-[#244061]' opacity="0.4" d="M27.9951 55.8977C43.4057 55.8977 55.8984 43.405 55.8984 27.9944C55.8984 12.5838 43.4057 0.0910645 27.9951 0.0910645C12.5845 0.0910645 0.0917969 12.5838 0.0917969 27.9944C0.0917969 43.405 12.5845 55.8977 27.9951 55.8977Z" />
-                                        <path opacity="0.4" d="M27.9945 56C12.559 56 0 43.4319 0 27.9945C0 12.5571 12.559 0 27.9945 0C43.4301 0 56 12.559 56 27.9945C56 43.4301 43.4319 56 27.9945 56ZM27.9945 0.18241C12.6593 0.18241 0.18241 12.6593 0.18241 27.9945C0.18241 43.3298 12.6593 55.8176 27.9945 55.8176C43.3298 55.8176 55.8176 43.3316 55.8176 27.9945C55.8176 12.6575 43.3316 0.18241 27.9945 0.18241Z" fill="#244061" />
-                                        <path opacity="0.4" d="M27.9943 51.1572C23.4124 51.1572 18.9335 49.7985 15.1239 47.253C11.3142 44.7075 8.34494 41.0894 6.59155 36.8564C4.83816 32.6233 4.3794 27.9654 5.27327 23.4716C6.16714 18.9778 8.3735 14.85 11.6133 11.6102C14.8532 8.37032 18.981 6.16396 23.4748 5.27009C27.9686 4.37622 32.6265 4.83499 36.8596 6.58838C41.0926 8.34177 44.7107 11.311 47.2562 15.1207C49.8017 18.9303 51.1604 23.4093 51.1604 27.9911C51.1546 34.1333 48.712 40.0224 44.3688 44.3656C40.0256 48.7088 34.1365 51.1514 27.9943 51.1572ZM27.9943 5.01649C23.4485 5.01649 19.0048 6.36446 15.2252 8.88995C11.4455 11.4154 8.49966 15.005 6.76008 19.2047C5.02049 23.4044 4.56534 28.0257 5.45217 32.4841C6.339 36.9425 8.52799 41.0378 11.7423 44.2522C14.9566 47.4665 19.052 49.6555 23.5104 50.5423C27.9688 51.4291 32.59 50.974 36.7897 49.2344C40.9895 47.4948 44.579 44.5489 47.1045 40.7693C49.63 36.9896 50.978 32.546 50.978 28.0002C50.9727 21.9062 48.5495 16.0633 44.2403 11.7541C39.9312 7.445 34.0883 5.02181 27.9943 5.01649Z" fill="#FF8B00" />
-                                        <path d="M27.9938 48.6546C39.4039 48.6546 48.6536 39.4049 48.6536 27.9948C48.6536 16.5847 39.4039 7.33496 27.9938 7.33496C16.5837 7.33496 7.33398 16.5847 7.33398 27.9948C7.33398 39.4049 16.5837 48.6546 27.9938 48.6546Z" fill="#FF8B00" />
-                                        <path d="M36.0956 27.9943L22.0117 19.8643V36.1261L36.0956 27.9943Z" fill="white" />
-                                    </svg>
-                                </button>}
-                                {toggle === true && playing === true && <button className='flex absolute z-50' type='button' onClick={handlePause}>
-                                    <svg className='w-[60px] h-[60px]' viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_561_10)">
-                                            <path opacity="0.4" d="M19.9969 38.6716C31.0044 38.6716 39.9277 30.0286 39.9277 19.3669C39.9277 8.7053 31.0044 0.0623169 19.9969 0.0623169C8.98929 0.0623169 0.0659103 8.7053 0.0659103 19.3669C0.0659103 30.0286 8.98929 38.6716 19.9969 38.6716Z" fill="#244061" />
-                                            <path opacity="0.4" d="M19.9961 38.743C8.97068 38.743 -7.62939e-06 30.0479 -7.62939e-06 19.3677C-7.62939e-06 8.68747 8.97068 -6.10352e-05 19.9961 -6.10352e-05C31.0215 -6.10352e-05 40 8.68874 40 19.3677C40 30.0466 31.0227 38.743 19.9961 38.743ZM19.9961 0.126138C9.04234 0.126138 0.130286 8.75815 0.130286 19.3677C0.130286 29.9772 9.04234 38.6168 19.9961 38.6168C30.9499 38.6168 39.8697 29.9785 39.8697 19.3677C39.8697 8.75688 30.9511 0.126138 19.9961 0.126138Z" fill="#FF8B00" />
-                                            <path opacity="0.4" d="M19.9945 35.3924C16.7217 35.3924 13.5225 34.4525 10.8014 32.6913C8.08016 30.9303 5.95926 28.4272 4.70685 25.4985C3.45443 22.5699 3.12674 19.3474 3.76521 16.2384C4.40369 13.1294 5.97966 10.2736 8.29384 8.03217C10.608 5.79072 13.5565 4.26427 16.7662 3.64586C19.9761 3.02744 23.3032 3.34484 26.3269 4.55789C29.3505 5.77097 31.9347 7.82521 33.753 10.4609C35.5712 13.0966 36.5417 16.1953 36.5417 19.3651C36.5376 23.6146 34.7929 27.6888 31.6906 30.6937C28.5882 33.6985 24.3819 35.3884 19.9945 35.3924ZM19.9945 3.4704C16.7475 3.4704 13.5735 4.40298 10.8737 6.15022C8.17398 7.89744 6.06978 10.3808 4.82723 13.2864C3.58466 16.1919 3.25955 19.3891 3.893 22.4736C4.52645 25.5581 6.09001 28.3914 8.38596 30.6152C10.6819 32.839 13.6071 34.3535 16.7917 34.967C19.9762 35.5806 23.2772 35.2656 26.277 34.0621C29.2767 32.8586 31.8407 30.8206 33.6447 28.2056C35.4486 25.5906 36.4115 22.5165 36.4115 19.3714C36.4076 15.1554 34.6767 11.113 31.5989 8.13178C28.5209 5.15054 24.3474 3.47408 19.9945 3.4704Z" fill="#FF8B00" />
-                                            <path d="M19.9962 33.6608C28.1464 33.6608 34.7532 27.2615 34.7532 19.3675C34.7532 11.4736 28.1464 5.07428 19.9962 5.07428C11.8462 5.07428 5.23926 11.4736 5.23926 19.3675C5.23926 27.2615 11.8462 33.6608 19.9962 33.6608Z" fill="#FF8B00" />
-                                            <path d="M13 26H17.6667V12H13V26ZM22.3333 12V26H27V12H22.3333Z" fill="white" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_561_10">
-                                                <rect width="40" height="40" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>}
-                                <div onMouseOver={() => setToogle(true)} className='w-full h-full'>
-                                    <video muted ref={playRef} onEnded={() => setPlaying(false)} className="object-fill object-top h-full min-w-full">
-                                        <source src="https://drive.google.com/uc?id=13wQVOZRdZDn5ixXo-wlyy48NaoTuGsZ1&export=download"
-                                            type="video/mp4" />
-                                    </video>
-                                </div>
-                            </div>
-                        </div>
+            </div>
+
+            {/* ── Photo Grid ── */}
+            <div className='bg-slate-950 py-14'>
+                <div className='w-[90%] max-w-7xl mx-auto'>
+                    {/* Section label */}
+                    <div className='flex items-center justify-between mb-8'>
+                        <p className='text-slate-500 text-xs uppercase tracking-[0.4em] font-bold'>Project Gallery</p>
+                        <Link href='/projects' className='text-primary text-xs font-bold hover:underline underline-offset-4 transition-all'>View All →</Link>
+                    </div>
+
+                    {/* Bento grid layout */}
+                    <div className='grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 auto-rows-[130px] lg:auto-rows-[160px]'>
+                        {projectGallery.map((item, index) => {
+                            let gridClass = '';
+                            // 3-col bento logic:
+                            // Desktop: 0=2x2, 1=1x1, 2=1x1, 3,4,5=1x1
+                            // Mobile: 0=2x2, 1,2=1x1, 3,4=1x1, 5=2x1
+                            if (index === 0) gridClass = 'col-span-2 row-span-2';
+                            else if (index === 5) gridClass = 'col-span-2 lg:col-span-1 row-span-1';
+                            else gridClass = 'col-span-1 row-span-1';
+
+                            const project = featuredProjects[index];
+
+                            return (
+                                <Reveal key={index} className={`h-full ${gridClass}`}>
+                                    <div className='group relative w-full h-full overflow-hidden rounded-xl border border-white/5 hover:border-primary/40 transition-all duration-300 cursor-pointer'>
+                                        <Image
+                                            src={item.img}
+                                            alt={project?.name || `Project ${index + 1}`}
+                                            className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'
+                                        />
+                                        {/* Gradient overlay always visible at bottom, darkens on hover */}
+                                        <div className='absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300' />
+
+                                        {/* Text container */}
+                                        <div className='absolute bottom-0 left-0 right-0 p-4 lg:p-6 flex flex-col justify-end'>
+                                            <div>
+                                                <span className='inline-block px-2 py-1 bg-white/10 backdrop-blur-md rounded-md text-[9px] lg:text-[10px] text-white/90 uppercase font-bold tracking-widest mb-2'>
+                                                    {project?.region} • {project?.year}
+                                                </span>
+                                                <h4 className='text-white font-tillitium font-bold text-base lg:text-xl leading-tight line-clamp-1'>
+                                                    {project?.name}
+                                                </h4>
+                                                <p className='text-slate-300 text-xs mt-1.5 line-clamp-1'>
+                                                    {project?.location} • {project?.lifts} Lift(s)
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Reveal>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
-        </div>
+
+            {/* ── Video Section ── */}
+            <div className='bg-slate-900 py-16'>
+                <div className='w-[90%] max-w-5xl mx-auto'>
+                    <Reveal>
+                        <div className='text-center mb-10'>
+                            <h3 className='font-tillitium font-bold sm:font-black text-white text-xl sm:text-2xl lg:text-3xl tracking-tight'>
+                                See Us <span className='text-primary'>In Action</span>
+                            </h3>
+                            <p className='text-slate-500 mt-2 text-sm'>Watch our team deliver a premium installation</p>
+                        </div>
+                    </Reveal>
+                    <Reveal>
+                        <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 mt-10'>
+                            {/* Main Video Player */}
+                            <div className='lg:col-span-2'>
+                                <div
+                                    onMouseEnter={() => setHovered(true)}
+                                    onMouseLeave={() => setHovered(false)}
+                                    onClick={handlePlayPause}
+                                    className='group relative overflow-hidden rounded-3xl bg-slate-950 border border-white/10 shadow-2xl lg:h-[480px] h-[280px] cursor-pointer'
+                                >
+                                    <video
+                                        ref={playRef}
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                        onPlay={() => setPlaying(true)}
+                                        onPause={() => setPlaying(false)}
+                                        className='w-full h-full object-cover pointer-events-none'
+                                        key={currentVideoIndex}
+                                    >
+                                        <source
+                                            src={videos[currentVideoIndex].src}
+                                            type='video/mp4'
+                                        />
+                                    </video>
+
+                                    {/* Centered play/pause overlay */}
+                                    <div className={`absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-[1px] transition-opacity duration-300 ${(!playing || hovered) ? 'opacity-100' : 'opacity-0'}`}>
+                                        <div
+                                            className='flex items-center justify-center w-20 h-20 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95'
+                                        >
+                                            {playing ? (
+                                                <svg viewBox='0 0 24 24' fill='white' className='w-8 h-8'>
+                                                    <path d='M6 19h4V5H6v14zm8-14v14h4V5h-4z' />
+                                                </svg>
+                                            ) : (
+                                                <svg viewBox='0 0 24 24' fill='white' className='w-8 h-8 ml-1'>
+                                                    <path d='M8 5v14l11-7z' />
+                                                </svg>
+                                            )}
+                                        </div>
+                                    </div>
+
+                                    {/* Bottom Glassmorphic Control Bar */}
+                                    <div
+                                        onClick={(e) => e.stopPropagation()}
+                                        className={`absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-950/60 border border-white/10 backdrop-blur-lg flex items-center justify-between transition-all duration-300 ${hovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                                    >
+                                        <div className='flex items-center gap-4'>
+                                            <button
+                                                type='button'
+                                                onClick={handlePlayPause}
+                                                className='text-white hover:text-primary transition-colors'
+                                                aria-label={playing ? 'Pause' : 'Play'}
+                                            >
+                                                {playing ? (
+                                                    <svg viewBox='0 0 24 24' fill='currentColor' className='w-5 h-5'>
+                                                        <path d='M6 19h4V5H6v14zm8-14v14h4V5h-4z' />
+                                                    </svg>
+                                                ) : (
+                                                    <svg viewBox='0 0 24 24' fill='currentColor' className='w-5 h-5'>
+                                                        <path d='M8 5v14l11-7z' />
+                                                    </svg>
+                                                )}
+                                            </button>
+                                            <span className='text-xs font-semibold tracking-wider text-slate-300 uppercase'>
+                                                {playing ? 'In Action' : 'Paused'}
+                                            </span>
+                                        </div>
+
+                                        <div className='flex items-center gap-3'>
+                                            <button
+                                                type='button'
+                                                onClick={handleMuteToggle}
+                                                className='p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-all hover:scale-105 active:scale-95'
+                                                aria-label={isMuted ? 'Unmute' : 'Mute'}
+                                            >
+                                                {isMuted ? (
+                                                    <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className='w-4 h-4'>
+                                                        <path d='M11 5L6 9H2v6h4l5 4V5z' />
+                                                        <line x1='23' y1='9' x2='17' y2='15' />
+                                                        <line x1='17' y1='9' x2='23' y2='15' />
+                                                    </svg>
+                                                ) : (
+                                                    <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className='w-4 h-4'>
+                                                        <polygon points='11 5 6 9 2 9 2 15 6 15 11 19 11 5' />
+                                                        <path d='M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07' />
+                                                    </svg>
+                                                )}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Playlist Selector Queue */}
+                            <div className='flex flex-col gap-3 lg:h-[480px] overflow-y-auto pr-1'>
+                                <h4 className='text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 mb-1'>Playlist Queue</h4>
+                                {videos.map((vid, idx) => (
+                                    <button
+                                        key={idx}
+                                        onClick={() => selectVideo(idx)}
+                                        className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 flex flex-col gap-2 ${idx === currentVideoIndex ? 'bg-primary/10 border-primary/40 shadow-lg shadow-primary/5' : 'bg-slate-900/50 border-white/5 hover:border-white/20 hover:bg-slate-900/80'}`}
+                                    >
+                                        <div className='flex justify-between items-center w-full'>
+                                            <span className={`inline-block px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider rounded-md ${idx === currentVideoIndex ? 'bg-primary text-white' : 'bg-white/5 text-slate-400 border border-white/5'}`}>
+                                                {vid.tag}
+                                            </span>
+                                            {idx === currentVideoIndex && playing && (
+                                                <span className='flex gap-1 items-end h-3'>
+                                                    <span className='w-[3px] bg-primary animate-pulse h-2.5' style={{ animationDuration: '0.6s' }} />
+                                                    <span className='w-[3px] bg-primary animate-pulse h-3.5' style={{ animationDuration: '0.8s' }} />
+                                                    <span className='w-[3px] bg-primary animate-pulse h-2' style={{ animationDuration: '0.5s' }} />
+                                                </span>
+                                            )}
+                                        </div>
+                                        <h5 className='text-white font-tillitium font-bold text-sm lg:text-base leading-snug line-clamp-1'>
+                                            {vid.title}
+                                        </h5>
+                                        <p className='text-slate-400 text-xs line-clamp-2 leading-relaxed'>
+                                            {vid.description}
+                                        </p>
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    </Reveal>
+                </div>
+            </div>
+
+        </section>
     );
 };
 

@@ -1,62 +1,141 @@
-import React, { useState } from 'react';
-import EmailIcon from '@/public/svgs/EmailIcon';
-import PhoneIcon from '@/public/svgs/PhoneIcon';
-import ClockIcon from '@/public/svgs/ClockIcon';
+"use client";
+import React, { useState, useEffect, useRef } from 'react';
 import Logo from '@/public/svgs/Logo';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Navbar from '@/components/mobile/Navbar';
 import { BiMenuAltLeft } from 'react-icons/bi';
+import { navLinks } from '@/data/navLinks';
 
+const HIDE_DELAY_MS = 2500; // ms of inactivity before header hides (only when not at top)
 
 const Header = () => {
-
     const [showMenu, setShowMenu] = useState<boolean>(false);
+    const [visible, setVisible] = useState<boolean>(true);   // show on launch
+    const [atTop, setAtTop] = useState<boolean>(true);        // true when page is at y=0
+    const pathname = usePathname();
+    const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const atTopRef = useRef<boolean>(true); // ref so scroll handler always has fresh value
+    const headerHoveredRef = useRef<boolean>(false); // ref to track mouse hover
 
-    const handleClick = () => {
-        setShowMenu(true);
-    }
+    const scheduleHide = () => {
+        if (hideTimer.current) clearTimeout(hideTimer.current);
+        // Never auto-hide when the user is at the very top of the page, or when hovered
+        if (atTopRef.current || headerHoveredRef.current) return;
+        hideTimer.current = setTimeout(() => setVisible(false), HIDE_DELAY_MS);
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const isAtTop = window.scrollY === 0;
+            atTopRef.current = isAtTop;
+            setAtTop(isAtTop);
+            setVisible(true); // show header on any scroll activity
+            if (isAtTop) {
+                // At the top — cancel any pending hide and keep header visible
+                if (hideTimer.current) clearTimeout(hideTimer.current);
+            } else {
+                scheduleHide(); // start idle timer only when scrolled down
+            }
+        };
+
+        const handleMouseMove = (e: MouseEvent) => {
+            // Show header when mouse enters the top 80px of the screen
+            if (e.clientY < 80) {
+                setVisible(true);
+                scheduleHide();
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('mousemove', handleMouseMove, { passive: true });
+
+        // On mount: page is at top so keep header visible indefinitely
+        // (no scheduleHide call here so header stays until user scrolls down)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('mousemove', handleMouseMove);
+            if (hideTimer.current) clearTimeout(hideTimer.current);
+        };
+    }, []);
+
+    const isHome = pathname === '/';
+    // Transparent + white text when on homepage at very top of page
+    const isOverHero = isHome && atTop;
 
     return (
-        <div>
+        <header
+            onMouseEnter={() => {
+                headerHoveredRef.current = true;
+                setVisible(true);
+                if (hideTimer.current) clearTimeout(hideTimer.current);
+            }}
+            onMouseLeave={() => {
+                headerHoveredRef.current = false;
+                scheduleHide();
+            }}
+            className={`
+                fixed top-0 w-full z-50
+                transition-all duration-400 ease-in-out
+                ${visible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
+                ${isOverHero
+                    ? 'bg-gradient-to-b from-slate-950/85 via-slate-950/40 to-transparent backdrop-blur-none'
+                    : 'bg-slate-950/95 backdrop-blur-xl border-b border-slate-800 shadow-2xl shadow-slate-950/40'}
+            `}
+        >
             {showMenu && <Navbar setShowMenu={setShowMenu} />}
-            <div className='bg-[#F2F3F5] text-primaryblack font-roboto-slab' >
-                <div className='w-[90%] mx-auto flex justify-between items-center h-[52px]'>
-                    <div className='flex lg:gap-10 h-44 gap-6'>
-                        <div className='flex items-center gap-1'>
-                            <PhoneIcon fillColor="#4F81BD" width="16px" height="14px" />
-                            <span className='sm:text-sm text-xs font-semibold'>+2348035802938, +2348034422516</span>
-                        </div>
-                        <div className='flex items-center gap-1'>
-                            <EmailIcon fillColor="#4F81BD" width="16px" height="16px" />
-                            <span className='sm:text-sm text-xs font-semibold'>info@gevacglobalservices.com</span>
-                        </div>
+
+            <div className='mx-auto flex w-[90%] items-center justify-between py-3 lg:py-4'>
+
+                {/* Logo + Brand */}
+                <Link href='/' className='flex items-center'>
+                    {/* No filter needed — logo colors are visible on both dark backgrounds */}
+                    <Logo />
+                    <div className='-ml-6'>
+                        <p className='text-sm font-extrabold tracking-tight leading-tight text-white'>
+                            GEVAC VENTURES
+                        </p>
+                        <p className='text-[9px] uppercase tracking-widest leading-tight text-slate-400'>
+                            Subsidiary of Gevac Global Services
+                        </p>
                     </div>
-                    <div className='lg:flex gap-2 items-center hidden'>
-                        <ClockIcon />
-                        <span className='sm:text-sm text-xs font-semibold'>Mon - Sat 9:00AM - 6:00PM, Sunday - Closed</span>
-                    </div>
+                </Link>
+
+                {/* Desktop Nav */}
+                <nav className='hidden lg:flex items-center gap-8'>
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            className={`text-sm font-medium transition-all duration-200 ${pathname === link.href
+                                ? 'font-semibold text-primary'
+                                : 'text-slate-300 hover:text-white'
+                                }`}
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                </nav>
+
+                {/* CTA + Mobile Menu */}
+                <div className='flex items-center gap-3'>
+                    <Link
+                        href='/contact'
+                        className='hidden lg:inline-flex items-center rounded-full bg-gradient-to-r from-accent to-orange-400 px-5 py-2 text-xs font-bold text-white shadow-lg shadow-accent/30 transition-all hover:scale-105 hover:shadow-accent/50'
+                    >
+                        Get Quote
+                    </Link>
+                    <button
+                        className='lg:hidden text-white transition-colors duration-300'
+                        onClick={() => setShowMenu(true)}
+                        aria-label='Open menu'
+                    >
+                        <BiMenuAltLeft size={26} />
+                    </button>
                 </div>
             </div>
-            <div className='h-auto py-3 bg-primaryblack items-center'>
-                <div className='w-[90%] mx-auto text-primaryblack flex justify-between items-center h-full'>
-                    <div className='flex items-center gap-16'>
-                        <div>
-                            <Logo />
-                        {/* <p className='text-primarypink font-semibold text-base font-tillitium'>GEVAC GLOBAL SERVICES LTD</p> */}
-                        </div>
-                    </div>
-                        <div className='lg:flex hidden items-center text-white font-roboto font-medium text-base gap-16'>
-                            <Link href="/" className='cursor-pointer hover:text-primarypink transition-all duration-500'>Home</Link>
-                            <Link href="#company" className='cursor-pointer hover:text-primarypink transition-all duration-500'>Company</Link>
-                            <Link href="#service" className='cursor-pointer hover:text-primarypink transition-all duration-500'>Our Service</Link>
-                            <Link href="#contact" className='cursor-pointer hover:text-primarypink transition-all duration-500'>Contact US</Link>
-                        </div>
-                    <div className='lg:hidden block' onClick={handleClick}>
-                        <BiMenuAltLeft color="white" size="30px" />
-                    </div>
-                </div>
-            </div>
-        </div>
+        </header>
     );
 };
 

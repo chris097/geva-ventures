@@ -1,8 +1,9 @@
+"use client";
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-export const Reveal = ({ children }: any) => {
+export const Reveal = ({ children, className }: { children: React.ReactNode, className?: string }) => {
 
     const [ref, inView] = useInView();
 
@@ -27,7 +28,7 @@ export const Reveal = ({ children }: any) => {
                 initial="hidden"
                 animate={control}
                 transition={{ duration: 0.65, delay: 0.33 }}
-                className='relative overflow-hidden'
+                className={`relative overflow-hidden ${className || ''}`}
                 ref={ref}
             >{children}</motion.div>
         </>
