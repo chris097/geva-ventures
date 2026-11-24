@@ -5,8 +5,8 @@ import Footer from '@/components/Footer/page';
 import Faq from '@/components/Faq/page';
 
 export const metadata: Metadata = {
-  title: 'FAQ | GEVAC VENTURES',
-  description: 'Frequently asked questions about GEVAC VENTURES elevator, escalator and automatic door services.',
+  title: 'FAQ | GEVAC GLOBAL SERVICES',
+  description: 'Frequently asked questions about GEVAC GLOBAL SERVICES elevator, escalator and automatic door services.',
 };
 
 const FaqPage = () => {

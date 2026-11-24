@@ -19,7 +19,7 @@ const Result = () => {
                 <div className='absolute inset-0'>
                     <Image
                         src={resultsImg}
-                        alt='GEVAC Ventures building atrium'
+                        alt='GEVAC Global Services building atrium'
                         className='w-full h-full object-cover'
                         priority
                     />

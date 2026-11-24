@@ -12,11 +12,11 @@ const Footer = () => {
         <div className='bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800 lg:h-auto h-auto pb-10'>
             <div className='lg:flex block justify-between text-slate-300 w-[90%] mx-auto pt-14'>
                 <div className='lg:w-[30%] w-[90%]'>
-                    <div className='flex items-center gap-4'>
+                    <div className='flex items-center'>
                         <Logo />
-                        <div>
-                            <p className='text-white font-bold tracking-tight text-lg sm:text-xl font-tillitium'>GEVAC VENTURES</p>
-                            <p className='text-[10px] uppercase tracking-wider text-slate-400'>A Subsidiary of Gevac Global Services Ltd</p>
+                        <div className='-ml-6'>
+                            <p className='text-white font-bold tracking-tight text-lg sm:text-xl font-tillitium'>GEVAC GLOBAL SERVICES</p>
+                            <p className='text-[10px] uppercase tracking-wider text-slate-400'>Elevators · Escalators · Automatic Doors</p>
                         </div>
                     </div>
                     <div className='mt-6'>
@@ -63,7 +63,7 @@ const Footer = () => {
             </div>
             <div className='border-t-[0.5px] w-[90%] mx-auto mt-14 border-slate-800' />
             <p className='text-slate-500 mt-10 text-center flex items-center sm:text-sm text-xs justify-center gap-1'>
-                <span className='text-lg'>&copy;</span> Copyright 2026 GEVAC VENTURES. All Rights Reserved.</p>
+                <span className='text-lg'>&copy;</span> Copyright 2026 GEVAC GLOBAL SERVICES. All Rights Reserved.</p>
         </div>
     )
 }

@@ -48,7 +48,7 @@ const TeamPage = () => {
 
             {/* Hero */}
             <div className='relative h-[420px] lg:h-[520px] overflow-hidden flex items-center'>
-                <Image src={teamHero} alt='GEVAC Ventures Team' className='absolute inset-0 w-full h-full object-cover object-top' priority />
+                <Image src={teamHero} alt='GEVAC Global Services Team' className='absolute inset-0 w-full h-full object-cover object-top' priority />
                 <div className='absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/70 to-slate-950/40' />
                 <div className='absolute inset-0 opacity-10' style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 

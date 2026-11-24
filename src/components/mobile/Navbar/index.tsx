@@ -48,8 +48,8 @@ const Navbar = ({ setShowMenu }: { setShowMenu: (show: boolean) => void }) => {
                     <Link href="/" onClick={() => setShowMenu(false)} className="flex items-center gap-2">
                         <Logo />
                         <div className="-ml-4">
-                            <p className="text-sm font-extrabold tracking-tight leading-tight text-white">GEVAC VENTURES</p>
-                            <p className="text-[8px] uppercase tracking-widest text-slate-500 leading-tight">Subsidiary of Gevac Global Services</p>
+                            <p className="text-sm font-extrabold tracking-tight leading-tight text-white">GEVAC GLOBAL SERVICES</p>
+                            <p className="text-[8px] uppercase tracking-widest text-slate-500 leading-tight">Elevators · Escalators · Doors</p>
                         </div>
                     </Link>
                     <button

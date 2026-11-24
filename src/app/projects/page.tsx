@@ -9,8 +9,8 @@ import heroImg from '@/public/images/recent1.png';
 import ProjectsTable from '@/components/ProjectsTable';
 
 export const metadata: Metadata = {
-  title: 'Projects | GEVAC VENTURES',
-  description: 'Completed and ongoing elevator, escalator and automatic door installations by GEVAC VENTURES across Nigeria.',
+  title: 'Projects | GEVAC GLOBAL SERVICES',
+  description: 'Completed and ongoing elevator, escalator and automatic door installations by GEVAC GLOBAL SERVICES across Nigeria.',
 };
 
 const ProjectsPage = () => {
@@ -20,7 +20,7 @@ const ProjectsPage = () => {
 
       {/* Hero Section */}
       <div className='relative h-[420px] lg:h-[500px] overflow-hidden flex items-center'>
-        <Image src={heroImg} alt='GEVAC Ventures Projects' className='absolute inset-0 w-full h-full object-cover object-center' priority />
+        <Image src={heroImg} alt='GEVAC Global Services Projects' className='absolute inset-0 w-full h-full object-cover object-center' priority />
         <div className='absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/80 to-slate-950/40' />
         <div className='absolute inset-0 opacity-10' style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
@@ -64,7 +64,7 @@ const ProjectsPage = () => {
               return (
                 <Reveal key={index} className={`h-full ${gridClass}`}>
                   <div className='group relative w-full h-full overflow-hidden rounded-[2rem] border border-white/5 hover:border-primary/40 transition-all duration-300 cursor-pointer shadow-2xl'>
-                    <Image src={item.img} alt={`GEVAC VENTURES installed elevator project`} className='h-full w-full object-cover transition-transform duration-700 group-hover:scale-105' />
+                    <Image src={item.img} alt={`GEVAC GLOBAL SERVICES installed elevator project`} className='h-full w-full object-cover transition-transform duration-700 group-hover:scale-105' />
                     <div className='absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300' />
 
                     <div className='absolute bottom-0 left-0 right-0 p-6 lg:p-8 flex flex-col justify-end'>

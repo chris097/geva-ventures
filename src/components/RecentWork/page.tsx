@@ -80,7 +80,7 @@ const RecentWork = () => {
             <div className='relative h-[420px] lg:h-[500px] overflow-hidden'>
                 <Image
                     src={bannerImg}
-                    alt='GEVAC Ventures completed projects'
+                    alt='GEVAC Global Services completed projects'
                     className='w-full h-full object-cover object-center'
                     priority
                 />

@@ -38,7 +38,7 @@ const ContactPage = () => {
     <main className='bg-slate-950'>
       <Header />
       <div className='relative h-[420px] lg:h-[500px] overflow-hidden flex items-center'>
-        <Image src={heroImg} alt='Contact GEVAC Ventures' className='absolute inset-0 w-full h-full object-cover object-center' priority />
+        <Image src={heroImg} alt='Contact GEVAC Global Services' className='absolute inset-0 w-full h-full object-cover object-center' priority />
         <div className='absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/80 to-slate-950/40' />
         <div className='absolute inset-0 opacity-10' style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 

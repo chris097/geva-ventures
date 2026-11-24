@@ -9,8 +9,8 @@ import { Reveal } from '@/components/utils/Reveal';
 import heroImg from '@/public/images/hero_escalator.png';
 
 export const metadata: Metadata = {
-  title: 'Services | GEVAC VENTURES',
-  description: 'Elevator installation, escalator installation, automatic doors, procurement and maintenance services from GEVAC VENTURES.',
+  title: 'Services | GEVAC GLOBAL SERVICES',
+  description: 'Elevator installation, escalator installation, automatic doors, procurement and maintenance services from GEVAC GLOBAL SERVICES.',
 };
 
 const ServicesPage = () => {
@@ -18,7 +18,7 @@ const ServicesPage = () => {
     <main>
       <Header />
       <div className='relative h-[420px] lg:h-[500px] overflow-hidden flex items-center'>
-        <Image src={heroImg} alt='GEVAC Ventures Services' className='absolute inset-0 w-full h-full object-cover object-center' priority />
+        <Image src={heroImg} alt='GEVAC Global Services Services' className='absolute inset-0 w-full h-full object-cover object-center' priority />
         <div className='absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/80 to-slate-950/40' />
         <div className='absolute inset-0 opacity-10' style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
@@ -56,7 +56,7 @@ const ServicesPage = () => {
                   <div className='w-full lg:w-1/2'>
                     <Reveal>
                       <div className='group relative h-[350px] sm:h-[450px] lg:h-[550px] w-full overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl'>
-                        <Image src={service.image} alt={`${service.title} at GEVAC VENTURES`} className='h-full w-full object-cover transition-transform duration-700 group-hover:scale-105' />
+                        <Image src={service.image} alt={`${service.title} at GEVAC GLOBAL SERVICES`} className='h-full w-full object-cover transition-transform duration-700 group-hover:scale-105' />
                         <div className='absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity duration-500' />
                         <div className='absolute bottom-0 left-0 p-8 lg:p-10'>
                           <span className='inline-block px-5 py-2.5 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl text-white font-bold sm:font-black text-xl sm:text-2xl lg:text-4xl tracking-tighter shadow-2xl'>
